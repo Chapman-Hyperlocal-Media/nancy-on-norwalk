@@ -1,0 +1,11 @@
+/*
+Theme Name: Norwalk 1.2.1
+Description: Adds support for wallpaper ads.
+Version: 1.2.1
+Author: Eric Chapman
+Author URI: http://www.ericchapman.net
+Tags: legible, simple, responsive, news
+*/
+
+@import "../norwalk-1.2.1/stylesheets/reset.css";
+@import "../norwalk-1.2.1/stylesheets/layout.css";
