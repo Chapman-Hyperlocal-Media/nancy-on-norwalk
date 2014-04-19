@@ -181,8 +181,12 @@ wp-content/cache/
 !wp-content/plugins/adzerk-ad-widget/
 !wp-content/plugins/google-ad-widget/
 !wp-content/plugins/norwalk-snow-effects/
-/temp/
-/test/
+comps/
+node_modules/
+sandbox/
+wp-content/w3tc-config/
+temp/
+test/
 .ftpquota
 .htaccess
 dwsync.xml
@@ -229,6 +233,8 @@ wpsettings-bak
 google-news-sitemap.xml
 advanced-cache.php
 wp-cache-config.php
+package.json
+gruntfile.js
 
 #other unnecessary crapola
 cgi-bin/
