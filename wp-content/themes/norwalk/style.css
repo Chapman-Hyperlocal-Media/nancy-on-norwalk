@@ -1,0 +1,11 @@
+/*
+Theme Name: Norwalk
+Description: A lightweight, responsive, mostly flat news blog design with a cheerful green color scheme.
+Version: 1.2.2
+Author: Eric Chapman
+Author URI: http://www.ericchapman.net
+Tags: legible, simple, responsive, news
+*/
+
+@import "../norwalk/stylesheets/reset.css";
+@import "../norwalk/stylesheets/layout.css";
