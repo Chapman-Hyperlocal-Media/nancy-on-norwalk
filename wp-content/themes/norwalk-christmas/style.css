@@ -1,0 +1,11 @@
+/*
+Theme Name: Norwalk Christmas
+Description: A christmas version of Norwalk.
+Version: 0.1
+Author: Eric Chapman
+Author URI: http://www.ericchapman.net
+Tags: legible, simple, photo gallery, news
+*/
+
+@import "../norwalk-christmas/stylesheets/reset.css";
+@import "../norwalk-christmas/stylesheets/layout.css";

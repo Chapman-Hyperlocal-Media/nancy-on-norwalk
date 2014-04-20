@@ -1,0 +1,86 @@
+@import "_includes.scss";
+#comments-section{
+	width:100%; 
+}
+.snowcap{
+	display:none;
+}
+#main-nav{
+	background-color:#252525;
+	border-bottom:1px solid #000;
+	.menu-item{
+		background-color:transparent;
+		&:hover{
+			background-color:#000;
+		}
+	}
+	.home-link{
+		opacity:0;
+		margin-left:percentage($column-width * -35);
+	}
+	#nav-logo{
+		margin-left:percentage($column-width * -9.955);
+	}
+}
+#NoN-content{
+	.content{
+		.the-content{
+			margin-left:0;
+		}
+		.post .meta{
+			width:100%;
+			margin-top:percentage($column-width * 1);
+			margin-bottom:percentage($column-width * 1);
+			float:none;
+			overflow:hidden;
+			.edit-link{
+				border-top:none;
+			}
+			.byline span, .time{
+				font-size:1em;
+				display:inline;
+			}
+			.date a{
+				text-transform:lowercase;
+			}
+			.post-categories a, .month, .comments a{
+				text-transform:capitalize;
+			}
+			ul{
+				font-size:1em;
+			}
+			
+			li, li:first-child{
+				float:left;
+				padding-right:percentage($column-width * 1);
+				padding-left:percentage($column-width * 1);
+				padding-top:0px;
+				padding-bottom:0px;
+				border-left:1px dotted $dark + #606060;
+				border-bottom:none;
+				height:1em;
+				margin-top:0;
+				margin-bottom:percentage($column-width * 0.5);
+				&:active{
+						background-color:$green;
+				}
+				&:first-child{
+					padding-left:0;
+					border-left:none;
+				}
+				a{
+					display:block;
+					height:100%;
+					&:active{
+						color:#fff;
+					}
+				}
+				&.comments, &.edit-link{
+					a{
+						padding-top:0px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+/* Sass stuff */
+
+$green: #9fb03e;
+$dark: #3c3f36;
+$lighter-dark: $dark + #606060;
+$bluegreen: #72918b;
+$warm: #ebe9dc;
+$column-width: .02127659574468085;
+$logo: "prenton-condensed", sans-serif;
+$headline: $logo;
+$asideHead: "proxima-nova", sans-serif;
+$asideHeadCondensed: "proxima-nova-extra-condensed", sans-serif;
+$bodycopy: "jubilat", serif;
+
+@mixin container{
+	margin-left:auto;
+	margin-right:auto;
+	max-width:940px;
+}
+
+@mixin aside-format{
+	font-size:1.4em;
+	font-family:$asideHead;
+	line-height:1.4em;
+}
+/* 
+expects params as numbers of columns, including padding 
+uses flexible 48 column system
+*/
+@mixin columns($cols, $padT, $padR, $padB, $padL){ 
+	width: percentage(($column-width * $cols) - ($column-width * ($padR + $padL)));
+	padding: percentage(($column-width * $padT)) percentage(($column-width * $padR)) percentage(($column-width * $padB)) percentage(($column-width * $padL)); 
+}
+
+@mixin margins($marT, $marR, $marB, $marL){
+	margin:  percentage(($column-width * $marT)) percentage(($column-width * $marR)) percentage(($column-width * $marB)) percentage(($column-width * $marL))
+}
