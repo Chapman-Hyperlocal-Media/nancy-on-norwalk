@@ -15,7 +15,10 @@
         <?php previous_posts_link( __( 'Newer posts &rarr;', 'starkers' ) ); ?>
     </nav>
 <?php endif;*/ ?>
- 
+<?php
+    // Loop counting, for mobile ad placement.
+    $loop_num = 0;
+?>
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
         <h1><?php _e( 'Not Found', 'starkers' ); ?></h1>
@@ -133,11 +136,14 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
 			<header>
             	<?php 
 					if(has_post_thumbnail()){?>
-						<div class="img-container thumb"><a href="<?php the_permalink();?>">
-						 <?php if (is_search()) the_post_thumbnail('search_thumb');
-						 	else the_post_thumbnail('story_thumb'); 
-							$strip_images = true;?>
-                         </a>
+						<div class="img-container thumb">
+                            <a href="<?php the_permalink();?>">
+        						<?php 
+                                    if (is_search()) the_post_thumbnail('search_thumb');
+        							else the_post_thumbnail('story_thumb'); 
+        							$strip_images = true;
+                                ?>
+                            </a>
                         <div class="inner-shadow top left"></div><div class="inner-shadow top right"></div><div class="inner-shadow left"></div><div class="inner-shadow right"></div></div>
 					<?php }	elseif (is_search()) { ?>
 						<div class="img-container thumb">
@@ -178,6 +184,12 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
  
     <?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
  
+    <?php 
+        if (is_int( $loop_num / 2) && ($loop_num / 2) != 0){
+            echo "<script>console.log('Loop number " . $loop_num . "); </script>";
+        }else echo "check not passed"
+        $loop_num++;
+    ?>
 <?php endwhile; // End the loop. Whew. ?>
  
 <?php /* Display navigation to next/previous pages when applicable */ ?>
