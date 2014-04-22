@@ -28,6 +28,7 @@
 <?php endif; ?>
  
 <?php while ( have_posts() ) : the_post(); ?>
+
 <?php $loop_num++; ?> 
 <?php /* How to display posts of the Gallery format. The gallery category is the old way. */ ?>
  
@@ -183,6 +184,7 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
  
             <?php comments_template( '', true ); ?>
  
+
     <?php endif; // This was the if statement that broke the loop into three parts based on post type. ?>
  
     <?php   // mobile ad placements; done as widgetable 'sidebars'
@@ -192,6 +194,7 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
             echo "</ul>";
             $mobile_ads_slot++;
         }
+
     ?>
 <?php endwhile; // End the loop. Whew. ?>
  
