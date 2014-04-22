@@ -18,6 +18,7 @@
 <?php
     // Loop counting, for mobile ad placement.
     $loop_num = 0;
+    $mobile_ads_slot = 1;
 ?>
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
@@ -27,7 +28,7 @@
 <?php endif; ?>
  
 <?php while ( have_posts() ) : the_post(); ?>
- 
+<?php $loop_num++; ?> 
 <?php /* How to display posts of the Gallery format. The gallery category is the old way. */ ?>
  
     <?php if ( ( function_exists( 'get_post_format' ) && 'gallery' == get_post_format( $post->ID ) ) || in_category( _x( 'gallery', 'gallery category slug', 'starkers' ) ) ) : ?>
@@ -182,13 +183,15 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
  
             <?php comments_template( '', true ); ?>
  
-    <?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
+    <?php endif; // This was the if statement that broke the loop into three parts based on post type. ?>
  
-    <?php 
-        if (is_int( $loop_num / 2) && ($loop_num / 2) != 0){
-            echo "<script>console.log('Loop number " . $loop_num . "); </script>";
-        }else echo "check not passed"
-        $loop_num++;
+    <?php   // mobile ad placements; done as widgetable 'sidebars'
+        if ( is_int( $loop_num / 2 ) && ($loop_num / 2) != 0){
+            echo "<ul id='mobile-ads-" . $mobile_ads_slot . "' class='mobile-ads'>";
+            if ( ! dynamic_sidebar( 'mobile-ads-' . $mobile_ads_slot )  )  echo '<!-- mobile-ads-' . $mobile_ads_slot . ' not found -->';
+            echo "</ul>";
+            $mobile_ads_slot++;
+        }
     ?>
 <?php endwhile; // End the loop. Whew. ?>
  

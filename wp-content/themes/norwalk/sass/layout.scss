@@ -651,7 +651,7 @@ body{
 			> li{
 				display:inline;
 				&:after {
-					content:", ";
+					content:", "; 
 				}
 			}
 		} 
@@ -674,6 +674,20 @@ body{
     	   	box-shadow: inset 0px 3px 6px 0px rgba(0, 0, 0, 0.75);
 			max-width:100%;
 		}
+	}
+}
+
+.mobile-ads{
+	display:none;
+	&>.widget{
+		clear: left;
+		margin-bottom: 10.638298%;
+		padding-top: 10.638298%;
+		border-top: 1px dotted #9c9f96;
+		width: 100%;
+	}
+	.adzerk-ad-slot{
+		display: none;
 	}
 }
 

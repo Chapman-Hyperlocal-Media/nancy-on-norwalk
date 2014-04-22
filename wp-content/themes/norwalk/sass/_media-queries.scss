@@ -228,7 +228,21 @@
 		@include columns(47, 4,4,4,4);
 	}
 	.sidebar{
-		@include columns(47, 0,4,0,4);
+		@include columns(47, 0,4,0,4);  
+	}
+
+}
+@media only screen and (max-width:800px){
+	.mobile-ads{
+		display:block;
+		width:100%;
+		clear:left;
+		.adzerk-ad-slot{
+			display:block;
+			width:300px;
+			height:auto;
+			margin:0 auto;
+		}
 	}
 }
 @media only screen and (max-width:550px){
