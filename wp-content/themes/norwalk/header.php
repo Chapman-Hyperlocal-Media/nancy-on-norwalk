@@ -37,6 +37,8 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/stylesheets/ie.css" />
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/FlashCanvasPro/bin/flashcanvas.js"></script>
 <![endif]-->
+<?php /*
+
 <script type='text/javascript'>
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -87,7 +89,7 @@ GA_googleAddSlot("ca-pub-7723353377962344", "nancyonnorwalk_300x250_5");
 
 GA_googleFetchAds();
 
-</script>
+</script>*/ ?>
 
 <script type='text/javascript'>
 var googletag = googletag || {};
