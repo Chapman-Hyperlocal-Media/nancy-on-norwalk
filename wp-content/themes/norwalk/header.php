@@ -173,8 +173,8 @@ ados_load();
 });</script>
 
 <?php 	wp_enqueue_script('jquery');
-	//	wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js');
-	//	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-1.6.min.js');
+		wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js', 'jquery');
+		wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-1.6.min.js');
 ?>
  
 <!-- Quantcast Tag -->
