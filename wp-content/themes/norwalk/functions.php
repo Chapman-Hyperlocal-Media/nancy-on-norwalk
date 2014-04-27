@@ -473,8 +473,22 @@ if (!function_exists('norwalk_facebook_like')){
 		$share = ' data-share="' . $share . '"';
 		$action = ' data-action="' . $action . '"'; 
 		$color = ' data-colorscheme="' . $color . '"'; 
+		/*
+
+		The $ref parameter was preventing the like button from loading on some pages.
+		This was because the ref parameter can't be longer than 50 characters,
+		and it was being auto-filled with the title of the story. 
+		So, if the headline was more than 50 characters, 
+		the like button	would not load. 
+
+		This parameter is optional, and used for tracking in analytics. 
+		Until we find a specific need for this kind of tracking, ref is disabled.
+
+		Should we need to enable it, a better solution must be found for an autofill.
+
 		if (!$ref) $ref = ' data-ref="FB+' . urlencode( get_the_title() ) . '"';
-		$button = '<div class="fb-like"' . $href . $layout . $share . $action . $ref . $color . ' data-send="false" data-show-faces="false" data-width="64"></div><div class="fb-share-button"' . $href . $type . '></div>';
+		*/
+		$button = '<div class="fb-like"' . $href . $layout . $share . $action /*. $ref*/ . $color . ' data-send="false" data-show-faces="false" data-width="64"></div><div class="fb-share-button"' . $href . $type . '></div>';
 		if ($echo) echo $button;
 		else return $button;
 	}
