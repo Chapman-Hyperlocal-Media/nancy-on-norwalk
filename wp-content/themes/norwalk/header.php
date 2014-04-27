@@ -37,6 +37,8 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/stylesheets/ie.css" />
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/FlashCanvasPro/bin/flashcanvas.js"></script>
 <![endif]-->
+<?php /*
+
 <script type='text/javascript'>
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -77,6 +79,10 @@ GA_googleAddSlot("ca-pub-7723353377962344", "nancyonnorwalk_300x250_5");
 
 GA_googleFetchAds();
 
+
+
+
+
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
 (function() {
@@ -99,6 +105,9 @@ googletag.defineSlot('/1732998/Nancy_on_Norwalk_bottom_sidebar_large_rectangle_a
 googletag.pubads().enableSingleRequest();
 googletag.enableServices();
 });
+</script>*/ ?>
+
+<script type='text/javascript'>
 
 var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);
 
