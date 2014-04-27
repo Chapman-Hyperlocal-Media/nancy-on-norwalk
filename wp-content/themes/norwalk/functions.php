@@ -114,7 +114,7 @@ function norwalk_widgets_init() {
 		'before_title' => '<h3 class="title">',
 		'after_title' => '</h3>',
 	) );
-		register_sidebar( array(
+	register_sidebar( array(
 		'name' => __( 'Top sidebar ad slot', 'norwalk' ),
 		'id' => 'top-sidebar-ad',
 		'description' => __( 'Displays at top of sidebar on almost every page', 'norwalk' ),
@@ -123,7 +123,7 @@ function norwalk_widgets_init() {
 		'before_title' => '<h3 class="title">',
 		'after_title' => '</h3>',
 	) );
-		register_sidebar( array(
+	register_sidebar( array(
 		'name' => __( 'Bottom sidebar ad slot', 'norwalk' ),
 		'id' => 'bottom-sidebar-ad',
 		'description' => __( 'Displays at bottom of sidebar on almost every page', 'norwalk' ),
@@ -142,41 +142,41 @@ function norwalk_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 	register_sidebar( array(
--		'name' => __( 'Mobile ads 1', 'norwalk' ),
--		'id' => 'mobile-ads-1',
--		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
--		'before_widget' => '<li class="widget ad">',
--		'after_widget' => '</li>',
--		'before_title' => '<h3 class="title">',
--		'after_title' => '</h3>',
--	) );
--	register_sidebar( array(
--		'name' => __( 'Mobile ads 2', 'norwalk' ),
--		'id' => 'mobile-ads-2',
--		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
--		'before_widget' => '<li class="widget ad">',
--		'after_widget' => '</li>',
--		'before_title' => '<h3 class="title">',
--		'after_title' => '</h3>',
--	) );
--	register_sidebar( array(
--		'name' => __( 'Mobile ads 3', 'norwalk' ),
--		'id' => 'mobile-ads-3',
--		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
--		'before_widget' => '<li class="widget ad">',
--		'after_widget' => '</li>',
--		'before_title' => '<h3 class="title">',
--		'after_title' => '</h3>',
--	) );
--	register_sidebar( array(
--		'name' => __( 'Mobile ads 4', 'norwalk' ),
--		'id' => 'mobile-ads-4',
--		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
--		'before_widget' => '<li class="widget ad">',
--		'after_widget' => '</li>',
--		'before_title' => '<h3 class="title">',
--		'after_title' => '</h3>',
--	) );
+		'name' => __( 'Mobile ads 1', 'norwalk' ),
+		'id' => 'mobile-ads-1',
+		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
+		'before_widget' => '<li class="widget ad">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="title">',
+		'after_title' => '</h3>',
+		) );
+	register_sidebar( array(
+		'name' => __( 'Mobile ads 2', 'norwalk' ),
+		'id' => 'mobile-ads-2',
+		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
+		'before_widget' => '<li class="widget ad">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Mobile ads 3', 'norwalk' ),
+		'id' => 'mobile-ads-3',
+		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
+		'before_widget' => '<li class="widget ad">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Mobile ads 4', 'norwalk' ),
+		'id' => 'mobile-ads-4',
+		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
+		'before_widget' => '<li class="widget ad">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="title">',
+		'after_title' => '</h3>',
+	) );
 }
 /** Register sidebars by running norwalk_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'norwalk_widgets_init' );
