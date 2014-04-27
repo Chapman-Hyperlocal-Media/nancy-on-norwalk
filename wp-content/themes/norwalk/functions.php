@@ -141,42 +141,6 @@ function norwalk_widgets_init() {
 		'before_title' => '<h3 class="title">',
 		'after_title' => '</h3>',
 	) );
-	register_sidebar( array(
-		'name' => __( 'Mobile ads 1', 'norwalk' ),
-		'id' => 'mobile-ads-1',
-		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
-		'before_widget' => '<li class="widget ad">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Mobile ads 2', 'norwalk' ),
-		'id' => 'mobile-ads-2',
-		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
-		'before_widget' => '<li class="widget ad">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Mobile ads 3', 'norwalk' ),
-		'id' => 'mobile-ads-3',
-		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
-		'before_widget' => '<li class="widget ad">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Mobile ads 4', 'norwalk' ),
-		'id' => 'mobile-ads-4',
-		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
-		'before_widget' => '<li class="widget ad">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	) );
 }
 /** Register sidebars by running norwalk_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'norwalk_widgets_init' );
@@ -509,8 +473,22 @@ if (!function_exists('norwalk_facebook_like')){
 		$share = ' data-share="' . $share . '"';
 		$action = ' data-action="' . $action . '"'; 
 		$color = ' data-colorscheme="' . $color . '"'; 
+		/*
+
+		The $ref parameter was preventing the like button from loading on some pages.
+		This was because the ref parameter can't be longer than 50 characters,
+		and it was being auto-filled with the title of the story. 
+		So, if the headline was more than 50 characters, 
+		the like button	would not load. 
+
+		This parameter is optional, and used for tracking in analytics. 
+		Until we find a specific need for this kind of tracking, ref is disabled.
+
+		Should we need to enable it, a better solution must be found for an autofill.
+
 		if (!$ref) $ref = ' data-ref="FB+' . urlencode( get_the_title() ) . '"';
-		$button = '<div class="fb-like"' . $href . $layout . $share . $action . $ref . $color . ' data-show-faces="false" data-width="90"></div><div class="fb-share-button"' . $href . $type . '></div>';
+		*/
+		$button = '<div class="fb-like"' . $href . $layout . $share . $action /*. $ref*/ . $color . ' data-send="false" data-show-faces="false" data-width="64"></div><div class="fb-share-button"' . $href . $type . '></div>';
 		if ($echo) echo $button;
 		else return $button;
 	}

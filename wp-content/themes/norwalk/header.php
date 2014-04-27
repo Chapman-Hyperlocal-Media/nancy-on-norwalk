@@ -53,19 +53,13 @@ node.parentNode.insertBefore(gads, node);
 </script>
 
 <!-- doug hardy ad code -->
-<script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'>
-
-</script>
+<script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'></script>
 
 <script type='text/javascript'>
 
 GS_googleAddAdSenseService("ca-pub-7723353377962344");
 
 GS_googleEnableAllServices();
-
-</script>
-
-<script type='text/javascript'>
 
 GA_googleAddSlot("ca-pub-7723353377962344", "nancyonnorwalk_300x250_1");
 
@@ -81,15 +75,8 @@ GA_googleAddSlot("ca-pub-7723353377962344", "nancyonnorwalk_300x250_5");
 //
 //GA_googleAddSlot("ca-pub-7723353377962344", "nancyonnorwalk_728x90_leaderboard"); 
 
-</script>
-
-<script type='text/javascript'>
-
 GA_googleFetchAds();
 
-</script>
-
-<script type='text/javascript'>
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
 (function() {
@@ -102,9 +89,7 @@ gads.src = (useSSL ? 'https:' : 'http:') +
 var node = document.getElementsByTagName('script')[0];
 node.parentNode.insertBefore(gads, node);
 })();
-</script>
 
-<script type='text/javascript'>
 googletag.cmd.push(function() {
 googletag.defineSlot('/1732998/Nancy_on_Norwalk_top_sidebar_large_rectangle_ad', [300, 250], 'div-gpt-ad-1390517935355-2').addService(googletag.pubads());
 googletag.defineSlot('/1732998/Nancy-On-Norwalk-upper-sidebar', [300, 250], 'div-gpt-ad-1390517935355-0').addService(googletag.pubads());
@@ -114,11 +99,9 @@ googletag.defineSlot('/1732998/Nancy_on_Norwalk_bottom_sidebar_large_rectangle_a
 googletag.pubads().enableSingleRequest();
 googletag.enableServices();
 });
-</script>
 
-<script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);
 
-<script type="text/javascript">
 var ados = ados || {};
 ados.run = ados.run || [];
 ados.run.push(function() {
@@ -190,8 +173,8 @@ ados_load();
 });</script>
 
 <?php 	wp_enqueue_script('jquery');
-		wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js');
-		wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-1.6.min.js');
+	//	wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js');
+	//	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-1.6.min.js');
 ?>
  
 <!-- Quantcast Tag -->
@@ -247,7 +230,7 @@ Begin facebook button code
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=267909876722098";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <?php /*?>
@@ -305,4 +288,4 @@ End facebook button code
 
         <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to the 'starkers_menu' function which can be found in functions.php.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
         <?php /*wp_nav_menu( array( 'container' => 'nav', 'fallback_cb' => 'starkers_menu', 'theme_location' => 'primary' ) );*/ ?>
-    </header>
+</header>
