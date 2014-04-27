@@ -1,4 +1,6 @@
-<meta property="fb:admins" content="1174811549" />
+<?php //<meta property="fb:admins" content="1174811549" />
+?>
+<meta property="fb:appid" content="267909876722098" />
 <meta property="og:site_name" content="Nancy On Norwalk" />
 <?php if (is_single()):
 	$og_excerpt = apply_filters('get_the_excerpt', $post->post_content);
