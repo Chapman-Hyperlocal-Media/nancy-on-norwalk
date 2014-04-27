@@ -488,7 +488,7 @@ if (!function_exists('norwalk_facebook_like')){
 
 		if (!$ref) $ref = ' data-ref="FB+' . urlencode( get_the_title() ) . '"';
 		*/
-		$button = '<div class="fb-like"' . $href . $layout . $share . $action /*. $ref*/ . $color . ' data-send="false" data-show-faces="false" data-width="64"></div><div class="fb-share-button"' . $href . $type . '></div>';
+		$button = '<div class="fb-like"' . $href . $layout . $share . $action /*. $ref*/ . $color . ' data-send="true" data-show-faces="false" data-width="64"></div><div class="fb-share-button"' . $href . $type . '></div>';
 		if ($echo) echo $button;
 		else return $button;
 	}
