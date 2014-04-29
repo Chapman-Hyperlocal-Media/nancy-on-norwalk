@@ -72,7 +72,7 @@ body{
 	font-family:$asideHead;
 	font-size:1.2em;
 	text-transform:uppercase;
-	z-index:2;
+	z-index:999;
 	-webkit-box-shadow: 0px 0px 20px 0px #000000;
 	-moz-box-shadow:    0px 0px 20px 0px #000000;
 	box-shadow:         0px 0px 20px 0px #000000;
@@ -678,20 +678,6 @@ body{
 	}
 }
 
-.mobile-ads{
-	display:none;
-	&>.widget{
-		clear: left;
-		margin-bottom: 10.638298%;
-		padding-top: 10.638298%;
-		border-top: 1px dotted #9c9f96;
-		width: 100%;
-	}
-	.adzerk-ad-slot{
-		display: none;
-	}
-}
-
 .single .post, .error404 .post, .page .type-page{
 	.the-content{
 		margin-left:0;
@@ -1262,3 +1248,4 @@ article.attachment{
 
 @import '_wallpaper-ad.scss';
 @import '_media-queries.scss';
+@import '_ads.scss';

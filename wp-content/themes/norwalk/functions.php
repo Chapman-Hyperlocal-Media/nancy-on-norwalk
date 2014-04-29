@@ -139,9 +139,9 @@ function norwalk_widgets_init() {
 		'before_widget' => '<li class="widget ad">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
+		'after_title' => '</h3>', 
 	) );
-	register_sidebar( array(
+/*	register_sidebar( array(
 		'name' => __( 'Mobile ads 1', 'norwalk' ),
 		'id' => 'mobile-ads-1',
 		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
@@ -176,7 +176,7 @@ function norwalk_widgets_init() {
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="title">',
 		'after_title' => '</h3>',
-	) );
+	) );*/
 }
 /** Register sidebars by running norwalk_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'norwalk_widgets_init' );
@@ -354,7 +354,6 @@ function norwalk_comment( $comment, $args, $depth ) {
 		<?php comment_text(); ?>
 		</div><footer class="reply">
 			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></footer>
-
 	<?php
 			break;
 		case 'pingback'  :

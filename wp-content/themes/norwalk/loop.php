@@ -41,7 +41,7 @@
                 <?php norwalk_posted_on(); ?>
             </header>
  
-<?php if ( post_password_required() ) : ?>
+<?php if ( post_password_required() ) : ?> 
                 <?php the_content(); ?>
 <?php else : ?>
 <?php $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
@@ -187,14 +187,24 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
 
     <?php endif; // This was the if statement that broke the loop into three parts based on post type. ?>
  
-    <?php   // mobile ad placements; done as widgetable 'sidebars'
+    <?php   
+        /*  mobile ad placements; 
+         *  empty divs placed after each story.
+         *  Javascript will into these divs from sidebar 
+         *  when document width makes it appropriate.
+         */
+    ?>
+    <div id="mobile-ad-slot-<?php echo $mobile_ads_slot; ?>" class="mobile-ad-slot"></div>
+    <?php 
+        $mobile_ads_slot++;
+
+        /*  widgetable sidebar approach
         if ( is_int( $loop_num / 2 ) && ($loop_num / 2) != 0){
             echo "<ul id='mobile-ads-" . $mobile_ads_slot . "' class='mobile-ads'>";
             if ( ! dynamic_sidebar( 'mobile-ads-' . $mobile_ads_slot )  )  echo '<!-- mobile-ads-' . $mobile_ads_slot . ' not found -->';
             echo "</ul>";
             $mobile_ads_slot++;
-        }
-
+        }*/
     ?>
 <?php endwhile; // End the loop. Whew. ?>
  

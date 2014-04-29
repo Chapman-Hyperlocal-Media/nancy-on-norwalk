@@ -1,0 +1,18 @@
+/*.mobile-ads{
+	display:none;
+	&>.widget{
+		clear: left;
+		margin-bottom: 10.638298%;
+		padding-top: 10.638298%; 
+		border-top: 1px dotted #9c9f96;
+		width: 100%;
+	}
+	.adzerk-ad-slot{
+		display: none;
+	}
+}*/
+
+.mobile-ad-slot{
+	clear:left;
+	.adzerk-ad{ margin:20px auto;}
+}

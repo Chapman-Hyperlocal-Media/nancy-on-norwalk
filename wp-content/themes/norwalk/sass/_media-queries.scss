@@ -102,7 +102,7 @@
 						border-left:1px dotted $dark + #606060;
 						border-bottom:none;
 						height:1em;
-						margin-top:0;
+						margin-top:0; 
 						margin-bottom:percentage($column-width * 0.5);
 						&:active{
 								background-color:$green;
