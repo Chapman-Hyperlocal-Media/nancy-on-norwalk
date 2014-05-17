@@ -65,12 +65,6 @@ jQuery(function ($) {
 
 //////////////////////// 
 
-/*var stickyNav = {
-	init : function(){ 	
-	},
-	
-}*/
-
 var $window = $(window),
 	$mainNav = $('#main-nav'),
 	$document = $(document),
@@ -90,7 +84,7 @@ $window.scroll(function(e){	$mainNav.toggleClass('addLogo', $window.scrollTop() 
 hideNav = function(e){
 
 	var keepGoing = true;
-	//console.log(e);
+
 	for (var i in e.target.parentElement.classList) {
 		if (e.target.parentElement.classList[i] == 'menu-item') keepGoing = false;
 	}
@@ -118,12 +112,26 @@ mobileAdCheck = function(e){
 			slotNum = 0,
 			newSlot = false;
 
-		//console.log($ads); 
-		//console.log($mobileAdSlots);
-
 		$ads.each(function(){ 
 			$(this).appendTo($mobileAdSlots[slotNum]); 
 			adNum++; 
+			////
+			////	check to see if element is filled and mark it if so.
+			////
+			var $thisSlot = $mobileAdSlots.eq(slotNum),
+				slotEmpty = true; 
+			$thisSlot.find('.adzerk-ad').each(function(){
+				if( $.trim( $(this).html() )  == '' ){
+					slotEmpty = true;
+				} else {
+					slotEmpty = false;
+					return;
+				}
+			});
+
+			if( !slotEmpty && !$thisSlot.hasClass('filled') ){
+				$thisSlot.addClass('filled');
+			}
 			if (newSlot) {
 				slotNum++;
 				newSlot = false;
@@ -138,9 +146,17 @@ mobileAdCheck = function(e){
 
 		var adNum = 0,
 			slotNum = 0;
-			
+		
+		///
+		///		Remove the filled marker
+		///
 		$ads.each(function(){ 
 			$(this).appendTo($adSlots[slotNum]); 
+			var $thisSlot = $mobileAdSlots.eq(slotNum); 
+
+			if ( $thisSlot.hasClass('filled') ){
+				$thisSlot.removeClass('filled')
+			}
 			adNum++; 
 			slotNum++;
 		});
@@ -160,6 +176,13 @@ $(document).ready(function(e) {
 				$('#NoN-content').css({width:contentWidth});
 			}); 
 	}
+
+   /*
+	*	Mobile ad placement code
+	*	
+	*	Inserts mobile-ad-slots in between paragraphs on single story pages
+	*
+	*/
 	if( $('body').hasClass('single') ){
 		var $content = $('#main-content div.the-content'),
 			storyHeight = 0,
@@ -168,7 +191,7 @@ $(document).ready(function(e) {
 		$content.find('p').each(function(){
 			storyHeight += $(this).outerHeight();
 
-			if (storyHeight > 500){
+			if (storyHeight > 500){		// spacing the ads apart a bit
 				$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot"></div>');
 				storyHeight = 0;
 				i++;
@@ -180,6 +203,9 @@ $(document).ready(function(e) {
 		})
 		$mobileAdSlots = $mainContent.find('div.content div.the-content > div.mobile-ad-slot, #comments-section > div.comments > div.mobile-ad-slot');
 	}
+
+	//	Move the ads from the sidebar into mobile ad slots when appropriate.
+	//
 	mobileAdCheck();
 	$window.smartresize( function(e){ mobileAdCheck(e) });
 
