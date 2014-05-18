@@ -194,7 +194,10 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
          *  when document width makes it appropriate.
          */
     ?>
-    <div id="mobile-ad-slot-<?php echo $mobile_ads_slot; ?>" class="mobile-ad-slot"></div>
+    <div id="mobile-ad-slot-<?php echo $mobile_ads_slot; ?>" class="mobile-ad-slot post">
+        <p class="ad-label">Advertisement</p>
+    </div>
+
     <?php 
         $mobile_ads_slot++;
 

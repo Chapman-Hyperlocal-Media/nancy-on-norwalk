@@ -106,7 +106,6 @@ showNav = function(e){
 mobileAdCheck = function(e){
 	var documentWidth = $document.width();
 	if(adsInSidebar && documentWidth < 801) {
-		console.log('move ads to content');
 
 		var adNum = 0,
 			slotNum = 0,
@@ -142,7 +141,6 @@ mobileAdCheck = function(e){
 		adsInSidebar = false;
 	} 
 	else if(!adsInSidebar && documentWidth >= 801) {
-		console.log('move ads to sidebar');
 
 		var adNum = 0,
 			slotNum = 0;

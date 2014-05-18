@@ -40,8 +40,8 @@
         wp_nav_menu($footer_nav_args); ?>
 
         <div id="legal">
-        <p>Copyright © 2013 Englewood Edge LLC. Reproduction of material from any Nancy on Norwalk pages without written permission is strictly prohibited. All rights reserved.</p>
-<p>Englewood Edge LLC is a registered LLC in the state of Florida.</p>
+        <p>Copyright © 2014 Chapman Hyperlocal Media Inc. Reproduction of material from any Nancy on Norwalk pages without written permission is strictly prohibited. All rights reserved.</p>
+<p>Chapman Hyperlocal Media Inc. is a registered non-profit corporation in the state of Connecticut.</p>
         </div>
         <script type="text/javascript"> // google+ share button code
 		  (function() {
