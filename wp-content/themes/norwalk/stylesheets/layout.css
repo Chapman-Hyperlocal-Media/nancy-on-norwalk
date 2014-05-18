@@ -2159,6 +2159,7 @@ article.attachment .parent-link .parent-title {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_ads\.scss}line{font-family:\000036}}
 .mobile-ad-slot .adzerk-ad {
   margin: 20px auto;
+  width: 300px;
 }
 
 @media only screen and (max-width: 342px) {
