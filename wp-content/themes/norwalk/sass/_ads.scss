@@ -1,13 +1,11 @@
 .mobile-ad-slot{ clear:both; display:none; float:none; margin-bottom:5%; padding-top:3%;
 
 	&.filled{ display:block; }
+	&.comment{ margin-bottom:5% !important; padding-top:3% !important; }
 	.ad-label{ text-align:center; margin-bottom:-18px;text-transform:uppercase; color:#9C9F96; font-family:helvetica, arial, sans-serif; font-size:10px; }
 	.adzerk-ad{ margin:20px auto; }
 }
 
 @media only screen and (max-width:342px){
-	.mobile-ad-slot{
-		width:112.76596%;
-		margin-left:-6.38298%;
-	}
+	.mobile-ad-slot{ width:112.76596%; margin-left:-6.38298%; }
 }

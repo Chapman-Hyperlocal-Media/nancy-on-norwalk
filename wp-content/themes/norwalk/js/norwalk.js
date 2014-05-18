@@ -190,13 +190,13 @@ $(document).ready(function(e) {
 			storyHeight += $(this).outerHeight();
 
 			if (storyHeight > 500){		// spacing the ads apart a bit
-				$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot"></div>');
+				$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot"><p class="ad-label">Advertisement</p></div>');
 				storyHeight = 0;
 				i++;
 			}
 		})
 		$('#comments-section').find('article.comment.odd').each(function(){
-			$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot"></div>');
+			$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot comment"><p class="ad-label">Advertisement</p></div>');
 			i++;
 		})
 		$mobileAdSlots = $mainContent.find('div.content div.the-content > div.mobile-ad-slot, #comments-section > div.comments > div.mobile-ad-slot');
