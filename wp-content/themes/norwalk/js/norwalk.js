@@ -105,10 +105,11 @@ showNav = function(e){
 
 mobileAdCheck = function(e){
 	var documentWidth = $document.width();
-	if(adsInSidebar && documentWidth < 801) {
+	if(/*adsInSidebar &&*/ documentWidth < 801) {
 
 		var slotNum = 0,
 			newSlot = false;
+
 
 		$ads.each(function(){ 
 			$(this).appendTo($mobileAdSlots[slotNum]); 
@@ -125,7 +126,6 @@ mobileAdCheck = function(e){
 					return;
 				}
 			});
-			
 			
 			if( !slotEmpty && !$thisSlot.hasClass('filled') ){
 				$thisSlot.addClass('filled');
@@ -206,10 +206,12 @@ $(document).ready(function(e) {
 	if($document.width() < 801){
 		tLimit = 0;
 		t = setInterval( function(){
+
 			mobileAdCheck();
 			if (tLimit >= 5000){
 				clearInterval(t);
-			} 
+				console.log('timer done');
+			} else console.log('timer running');
 			tLimit += 500;
 		}, 500 )
 	} else mobileAdCheck();
