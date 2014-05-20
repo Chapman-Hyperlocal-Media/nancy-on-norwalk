@@ -125,8 +125,8 @@ mobileAdCheck = function(e){
 					return;
 				}
 			});
-			console.log("slotEmpty = " + slotEmpty);
-			console.log("hasClass filled = " + $thisSlot.hasClass('filled'))
+			
+			
 			if( !slotEmpty && !$thisSlot.hasClass('filled') ){
 				$thisSlot.addClass('filled');
 			}
@@ -207,10 +207,9 @@ $(document).ready(function(e) {
 		tLimit = 0;
 		t = setInterval( function(){
 			mobileAdCheck();
-			if (tLimit >= 3000){
+			if (tLimit >= 5000){
 				clearInterval(t);
-				console.log('timer done');
-			} else console.log('timer running');
+			} 
 			tLimit += 500;
 		}, 500 )
 	} else mobileAdCheck();
