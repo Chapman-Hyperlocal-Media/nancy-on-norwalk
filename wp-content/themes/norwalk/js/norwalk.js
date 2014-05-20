@@ -107,6 +107,7 @@ showNav = function(e){
 mobileAdCheck = function(e){
 	var documentWidth = $document.width();
 	console.log(documentWidth);
+	console.log('initRunning = ' + initRunning);
 	if(!initRunning){
 		if(adsInSidebar && documentWidth < 801) {
 
@@ -169,7 +170,8 @@ mobileAdCheck = function(e){
 			if(!initRunning){
 				mobileAdCheck();
 				clearInterval(t);
-			}
+				console.log('timer done')
+			} else console.log('timer running')
 		}, 100 )
 	}
 }
