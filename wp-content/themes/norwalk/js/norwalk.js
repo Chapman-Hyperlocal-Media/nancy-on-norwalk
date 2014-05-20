@@ -73,8 +73,7 @@ var $window = $(window),
 	$adSlots =  $sidebar.find('li.widget.adzerk-ad-slot')
 	$ads = $adSlots.find('div.adzerk-ad'),
 	$mobileAdSlots = $mainContent.find('div.content > div.mobile-ad-slot'),
-	adsInSidebar = true,
-	initRunning = false;
+	adsInSidebar = true;
 
 $window.smartresize(function(e) {
 	var height = $mainNav.outerHeight();
@@ -106,71 +105,60 @@ showNav = function(e){
 
 mobileAdCheck = function(e){
 	var documentWidth = $document.width();
-	console.log(documentWidth);
-	console.log('initRunning = ' + initRunning);
-	if(!initRunning){
-		if(adsInSidebar && documentWidth < 801) {
+	if(adsInSidebar && documentWidth < 801) {
 
-			var slotNum = 0,
-				newSlot = false;
+		var slotNum = 0,
+			newSlot = false;
 
-			$ads.each(function(){ 
-				$(this).appendTo($mobileAdSlots[slotNum]); 
-				////
-				////	check to see if element is filled and mark it if so.
-				////
-				var $thisSlot = $mobileAdSlots.eq(slotNum),
-					slotEmpty = true; 
-				$thisSlot.find('.adzerk-ad').each(function(){
-					if( $.trim( $(this).html() )  == '' ){
-						slotEmpty = true;
-					} else {
-						slotEmpty = false;
-						return;
-					}
-				});
-				console.log("slotEmpty = " + slotEmpty);
-				console.log("hasClass filled = " + $thisSlot.hasClass('filled'))
-				if( !slotEmpty && !$thisSlot.hasClass('filled') ){
-					$thisSlot.addClass('filled');
+		$ads.each(function(){ 
+			$(this).appendTo($mobileAdSlots[slotNum]); 
+			////
+			////	check to see if element is filled and mark it if so.
+			////
+			var $thisSlot = $mobileAdSlots.eq(slotNum),
+				slotEmpty = true; 
+			$thisSlot.find('.adzerk-ad').each(function(){
+				if( $.trim( $(this).html() )  == '' ){
+					slotEmpty = true;
+				} else {
+					slotEmpty = false;
+					return;
 				}
-				if (newSlot) {
-					slotNum++;
-					newSlot = false;
-				} 
-				else newSlot = true; 
 			});
-
-			adsInSidebar = false;
-		} 
-		else if(!adsInSidebar && documentWidth >= 801) {
-
-			var slotNum = 0;
-			
-			///
-			///		Remove the filled marker
-			///
-			$ads.each(function(){ 
-				$(this).appendTo($adSlots[slotNum]); 
-				var $thisSlot = $mobileAdSlots.eq(slotNum); 
-
-				if ( $thisSlot.hasClass('filled') ){
-					$thisSlot.removeClass('filled')
-				} 
+			console.log("slotEmpty = " + slotEmpty);
+			console.log("hasClass filled = " + $thisSlot.hasClass('filled'))
+			if( !slotEmpty && !$thisSlot.hasClass('filled') ){
+				$thisSlot.addClass('filled');
+			}
+			if (newSlot) {
 				slotNum++;
-			});
+				newSlot = false;
+			} 
+			else newSlot = true; 
+		});
 
-			adsInSidebar = true;
-		}
-	} else { 
-		t = setInterval( function(){
-			if(!initRunning){
-				mobileAdCheck();
-				clearInterval(t);
-				console.log('timer done')
-			} else console.log('timer running')
-		}, 100 )
+		adsInSidebar = false;
+	} 
+	else if(!adsInSidebar && documentWidth >= 801) {
+
+		var slotNum = 0;
+		
+		///
+		///		Remove the filled marker
+		///
+		$ads.each(function(){ 
+			$(this).appendTo($adSlots[slotNum]); 
+			var $thisSlot = $mobileAdSlots.eq(slotNum); 
+
+			if ( $thisSlot.hasClass('filled') ){
+				$thisSlot.removeClass('filled')
+			} 
+			slotNum++;
+		});
+
+		adsInSidebar = true;
 	}
+
 }
 
 $(document).ready(function(e) {
@@ -195,7 +183,6 @@ $(document).ready(function(e) {
 		var $content = $('#main-content div.the-content'),
 			storyHeight = 0,
 			i = 1;
-		initRunning = true;
 
 		$content.find('p').each(function(){
 			storyHeight += $(this).outerHeight();
@@ -211,12 +198,22 @@ $(document).ready(function(e) {
 			i++;
 		})
 		$mobileAdSlots = $mainContent.find('div.content div.the-content > div.mobile-ad-slot, #comments-section > div.comments > div.mobile-ad-slot');
-		initRunning = false;
-	}
+		
+	} 
 
 	//	Move the ads from the sidebar into mobile ad slots when appropriate.
 	//
-	mobileAdCheck();
+	if($document.width() < 801){
+		tLimit = 0;
+		t = setInterval( function(){
+			mobileAdCheck();
+			if (tLimit >= 3000){
+				clearInterval(t);
+				console.log('timer done');
+			} else console.log('timer running');
+			tLimit += 500;
+		}, 500 )
+	} else mobileAdCheck();
 	$window.smartresize( function(e){ mobileAdCheck(e) });
 
 	$('#nav-logo, #nav-label').prependTo('#main-nav').attr('style', '');
