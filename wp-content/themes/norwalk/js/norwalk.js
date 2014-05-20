@@ -111,13 +111,11 @@ mobileAdCheck = function(e){
 	if(!initRunning){
 		if(adsInSidebar && documentWidth < 801) {
 
-			var adNum = 0,
-				slotNum = 0,
+			var slotNum = 0,
 				newSlot = false;
 
 			$ads.each(function(){ 
 				$(this).appendTo($mobileAdSlots[slotNum]); 
-				adNum++; 
 				////
 				////	check to see if element is filled and mark it if so.
 				////
@@ -131,7 +129,8 @@ mobileAdCheck = function(e){
 						return;
 					}
 				});
-
+				console.log("slotEmpty = " + slotEmpty);
+				console.log("hasClass filled = " + $thisSlot.hasClass('filled'))
 				if( !slotEmpty && !$thisSlot.hasClass('filled') ){
 					$thisSlot.addClass('filled');
 				}
@@ -146,8 +145,7 @@ mobileAdCheck = function(e){
 		} 
 		else if(!adsInSidebar && documentWidth >= 801) {
 
-			var adNum = 0,
-				slotNum = 0;
+			var slotNum = 0;
 			
 			///
 			///		Remove the filled marker
@@ -158,8 +156,7 @@ mobileAdCheck = function(e){
 
 				if ( $thisSlot.hasClass('filled') ){
 					$thisSlot.removeClass('filled')
-				}
-				adNum++; 
+				} 
 				slotNum++;
 			});
 
