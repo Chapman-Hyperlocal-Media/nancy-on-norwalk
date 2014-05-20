@@ -73,7 +73,8 @@ var $window = $(window),
 	$adSlots =  $sidebar.find('li.widget.adzerk-ad-slot')
 	$ads = $adSlots.find('div.adzerk-ad'),
 	$mobileAdSlots = $mainContent.find('div.content > div.mobile-ad-slot'),
-	adsInSidebar = true;
+	adsInSidebar = true,
+	initRunning = false;
 
 $window.smartresize(function(e) {
 	var height = $mainNav.outerHeight();
@@ -105,61 +106,71 @@ showNav = function(e){
 
 mobileAdCheck = function(e){
 	var documentWidth = $document.width();
-	if(adsInSidebar && documentWidth < 801) {
+	console.log(documentWidth);
+	if(!initRunning){
+		if(adsInSidebar && documentWidth < 801) {
 
-		var adNum = 0,
-			slotNum = 0,
-			newSlot = false;
+			var adNum = 0,
+				slotNum = 0,
+				newSlot = false;
 
-		$ads.each(function(){ 
-			$(this).appendTo($mobileAdSlots[slotNum]); 
-			adNum++; 
-			////
-			////	check to see if element is filled and mark it if so.
-			////
-			var $thisSlot = $mobileAdSlots.eq(slotNum),
-				slotEmpty = true; 
-			$thisSlot.find('.adzerk-ad').each(function(){
-				if( $.trim( $(this).html() )  == '' ){
-					slotEmpty = true;
-				} else {
-					slotEmpty = false;
-					return;
+			$ads.each(function(){ 
+				$(this).appendTo($mobileAdSlots[slotNum]); 
+				adNum++; 
+				////
+				////	check to see if element is filled and mark it if so.
+				////
+				var $thisSlot = $mobileAdSlots.eq(slotNum),
+					slotEmpty = true; 
+				$thisSlot.find('.adzerk-ad').each(function(){
+					if( $.trim( $(this).html() )  == '' ){
+						slotEmpty = true;
+					} else {
+						slotEmpty = false;
+						return;
+					}
+				});
+
+				if( !slotEmpty && !$thisSlot.hasClass('filled') ){
+					$thisSlot.addClass('filled');
 				}
+				if (newSlot) {
+					slotNum++;
+					newSlot = false;
+				} 
+				else newSlot = true; 
 			});
 
-			if( !slotEmpty && !$thisSlot.hasClass('filled') ){
-				$thisSlot.addClass('filled');
-			}
-			if (newSlot) {
+			adsInSidebar = false;
+		} 
+		else if(!adsInSidebar && documentWidth >= 801) {
+
+			var adNum = 0,
+				slotNum = 0;
+			
+			///
+			///		Remove the filled marker
+			///
+			$ads.each(function(){ 
+				$(this).appendTo($adSlots[slotNum]); 
+				var $thisSlot = $mobileAdSlots.eq(slotNum); 
+
+				if ( $thisSlot.hasClass('filled') ){
+					$thisSlot.removeClass('filled')
+				}
+				adNum++; 
 				slotNum++;
-				newSlot = false;
-			} 
-			else newSlot = true; 
-		});
+			});
 
-		adsInSidebar = false;
-	} 
-	else if(!adsInSidebar && documentWidth >= 801) {
-
-		var adNum = 0,
-			slotNum = 0;
-		
-		///
-		///		Remove the filled marker
-		///
-		$ads.each(function(){ 
-			$(this).appendTo($adSlots[slotNum]); 
-			var $thisSlot = $mobileAdSlots.eq(slotNum); 
-
-			if ( $thisSlot.hasClass('filled') ){
-				$thisSlot.removeClass('filled')
+			adsInSidebar = true;
+		}
+	} else { 
+		t = setInterval( function(){
+			if(!initRunning){
+				mobileAdCheck();
+				clearInterval(t);
 			}
-			adNum++; 
-			slotNum++;
-		});
-
-		adsInSidebar = true;
+		}, 100 )
 	}
 }
 
@@ -185,6 +196,7 @@ $(document).ready(function(e) {
 		var $content = $('#main-content div.the-content'),
 			storyHeight = 0,
 			i = 1;
+		initRunning = true;
 
 		$content.find('p').each(function(){
 			storyHeight += $(this).outerHeight();
@@ -200,6 +212,7 @@ $(document).ready(function(e) {
 			i++;
 		})
 		$mobileAdSlots = $mainContent.find('div.content div.the-content > div.mobile-ad-slot, #comments-section > div.comments > div.mobile-ad-slot');
+		initRunning = false;
 	}
 
 	//	Move the ads from the sidebar into mobile ad slots when appropriate.
