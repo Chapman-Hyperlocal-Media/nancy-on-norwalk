@@ -63,6 +63,11 @@
 	.sidebar{
 		@include columns(18, 0,3,0,0);
 	}
+	.archive{
+		.post{
+			.post-title{font-size:2.6em;}
+		}
+	}
 }
 @media only screen and (max-width:1030px){
 		#NoN-content{
@@ -149,6 +154,11 @@
 	.sidebar{
 		@include columns(22, 0,3,0,0);
 	}
+	.archive{
+		.post{
+			.post-title{font-size:2.3em;}
+		}
+	}
 }
 @media only screen and (max-width:800px) and (min-width:551px){
 	#mainhead{
@@ -230,7 +240,13 @@
 	.sidebar{
 		@include columns(47, 0,4,0,4);  
 	}
-
+	.archive{
+		.post{
+			.attachment-thumbnail{width:30%;}
+			.post-title{font-size:2.3em;}
+			.post-title, .the-content, .date{margin-left:33% !important;}
+		}
+	}
 }
 @media only screen and (max-width:550px){
 	.norwalk-social-bar{
@@ -358,4 +374,13 @@
 		}
 	}
 	#comments-section, #idc-container-parent{ float:none; clear:both; }
+
+	.archive{
+		.post{
+			padding:percentage($column-width * 3) 0;
+			.attachment-thumbnail{width:30%; float:right; margin: 0 0 2% 3%;}
+			.post-title{font-size:2.3em;}
+			.post-title, .the-content, .date{margin-left:0 !important;}
+		}
+	}
 }

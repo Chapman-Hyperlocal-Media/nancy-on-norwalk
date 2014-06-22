@@ -886,34 +886,59 @@ article.attachment{
 		}
 	}
 	.post{
-		@include columns(10.8, 0,0.75,1,0);
-		height: 28em;
-		margin-right:percentage($column-width * 0.8);
-		margin-bottom:percentage($column-width * 1);
-		float:left;
+		width:100%;
+		margin-right:0;
+		margin-bottom: 0;
+		padding:percentage($column-width * 1) 0;
 		clear:none;
 		border-top:none;
-		border-right:1px $dark + #808080 dotted;
 		border-bottom:1px $dark + #808080 dotted;
+		overflow:visible;
+		.the-content{ margin-left: percentage($column-width * 10)}
 		.attachment-thumbnail{
-			background-image:url('../images/bgpattern.gif');
+			width:21%;
+			float:left;
+			position:relative;
+		}
+		div.attachment-thumbnail{background-image:url('../images/bgpattern.gif');
+			&>span{position:absolute; bottom:2px; left:2px; color:#aa8; font-family:$asideHead; font-size:1.2em; padding:3px 4px 2px 4px; opacity:0.6; background:#fff;} 
 		}
 		.post-title{
-			font-size:2em;
+			font-size:3em;
 			font-family:$asideHeadCondensed;
-			margin-top:0.5em;
+			margin-bottom: 0;
 			a{
 				color:$green - #222222;
 			}
 		}
-		.date{
-			text-indent:0;
-			color:$dark + #444444;
-			margin-top:0.5em;
-			font-family:$asideHead;
+		.the-content {font-size:1.2em;}
+		.post-title, .the-content, .date{ margin-left:23% !important;}
+		.date{ text-indent:0;	color:$dark + #444444; margin-top:0.5em; font-family:$asideHead; }
+		.link-style{color:$green - #222222; text-transform:capitalize; font-family:$asideHead; font-style:italic;}
+	}
+	.blanket-link:active{
+		.post{transition: none; -moz-transition: none; /* Firefox 4 */ -webkit-transition: none; /* Safari and Chrome */ -o-transition: none; background-color:$green !important; color:#fff !important; 
+			.post-title, .the-content, .date, .link-style{color:#fff;}
 		}
-		img{
-			width:100%;
+	}
+}
+.no-touch{
+	.archive{
+		.post{
+			transition: background-color 0.5s;
+			-moz-transition: background-color 0.5s; /* Firefox 4 */
+			-webkit-transition: background-color 0.5s; /* Safari and Chrome */
+			-o-transition: background-color 0.5s;
+			.archive-post-inner{
+				transition:margin 0.3s;
+				-moz-transition:margin 0.3s; /* Firefox 4 */
+				-webkit-transition:margin 0.3s; /* Safari and Chrome */
+				-o-transition:margin 0.3s;
+			}
+		}
+		.post:hover{
+			 background-color:#f5ffe5;
+			.archive-post-inner:hover{ margin: 0 -10px 0 10px; }
 		}
 	}
 }

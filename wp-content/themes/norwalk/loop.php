@@ -93,41 +93,42 @@
  
 <?php /* How to display Category and Tag pages. */ ?>
  	<?php elseif (is_archive()): //( is_category() || is_tag()): ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-         
-			<header>
-            	<?php 
-					if(has_post_thumbnail()){?>
-						<div class="img-container thumb"><a href="<?php the_permalink();?>">
-						 <?php the_post_thumbnail('thumbnail'); ?>
-                         </a>
-                        <div class="inner-shadow top left"></div><div class="inner-shadow top right"></div><div class="inner-shadow left"></div><div class="inner-shadow right"></div></div>
-					<?php }
-					else {
-						global $wpdb; 
-						echo '<a href="' . get_permalink() . '">';
-						$attachment_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_parent = '$post->ID' 
-AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC LIMIT 1"); 
-						$thumb = wp_get_attachment_image( $attachment_id, 'thumbnail' ); 
-						if ($thumb) echo $thumb;
-						else echo '<img class="attachment-thumbnail" src="' . get_bloginfo('template_directory') . '/images/blankthumb.gif" />';
-						echo '</a>';
-					}
-				?>
-                <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'starkers' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        <a class="blanket-link" href="<?php the_permalink();?>"  title="<?php printf( esc_attr__( 'Click to view this story', 'starkers' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <div class="archive-post-inner">
+                	<?php 
+    					if(has_post_thumbnail()){?>
+    					
+    						 <?php the_post_thumbnail('thumbnail'); ?>
+
+    					<?php }
+    					else {
+    						global $wpdb; 
+    						
+    						$attachment_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_parent = '$post->ID' 
+    AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC LIMIT 1"); 
+    						$thumb = wp_get_attachment_image( $attachment_id, 'thumbnail' ); 
+    						if ($thumb) echo $thumb;
+    						else {
+                                $thumb_markup = '<div class="attachment-thumbnail"><img class="" src="' . get_bloginfo('template_directory') . '/images/blankthumb.gif" /><span>no image</span></div>';
+                                echo $thumb_markup;
+    						}
+    					}
+    				?>
+                    <h2 class="post-title"><?php the_title(); ?></h2>
+     
+                    <?php //norwalk_meta('meta'); ?>
+               
+    			<div class="the-content"> 
+                    <p><?php echo trim_excerpt(20); ?> <span class="link-style">(Read more)</span></p>
+                </div>
                 <p class="date"><?php echo get_the_date('n / j / Y')?></p>
- 
-                <?php //norwalk_meta('meta'); ?>
-            </header>
-			<div class="the-content"> 
-            
-                <?php //the_excerpt(); ?>
-                 
-                <?php wp_link_pages( array( 'before' => '<nav>' . __( 'Pages:', 'starkers' ), 'after' => '</nav>' ) ); ?>
-    <?php //endif; ?>
-     		</div>
- 
-		</article>   	
+                    <?php // wp_link_pages( array( 'before' => '<nav>' . __( 'Pages:', 'starkers' ), 'after' => '</nav>' ) ); ?>
+                <?php //endif; ?>
+         		
+                </div>
+    		</article>
+        </a>   	
         	
             
 <?php /* How to display all other posts. */ ?>            

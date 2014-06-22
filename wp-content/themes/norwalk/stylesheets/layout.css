@@ -1084,44 +1084,117 @@ article.attachment .parent-link .parent-title {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003888}}
 .archive .post {
-  width: 21.382979%;
-  padding: 0% 1.595745% 2.12766% 0%;
-  height: 28em;
-  margin-right: 1.702128%;
-  margin-bottom: 2.12766%;
-  float: left;
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding: 2.12766% 0;
   clear: none;
   border-top: none;
-  border-right: 1px #bcbfb6 dotted;
   border-bottom: 1px #bcbfb6 dotted;
+  overflow: visible;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003897}}
+.archive .post .the-content {
+  margin-left: 21.276596%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003898}}
 .archive .post .attachment-thumbnail {
+  width: 21%;
+  float: left;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003903}}
+.archive .post div.attachment-thumbnail {
   background-image: url("../images/bgpattern.gif");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003901}}
-.archive .post .post-title {
-  font-size: 2em;
-  font-family: "proxima-nova-extra-condensed", sans-serif;
-  margin-top: 0.5em;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003904}}
+.archive .post div.attachment-thumbnail > span {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  color: #aa8;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1.2em;
+  padding: 3px 4px 2px 4px;
+  opacity: 0.6;
+  background: #fff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003905}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003906}}
+.archive .post .post-title {
+  font-size: 3em;
+  font-family: "proxima-nova-extra-condensed", sans-serif;
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003910}}
 .archive .post .post-title a {
   color: #7d8e1c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003909}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003914}}
+.archive .post .the-content {
+  font-size: 1.2em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003915}}
+.archive .post .post-title, .archive .post .the-content, .archive .post .date {
+  margin-left: 23% !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003916}}
 .archive .post .date {
   text-indent: 0;
   color: #80837a;
   margin-top: 0.5em;
   font-family: "proxima-nova", sans-serif;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003915}}
-.archive .post img {
-  width: 100%;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003917}}
+.archive .post .link-style {
+  color: #7d8e1c;
+  text-transform: capitalize;
+  font-family: "proxima-nova", sans-serif;
+  font-style: italic;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003920}}
+.archive .blanket-link:active .post {
+  transition: none;
+  -moz-transition: none;
+  /* Firefox 4 */
+  -webkit-transition: none;
+  /* Safari and Chrome */
+  -o-transition: none;
+  background-color: #9fb03e !important;
+  color: #fff !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003921}}
+.archive .blanket-link:active .post .post-title, .archive .blanket-link:active .post .the-content, .archive .blanket-link:active .post .date, .archive .blanket-link:active .post .link-style {
+  color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003921}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003927}}
+.no-touch .archive .post {
+  transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  /* Firefox 4 */
+  -webkit-transition: background-color 0.5s;
+  /* Safari and Chrome */
+  -o-transition: background-color 0.5s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003932}}
+.no-touch .archive .post .archive-post-inner {
+  transition: margin 0.3s;
+  -moz-transition: margin 0.3s;
+  /* Firefox 4 */
+  -webkit-transition: margin 0.3s;
+  /* Safari and Chrome */
+  -o-transition: margin 0.3s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003939}}
+.no-touch .archive .post:hover {
+  background-color: #f5ffe5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003941}}
+.no-touch .archive .post:hover .archive-post-inner:hover {
+  margin: 0 -10px 0 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003946}}
 #comments-section, #idc-container-parent {
   margin: 2.12766% 0% 2.12766% 0%;
   position: relative;
@@ -1130,29 +1203,29 @@ article.attachment .parent-link .parent-title {
   padding-top: 0;
   margin-top: 1.06383%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003929}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003954}}
 #comments-section #idc-container-parent #IDCommentsHead .idc-right, #idc-container-parent #idc-container-parent #IDCommentsHead .idc-right {
   position: absolute;
   top: 5px;
   right: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003935}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003960}}
 #comments-section #idc-container .idc-c .idc-c-h-inner, #idc-container-parent #idc-container .idc-c .idc-c-h-inner {
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003938}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003963}}
 #comments-section #idc-container div.idc-c-t-inner, #idc-container-parent #idc-container div.idc-c-t-inner {
   font-size: 1.1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003941}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003966}}
 #comments-section #idc-container .idc-c-t, #idc-container-parent #idc-container .idc-c-t {
   padding: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003944}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003969}}
 #comments-section #idc-container .idc-comments > .idc-thread, #idc-container-parent #idc-container .idc-comments > .idc-thread {
   border-top: 1px dotted #9C9F96;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003948}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003973}}
 #comments-section #comment-section-head, #comments-section #IDCommentsHead h3, #idc-container-parent #comment-section-head, #idc-container-parent #IDCommentsHead h3 {
   font-family: "proxima-nova", sans-serif;
   font-size: 1.8em;
@@ -1163,24 +1236,24 @@ article.attachment .parent-link .parent-title {
   margin-bottom: 2.12766%;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003957}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003982}}
 #comments-section #comment-section-head #comments-title, #comments-section #IDCommentsHead h3 #comments-title, #idc-container-parent #comment-section-head #comments-title, #idc-container-parent #IDCommentsHead h3 #comments-title {
   font-weight: bold;
   padding: 1.06383% 2.12766%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003961}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003986}}
 #comments-section #comment-section-head .comment-nav, #comments-section #IDCommentsHead h3 .comment-nav, #idc-container-parent #comment-section-head .comment-nav, #idc-container-parent #IDCommentsHead h3 .comment-nav {
   float: right;
   padding: 2.12766% 2.12766% 2.12766% 2.12766%;
   font-size: 0.6em;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003966}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003991}}
 #comments-section #comment-section-head .comment-nav a, #comments-section #IDCommentsHead h3 .comment-nav a, #idc-container-parent #comment-section-head .comment-nav a, #idc-container-parent #IDCommentsHead h3 .comment-nav a {
   padding: 0 10px;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003972}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003997}}
 #comments-section .comment-nav, #idc-container-parent .comment-nav {
   font-size: 1.2em;
   display: block;
@@ -1188,7 +1261,7 @@ article.attachment .parent-link .parent-title {
   font-family: "proxima-nova", sans-serif;
   margin: 2.12766% 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003978}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031003}}
 #comments-section .comment-nav a, #idc-container-parent .comment-nav a {
   color: #d2e371;
   background-color: #9fb03e;
@@ -1198,7 +1271,7 @@ article.attachment .parent-link .parent-title {
   padding: 2.12766% 2.12766% 2.12766% 2.12766%;
   margin-right: 1.06383%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003989}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031014}}
 #comments-section .comment, #comments-section .idc-c, #idc-container-parent .comment, #idc-container-parent .idc-c {
   background-color: #FFF;
   margin-bottom: 5px;
@@ -1209,63 +1282,63 @@ article.attachment .parent-link .parent-title {
   padding: 6.382979% 0;
   border-top: 1px dotted #9c9f96;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\00003998}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031023}}
 #comments-section .comment:first-child, #comments-section .idc-c:first-child, #idc-container-parent .comment:first-child, #idc-container-parent .idc-c:first-child {
   border-top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031001}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031026}}
 #comments-section .comment a, #comments-section .idc-c a, #idc-container-parent .comment a, #idc-container-parent .idc-c a {
   color: #9fb03e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031006}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031031}}
 #comments-section .comment > .comment, #comments-section .comment > .idc-c, #comments-section .idc-c > .comment, #comments-section .idc-c > .idc-c, #idc-container-parent .comment > .comment, #idc-container-parent .comment > .idc-c, #idc-container-parent .idc-c > .comment, #idc-container-parent .idc-c > .idc-c {
   font-size: 1em;
   border: 1px dotted #a2a59c;
   margin: 2.12766% 2.12766% 2.12766% 2.12766%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031010}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031035}}
 #comments-section .comment > .comment .idc-i, #comments-section .comment > .comment .idc-c-h-inner, #comments-section .comment > .idc-c .idc-i, #comments-section .comment > .idc-c .idc-c-h-inner, #comments-section .idc-c > .comment .idc-i, #comments-section .idc-c > .comment .idc-c-h-inner, #comments-section .idc-c > .idc-c .idc-i, #comments-section .idc-c > .idc-c .idc-c-h-inner, #idc-container-parent .comment > .comment .idc-i, #idc-container-parent .comment > .comment .idc-c-h-inner, #idc-container-parent .comment > .idc-c .idc-i, #idc-container-parent .comment > .idc-c .idc-c-h-inner, #idc-container-parent .idc-c > .comment .idc-i, #idc-container-parent .idc-c > .comment .idc-c-h-inner, #idc-container-parent .idc-c > .idc-c .idc-i, #idc-container-parent .idc-c > .idc-c .idc-c-h-inner {
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031013}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031038}}
 #comments-section .comment > .comment .meta, #comments-section .comment > .comment .idc-c-h, #comments-section .comment > .idc-c .meta, #comments-section .comment > .idc-c .idc-c-h, #comments-section .idc-c > .comment .meta, #comments-section .idc-c > .comment .idc-c-h, #comments-section .idc-c > .idc-c .meta, #comments-section .idc-c > .idc-c .idc-c-h, #idc-container-parent .comment > .comment .meta, #idc-container-parent .comment > .comment .idc-c-h, #idc-container-parent .comment > .idc-c .meta, #idc-container-parent .comment > .idc-c .idc-c-h, #idc-container-parent .idc-c > .comment .meta, #idc-container-parent .idc-c > .comment .idc-c-h, #idc-container-parent .idc-c > .idc-c .meta, #idc-container-parent .idc-c > .idc-c .idc-c-h {
   background: transparent;
   background-color: #ebe9dc;
   color: #9fb03e;
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031018}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031043}}
 #comments-section .comment > .comment .meta a, #comments-section .comment > .comment .idc-c-h a, #comments-section .comment > .idc-c .meta a, #comments-section .comment > .idc-c .idc-c-h a, #comments-section .idc-c > .comment .meta a, #comments-section .idc-c > .comment .idc-c-h a, #comments-section .idc-c > .idc-c .meta a, #comments-section .idc-c > .idc-c .idc-c-h a, #idc-container-parent .comment > .comment .meta a, #idc-container-parent .comment > .comment .idc-c-h a, #idc-container-parent .comment > .idc-c .meta a, #idc-container-parent .comment > .idc-c .idc-c-h a, #idc-container-parent .idc-c > .comment .meta a, #idc-container-parent .idc-c > .comment .idc-c-h a, #idc-container-parent .idc-c > .idc-c .meta a, #idc-container-parent .idc-c > .idc-c .idc-c-h a {
   color: #9fb03e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031023}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031048}}
 #comments-section .comment > .comment .meta p .time a, #comments-section .comment > .comment .idc-c-h p .time a, #comments-section .comment > .idc-c .meta p .time a, #comments-section .comment > .idc-c .idc-c-h p .time a, #comments-section .idc-c > .comment .meta p .time a, #comments-section .idc-c > .comment .idc-c-h p .time a, #comments-section .idc-c > .idc-c .meta p .time a, #comments-section .idc-c > .idc-c .idc-c-h p .time a, #idc-container-parent .comment > .comment .meta p .time a, #idc-container-parent .comment > .comment .idc-c-h p .time a, #idc-container-parent .comment > .idc-c .meta p .time a, #idc-container-parent .comment > .idc-c .idc-c-h p .time a, #idc-container-parent .idc-c > .comment .meta p .time a, #idc-container-parent .idc-c > .comment .idc-c-h p .time a, #idc-container-parent .idc-c > .idc-c .meta p .time a, #idc-container-parent .idc-c > .idc-c .idc-c-h p .time a {
   color: #3c3f36;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031030}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031055}}
 #comments-section .comment .idc-i, #comments-section .comment .idc-c-h-inner, #comments-section .idc-c .idc-i, #comments-section .idc-c .idc-c-h-inner, #idc-container-parent .comment .idc-i, #idc-container-parent .comment .idc-c-h-inner, #idc-container-parent .idc-c .idc-i, #idc-container-parent .idc-c .idc-c-h-inner {
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031058}}
 #comments-section .comment .meta, #comments-section .comment .idc-c-h, #comments-section .idc-c .meta, #comments-section .idc-c .idc-c-h, #idc-container-parent .comment .meta, #idc-container-parent .comment .idc-c-h, #idc-container-parent .idc-c .meta, #idc-container-parent .idc-c .idc-c-h {
   background: transparent !important;
   color: #3c3f36;
   overflow: hidden;
   height: auto !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031063}}
 #comments-section .comment .meta p, #comments-section .comment .meta .idc-i, #comments-section .comment .idc-c-h p, #comments-section .comment .idc-c-h .idc-i, #comments-section .idc-c .meta p, #comments-section .idc-c .meta .idc-i, #comments-section .idc-c .idc-c-h p, #comments-section .idc-c .idc-c-h .idc-i, #idc-container-parent .comment .meta p, #idc-container-parent .comment .meta .idc-i, #idc-container-parent .comment .idc-c-h p, #idc-container-parent .comment .idc-c-h .idc-i, #idc-container-parent .idc-c .meta p, #idc-container-parent .idc-c .meta .idc-i, #idc-container-parent .idc-c .idc-c-h p, #idc-container-parent .idc-c .idc-c-h .idc-i {
   line-height: 0.8em;
   font-size: 2em;
   margin-left: 0;
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031043}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031068}}
 #comments-section .comment .meta p > em, #comments-section .comment .meta .idc-i > em, #comments-section .comment .idc-c-h p > em, #comments-section .comment .idc-c-h .idc-i > em, #comments-section .idc-c .meta p > em, #comments-section .idc-c .meta .idc-i > em, #comments-section .idc-c .idc-c-h p > em, #comments-section .idc-c .idc-c-h .idc-i > em, #idc-container-parent .comment .meta p > em, #idc-container-parent .comment .meta .idc-i > em, #idc-container-parent .comment .idc-c-h p > em, #idc-container-parent .comment .idc-c-h .idc-i > em, #idc-container-parent .idc-c .meta p > em, #idc-container-parent .idc-c .meta .idc-i > em, #idc-container-parent .idc-c .idc-c-h p > em, #idc-container-parent .idc-c .idc-c-h .idc-i > em {
   margin-left: -0.35em;
   font-style: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031047}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031072}}
 #comments-section .comment .meta p .user, #comments-section .comment .meta p > span, #comments-section .comment .meta p > a, #comments-section .comment .meta .idc-i .user, #comments-section .comment .meta .idc-i > span, #comments-section .comment .meta .idc-i > a, #comments-section .comment .idc-c-h p .user, #comments-section .comment .idc-c-h p > span, #comments-section .comment .idc-c-h p > a, #comments-section .comment .idc-c-h .idc-i .user, #comments-section .comment .idc-c-h .idc-i > span, #comments-section .comment .idc-c-h .idc-i > a, #comments-section .idc-c .meta p .user, #comments-section .idc-c .meta p > span, #comments-section .idc-c .meta p > a, #comments-section .idc-c .meta .idc-i .user, #comments-section .idc-c .meta .idc-i > span, #comments-section .idc-c .meta .idc-i > a, #comments-section .idc-c .idc-c-h p .user, #comments-section .idc-c .idc-c-h p > span, #comments-section .idc-c .idc-c-h p > a, #comments-section .idc-c .idc-c-h .idc-i .user, #comments-section .idc-c .idc-c-h .idc-i > span, #comments-section .idc-c .idc-c-h .idc-i > a, #idc-container-parent .comment .meta p .user, #idc-container-parent .comment .meta p > span, #idc-container-parent .comment .meta p > a, #idc-container-parent .comment .meta .idc-i .user, #idc-container-parent .comment .meta .idc-i > span, #idc-container-parent .comment .meta .idc-i > a, #idc-container-parent .comment .idc-c-h p .user, #idc-container-parent .comment .idc-c-h p > span, #idc-container-parent .comment .idc-c-h p > a, #idc-container-parent .comment .idc-c-h .idc-i .user, #idc-container-parent .comment .idc-c-h .idc-i > span, #idc-container-parent .comment .idc-c-h .idc-i > a, #idc-container-parent .idc-c .meta p .user, #idc-container-parent .idc-c .meta p > span, #idc-container-parent .idc-c .meta p > a, #idc-container-parent .idc-c .meta .idc-i .user, #idc-container-parent .idc-c .meta .idc-i > span, #idc-container-parent .idc-c .meta .idc-i > a, #idc-container-parent .idc-c .idc-c-h p .user, #idc-container-parent .idc-c .idc-c-h p > span, #idc-container-parent .idc-c .idc-c-h p > a, #idc-container-parent .idc-c .idc-c-h .idc-i .user, #idc-container-parent .idc-c .idc-c-h .idc-i > span, #idc-container-parent .idc-c .idc-c-h .idc-i > a {
   font-family: "proxima-nova-extra-condensed", sans-serif;
   font-weight: 300;
@@ -1273,31 +1346,31 @@ article.attachment .parent-link .parent-title {
   display: block;
   float: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031053}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031078}}
 #comments-section .comment .meta p .user a, #comments-section .comment .meta p > span a, #comments-section .comment .meta p > a a, #comments-section .comment .meta .idc-i .user a, #comments-section .comment .meta .idc-i > span a, #comments-section .comment .meta .idc-i > a a, #comments-section .comment .idc-c-h p .user a, #comments-section .comment .idc-c-h p > span a, #comments-section .comment .idc-c-h p > a a, #comments-section .comment .idc-c-h .idc-i .user a, #comments-section .comment .idc-c-h .idc-i > span a, #comments-section .comment .idc-c-h .idc-i > a a, #comments-section .idc-c .meta p .user a, #comments-section .idc-c .meta p > span a, #comments-section .idc-c .meta p > a a, #comments-section .idc-c .meta .idc-i .user a, #comments-section .idc-c .meta .idc-i > span a, #comments-section .idc-c .meta .idc-i > a a, #comments-section .idc-c .idc-c-h p .user a, #comments-section .idc-c .idc-c-h p > span a, #comments-section .idc-c .idc-c-h p > a a, #comments-section .idc-c .idc-c-h .idc-i .user a, #comments-section .idc-c .idc-c-h .idc-i > span a, #comments-section .idc-c .idc-c-h .idc-i > a a, #idc-container-parent .comment .meta p .user a, #idc-container-parent .comment .meta p > span a, #idc-container-parent .comment .meta p > a a, #idc-container-parent .comment .meta .idc-i .user a, #idc-container-parent .comment .meta .idc-i > span a, #idc-container-parent .comment .meta .idc-i > a a, #idc-container-parent .comment .idc-c-h p .user a, #idc-container-parent .comment .idc-c-h p > span a, #idc-container-parent .comment .idc-c-h p > a a, #idc-container-parent .comment .idc-c-h .idc-i .user a, #idc-container-parent .comment .idc-c-h .idc-i > span a, #idc-container-parent .comment .idc-c-h .idc-i > a a, #idc-container-parent .idc-c .meta p .user a, #idc-container-parent .idc-c .meta p > span a, #idc-container-parent .idc-c .meta p > a a, #idc-container-parent .idc-c .meta .idc-i .user a, #idc-container-parent .idc-c .meta .idc-i > span a, #idc-container-parent .idc-c .meta .idc-i > a a, #idc-container-parent .idc-c .idc-c-h p .user a, #idc-container-parent .idc-c .idc-c-h p > span a, #idc-container-parent .idc-c .idc-c-h p > a a, #idc-container-parent .idc-c .idc-c-h .idc-i .user a, #idc-container-parent .idc-c .idc-c-h .idc-i > span a, #idc-container-parent .idc-c .idc-c-h .idc-i > a a {
   color: #3c3f36;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031057}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031082}}
 #comments-section .comment .meta p .time, #comments-section .comment .meta p .idc-time, #comments-section .comment .meta .idc-i .time, #comments-section .comment .meta .idc-i .idc-time, #comments-section .comment .idc-c-h p .time, #comments-section .comment .idc-c-h p .idc-time, #comments-section .comment .idc-c-h .idc-i .time, #comments-section .comment .idc-c-h .idc-i .idc-time, #comments-section .idc-c .meta p .time, #comments-section .idc-c .meta p .idc-time, #comments-section .idc-c .meta .idc-i .time, #comments-section .idc-c .meta .idc-i .idc-time, #comments-section .idc-c .idc-c-h p .time, #comments-section .idc-c .idc-c-h p .idc-time, #comments-section .idc-c .idc-c-h .idc-i .time, #comments-section .idc-c .idc-c-h .idc-i .idc-time, #idc-container-parent .comment .meta p .time, #idc-container-parent .comment .meta p .idc-time, #idc-container-parent .comment .meta .idc-i .time, #idc-container-parent .comment .meta .idc-i .idc-time, #idc-container-parent .comment .idc-c-h p .time, #idc-container-parent .comment .idc-c-h p .idc-time, #idc-container-parent .comment .idc-c-h .idc-i .time, #idc-container-parent .comment .idc-c-h .idc-i .idc-time, #idc-container-parent .idc-c .meta p .time, #idc-container-parent .idc-c .meta p .idc-time, #idc-container-parent .idc-c .meta .idc-i .time, #idc-container-parent .idc-c .meta .idc-i .idc-time, #idc-container-parent .idc-c .idc-c-h p .time, #idc-container-parent .idc-c .idc-c-h p .idc-time, #idc-container-parent .idc-c .idc-c-h .idc-i .time, #idc-container-parent .idc-c .idc-c-h .idc-i .idc-time {
   font-size: 0.4em;
   color: #9c9f96;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031061}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031086}}
 #comments-section .comment .meta p .time a, #comments-section .comment .meta p .idc-time a, #comments-section .comment .meta .idc-i .time a, #comments-section .comment .meta .idc-i .idc-time a, #comments-section .comment .idc-c-h p .time a, #comments-section .comment .idc-c-h p .idc-time a, #comments-section .comment .idc-c-h .idc-i .time a, #comments-section .comment .idc-c-h .idc-i .idc-time a, #comments-section .idc-c .meta p .time a, #comments-section .idc-c .meta p .idc-time a, #comments-section .idc-c .meta .idc-i .time a, #comments-section .idc-c .meta .idc-i .idc-time a, #comments-section .idc-c .idc-c-h p .time a, #comments-section .idc-c .idc-c-h p .idc-time a, #comments-section .idc-c .idc-c-h .idc-i .time a, #comments-section .idc-c .idc-c-h .idc-i .idc-time a, #idc-container-parent .comment .meta p .time a, #idc-container-parent .comment .meta p .idc-time a, #idc-container-parent .comment .meta .idc-i .time a, #idc-container-parent .comment .meta .idc-i .idc-time a, #idc-container-parent .comment .idc-c-h p .time a, #idc-container-parent .comment .idc-c-h p .idc-time a, #idc-container-parent .comment .idc-c-h .idc-i .time a, #idc-container-parent .comment .idc-c-h .idc-i .idc-time a, #idc-container-parent .idc-c .meta p .time a, #idc-container-parent .idc-c .meta p .idc-time a, #idc-container-parent .idc-c .meta .idc-i .time a, #idc-container-parent .idc-c .meta .idc-i .idc-time a, #idc-container-parent .idc-c .idc-c-h p .time a, #idc-container-parent .idc-c .idc-c-h p .idc-time a, #idc-container-parent .idc-c .idc-c-h .idc-i .time a, #idc-container-parent .idc-c .idc-c-h .idc-i .idc-time a {
   text-decoration: none;
   color: #9c9f96;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031068}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031093}}
 #comments-section .comment .meta a, #comments-section .comment .idc-c-h a, #comments-section .idc-c .meta a, #comments-section .idc-c .idc-c-h a, #idc-container-parent .comment .meta a, #idc-container-parent .comment .idc-c-h a, #idc-container-parent .idc-c .meta a, #idc-container-parent .idc-c .idc-c-h a {
   color: #fff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031072}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031097}}
 #comments-section .comment .idc-c-h, #comments-section .idc-c .idc-c-h, #idc-container-parent .comment .idc-c-h, #idc-container-parent .idc-c .idc-c-h {
   height: auto !important;
   overflow: visible;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031076}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031101}}
 #comments-section .comment .avatar, #comments-section .idc-c .avatar, #idc-container-parent .comment .avatar, #idc-container-parent .idc-c .avatar {
   margin-right: 2.12766%;
   -webkit-border-radius: 20px;
@@ -1305,31 +1378,31 @@ article.attachment .parent-link .parent-title {
   border-radius: 20px;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031083}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031108}}
 #comments-section .comment .text, #comments-section .comment .idc-c-t-inner, #comments-section .idc-c .text, #comments-section .idc-c .idc-c-t-inner, #idc-container-parent .comment .text, #idc-container-parent .comment .idc-c-t-inner, #idc-container-parent .idc-c .text, #idc-container-parent .idc-c .idc-c-t-inner {
   padding: 2.12766% 0;
   color: #3c3f36;
   line-height: 1.5em;
   font-size: inherit;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031090}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031115}}
 #comments-section #IDCommentsHead h3, #idc-container-parent #IDCommentsHead h3 {
   font-weight: bold;
   padding: 1.06383% 2.12766%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031093}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031118}}
 #comments-section #IDCommentsHead h3 #idc-commentcount_label, #comments-section #IDCommentsHead h3 #idc-commentcount_wrap, #idc-container-parent #IDCommentsHead h3 #idc-commentcount_label, #idc-container-parent #IDCommentsHead h3 #idc-commentcount_wrap {
   font-weight: bold;
   font-size: 0.7em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031098}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031123}}
 #comments-section #IDCommentsHead > .idc-right, #idc-container-parent #IDCommentsHead > .idc-right {
   position: absolute;
   top: 2.4%;
   right: 2%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031130}}
 #respond #reply-title {
   background-color: #9fb03e;
   padding: 1.06383% 2.12766%;
@@ -1341,12 +1414,12 @@ article.attachment .parent-link .parent-title {
   margin-bottom: 3.191489%;
   margin-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031141}}
 #respond #commentform {
   background-color: #fff;
   padding: 4.255319%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031144}}
 #respond #commentform label {
   display: block;
   background-color: #9fb03e;
@@ -1357,7 +1430,7 @@ article.attachment .parent-link .parent-title {
   clear: left;
   font-size: 0.7em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031154}}
 #respond #commentform p {
   font-family: "proxima-nova", sans-serif;
   overflow: hidden;
@@ -1365,14 +1438,14 @@ article.attachment .parent-link .parent-title {
   line-height: 1.4em;
   width: 55%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031160}}
 #respond #commentform p.comment-notes {
   float: right;
   width: 30%;
   color: #3c3f36;
   font-size: 1.1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031167}}
 #respond #commentform p span.required {
   font-size: 30px;
   font-weight: bold;
@@ -1381,12 +1454,12 @@ article.attachment .parent-link .parent-title {
   top: 0.4em;
   line-height: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031175}}
 #respond #commentform p.comment-form-comment {
   float: none;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031180}}
 #respond #commentform #author, #respond #commentform #email, #respond #commentform #url {
   border: none;
   border-bottom: 1px dotted #3c3f36;
@@ -1398,17 +1471,17 @@ article.attachment .parent-link .parent-title {
   display: block;
   clear: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031195}}
 #respond #commentform #comment {
   width: 98%;
   border: 1px dotted #3c3f36;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031199}}
 #respond #commentform .form-allowed-tags {
   width: 100%;
   margin: 1.06383% 0 1.06383% 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031203}}
 #respond #commentform code {
   font-family: "Courier New", Courier, monospace;
   display: block;
@@ -1420,7 +1493,7 @@ article.attachment .parent-link .parent-title {
   line-height: 1.4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031215}}
 #mainfoot {
   padding-top: 2.12766%;
   overflow: hidden;
@@ -1428,36 +1501,36 @@ article.attachment .parent-link .parent-title {
   font-family: "proxima-nova", sans-serif;
   line-height: 1.4em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031219}}
 #mainfoot p {
   color: #ccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031222}}
 #mainfoot a {
   color: #FFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031225}}
 #mainfoot .about {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031227}}
 #mainfoot .about .title {
   font-family: "proxima-nova-extra-condensed", sans-serif;
   color: #FFF;
   font-size: 1.6em;
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031209}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031234}}
 #mainfoot #site.about {
   width: 40.425532%;
   padding: 2.12766% 4.255319% 4.255319% 14.893617%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031237}}
 #mainfoot #nancy.about {
   width: 25.531915%;
   padding: 2.12766% 0% 4.255319% 0%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031240}}
 #mainfoot .navigation {
   width: 72.340426%;
   padding: 0% 0% 2.12766% 14.893617%;
@@ -1465,33 +1538,33 @@ article.attachment .parent-link .parent-title {
   clear: both;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031246}}
 #mainfoot .navigation a {
   color: #AAA;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031224}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031249}}
 #mainfoot .navigation li {
   display: inline;
   color: #888;
   margin-left: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031231}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031256}}
 #mainfoot #legal {
   width: 72.340426%;
   padding: 0% 0% 4.255319% 14.893617%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031258}}
 #mainfoot #legal p {
   font-size: 0.7em;
   color: #888;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031265}}
 .page-template-search-page-php #logo {
   margin-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/layout\.scss}line{font-family:\000031269}}
 .button-paypal {
   text-align: center;
 }
@@ -1776,13 +1849,18 @@ article.attachment .parent-link .parent-title {
     width: 31.914894%;
     padding: 0% 6.382979% 0% 0%;
   }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000368}}
+  .archive .post .post-title {
+    font-size: 2.6em;
+  }
 }
 @media only screen and (max-width: 1030px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000375}}
   #NoN-content .content .the-content {
     margin-left: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000378}}
   #NoN-content .content .post .meta {
     width: 100%;
     margin-top: 2.12766%;
@@ -1790,28 +1868,28 @@ article.attachment .parent-link .parent-title {
     float: none;
     overflow: hidden;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000384}}
   #NoN-content .content .post .meta .edit-link {
     border-top: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000387}}
   #NoN-content .content .post .meta .byline span, #NoN-content .content .post .meta .time {
     font-size: 1em;
     display: inline;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000391}}
   #NoN-content .content .post .meta .date a {
     text-transform: lowercase;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000394}}
   #NoN-content .content .post .meta .post-categories a, #NoN-content .content .post .meta .month, #NoN-content .content .post .meta .comments a {
     text-transform: capitalize;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000397}}
   #NoN-content .content .post .meta ul {
     font-size: 1em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003101}}
   #NoN-content .content .post .meta li, #NoN-content .content .post .meta li:first-child {
     float: left;
     padding-right: 2.12766%;
@@ -1824,90 +1902,95 @@ article.attachment .parent-link .parent-title {
     margin-top: 0;
     margin-bottom: 1.06383%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003112}}
   #NoN-content .content .post .meta li:active, #NoN-content .content .post .meta li:first-child:active {
     background-color: #9fb03e;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003115}}
   #NoN-content .content .post .meta li:first-child, #NoN-content .content .post .meta li:first-child:first-child {
     padding-left: 0;
     border-left: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003119}}
   #NoN-content .content .post .meta li a, #NoN-content .content .post .meta li:first-child a {
     display: block;
     height: 100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003122}}
   #NoN-content .content .post .meta li a:active, #NoN-content .content .post .meta li:first-child a:active {
     color: #fff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003127}}
   #NoN-content .content .post .meta li.comments a, #NoN-content .content .post .meta li.edit-link a, #NoN-content .content .post .meta li:first-child.comments a, #NoN-content .content .post .meta li:first-child.edit-link a {
     padding-top: 0px;
   }
 }
 @media only screen and (max-width: 960px) and (min-width: 801px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003139}}
   #logo h1 a > span, #logo h2 a > span {
     padding-left: 6.382979%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003144}}
   #main-nav {
     width: 91.489362%;
     padding: 0% 2.12766% 0% 6.382979%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003146}}
   #main-nav #nav-logo {
     margin-left: -63.829787%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003151}}
   .content {
     width: 42.553191%;
     padding: 2.12766% 2.12766% 2.12766% 6.382979%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003154}}
   .sidebar {
     width: 40.425532%;
     padding: 0% 6.382979% 0% 0%;
   }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003159}}
+  .archive .post .post-title {
+    font-size: 2.3em;
+  }
 }
 @media only screen and (max-width: 800px) and (min-width: 551px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003164}}
   #mainhead {
     background-position: center -75px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003167}}
   #logo {
     font-size: 6em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003159}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003169}}
   #logo h1, #logo h2 {
     padding-left: 8.510638%;
     background: url("../images/logoBG.png") no-repeat right center;
     background-color: #9fb03e;
     color: #fff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003164}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003174}}
   #logo h1 a, #logo h2 a {
     color: #fff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003177}}
   #logo h1 a > span, #logo h2 a > span {
     padding-left: 0%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003182}}
   #main-nav {
     width: 82.978723%;
     padding: 0% 8.510638% 0% 8.510638%;
     height: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003185}}
   #main-nav #menu-main-navigation {
     transition: top 0.5s ease;
     border-radius: 0 0 5px 5px;
@@ -1920,107 +2003,120 @@ article.attachment .parent-link .parent-title {
     position: fixed;
     right: 8.510638%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003197}}
   #main-nav .menu-item {
     transition: height 0.6s ease;
     height: 0px;
     float: none;
     overflow: hidden;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003202}}
   #main-nav .menu-item a {
     color: #ccc;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003206}}
   #main-nav #nav-label {
     display: block;
     float: right;
     width: 30%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003211}}
   #main-nav #nav-logo {
     margin-left: -106.382979%;
     float: left;
     clear: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003216}}
   #main-nav #nav-compact {
     display: block;
     float: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003221}}
   #main-nav.addLogo .home-link {
     opacity: 1;
     display: block;
     margin-left: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003228}}
   #main-nav.expand #menu-main-navigation {
     margin-top: -1px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003231}}
   #main-nav.expand .menu-item {
     height: 40px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003227}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003237}}
   .content {
     width: 82.978723%;
     padding: 8.510638% 8.510638% 8.510638% 8.510638%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003240}}
   .sidebar {
     width: 82.978723%;
     padding: 0% 8.510638% 0% 8.510638%;
   }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003245}}
+  .archive .post .attachment-thumbnail {
+    width: 30%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003246}}
+  .archive .post .post-title {
+    font-size: 2.3em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003247}}
+  .archive .post .post-title, .archive .post .the-content, .archive .post .date {
+    margin-left: 33% !important;
+  }
 }
 @media only screen and (max-width: 550px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003236}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003252}}
   .norwalk-social-bar {
     height: 42px;
     margin-bottom: 5px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003255}}
   .norwalk-social-bar .twitter-share-button, .norwalk-social-bar .fb-like, .norwalk-social-bar .fb-share-button {
     margin-bottom: 2px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003243}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003259}}
   .norwalk-social-bar .fb_iframe_widget > span {
     width: auto !important;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003248}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003264}}
   #mainhead {
     background-position: center -75px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003267}}
   #logo {
     font-size: 3.8em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003253}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003269}}
   #logo h1, #logo h2 {
     padding-left: 6.382979%;
     background: url("../images/logoBG.png") no-repeat right center;
     background-color: #9fb03e;
     color: #fff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003259}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003275}}
   #logo h1 a, #logo h2 a {
     display: block;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     color: #fff;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003265}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003281}}
   #logo h1 a > span, #logo h2 a > span {
     float: none;
     padding: 0;
     display: inline;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003272}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003288}}
   #main-nav {
     transition: all 0.5s ease;
     width: 87.234043%;
@@ -2028,20 +2124,20 @@ article.attachment .parent-link .parent-title {
     position: absolute;
     padding-bottom: 3px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003278}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003294}}
   #main-nav.addLogo .home-link {
     opacity: 1;
     margin-left: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003299}}
   #main-nav #nav-label {
     display: block;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003286}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003302}}
   #main-nav #nav-logo {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003289}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003305}}
   #main-nav .menu-item {
     display: block;
     transition: height 0.6s ease;
@@ -2051,11 +2147,11 @@ article.attachment .parent-link .parent-title {
     margin-right: 0;
     width: 50%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003313}}
   #main-nav .menu-item a {
     color: #ccc;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003301}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003317}}
   #main-nav #menu-main-navigation {
     transition: top 0.5s ease;
     width: 87.234043%;
@@ -2068,66 +2164,85 @@ article.attachment .parent-link .parent-title {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     overflow: hidden;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003331}}
   #main-nav.expand #menu-main-navigation {
     top: 0px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003334}}
   #main-nav.expand .menu-item {
     height: 40px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003342}}
   .content {
     width: 87.234043%;
     padding: 8.510638% 6.382979% 8.510638% 6.382979%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003345}}
   .sidebar {
     width: 87.234043%;
     padding: 0% 6.382979% 0% 6.382979%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003349}}
   .post .post-title, article.attachment .post-title, .page .type-page .post-title {
     font-size: 3.6em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003352}}
   .post .meta, article.attachment .meta, .page .type-page .meta {
     font-size: 1.5em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003355}}
   .post .img-container, .post .wp-caption, .post article.attachment .wp-caption, article.attachment .post .wp-caption, .post .page .type-page .wp-caption, .page .type-page .post .wp-caption, article.attachment .img-container, article.attachment .wp-caption, article.attachment .page .type-page .wp-caption, .page .type-page article.attachment .wp-caption, .page .type-page .img-container, .page .type-page .wp-caption {
     margin-bottom: 2.12766%;
     position: relative;
     max-width: 100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003359}}
   .post .img-container.alignleft, .post .alignleft.wp-caption, .post .img-container.alignright, .post .alignright.wp-caption, article.attachment .img-container.alignleft, article.attachment .alignleft.wp-caption, article.attachment .img-container.alignright, article.attachment .alignright.wp-caption, .page .type-page .img-container.alignleft, .page .type-page .alignleft.wp-caption, .page .type-page .img-container.alignright, .page .type-page .alignright.wp-caption {
     max-width: 100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003362}}
   .post .img-container.thumb, .post .thumb.wp-caption, article.attachment .img-container.thumb, article.attachment .thumb.wp-caption, .page .type-page .img-container.thumb, .page .type-page .thumb.wp-caption {
     margin-bottom: 3.829787%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003365}}
   .post .img-container.alignleft, .post .alignleft.wp-caption, article.attachment .img-container.alignleft, article.attachment .alignleft.wp-caption, .page .type-page .img-container.alignleft, .page .type-page .alignleft.wp-caption {
     margin-right: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003368}}
   .post .img-container.alignright, .post .alignright.wp-caption, article.attachment .img-container.alignright, article.attachment .alignright.wp-caption, .page .type-page .img-container.alignright, .page .type-page .alignright.wp-caption {
     margin-left: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003371}}
   .post .img-container.alignnone img, .post .alignnone.wp-caption img, .post .img-container.aligncenter img, .post .aligncenter.wp-caption img, .post .img-container img, .post .wp-caption img, .post .page .type-page .wp-caption img, .page .type-page .post .wp-caption img, article.attachment .img-container.alignnone img, article.attachment .alignnone.wp-caption img, article.attachment .img-container.aligncenter img, article.attachment .aligncenter.wp-caption img, article.attachment .img-container img, article.attachment .wp-caption img, article.attachment .page .type-page .wp-caption img, .page .type-page article.attachment .wp-caption img, .page .type-page .img-container.alignnone img, .page .type-page .alignnone.wp-caption img, .page .type-page .img-container.aligncenter img, .page .type-page .aligncenter.wp-caption img, .page .type-page .img-container img, .page .type-page .wp-caption img {
     width: 100%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003376}}
   #comments-section, #idc-container-parent {
     float: none;
     clear: both;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003379}}
+  .archive .post {
+    padding: 6.382979% 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003381}}
+  .archive .post .attachment-thumbnail {
+    width: 30%;
+    float: right;
+    margin: 0 0 2% 3%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003382}}
+  .archive .post .post-title {
+    font-size: 2.3em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_media-queries\.scss}line{font-family:\00003383}}
+  .archive .post .post-title, .archive .post .the-content, .archive .post .date {
+    margin-left: 0 !important;
   }
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_ads\.scss}line{font-family:\000031}}
