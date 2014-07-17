@@ -15,7 +15,7 @@
         </div>
         <div id="nancy" class="about">
             <h4 class="title">About Nancy</h4>
-            <p>Nancy came to Norwalk more than 2 years ago as the Norwalk reporter for the Norwalk Daily Voice and resigned in October to begin Nancy On Norwalk. She is married to a career journalist, has a son, Eric (<a href="http://www.ericchapman.net">the artist and web designer who built this website</a>) and two middle-aged cats who are still trying to work out a peaceful co-existence.</p>
+            <p>Nancy came to Norwalk in September 2010 and, after reporting on Norwalk for two years for another company, resigned to begin Nancy On Norwalk so she engage in journalism the way it was meant to be done. She is married to career journalist Mark Chapman, has a son, Eric (<a href="http://www.ericchapman.net">the artist and web designer who built this website</a>), and two cats – a middle-aged lady and a young hottie who are learning how to peacefully co-exist.</p>
         </div>
 
 		<?php
