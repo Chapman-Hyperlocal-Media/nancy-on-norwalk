@@ -252,7 +252,7 @@ End facebook button code
 <div id="wallpaper-content">
 <div id="NoN-content"> 
     <header id="mainhead">
-    <h5 id="nav-label" style="display:none;">Navigation<object id="menu-icon" type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQwIDMyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA0MCAzMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlPi5tZW51LWljb257ZmlsbDoJI0NDQ0NDQzt9PC9zdHlsZT48cmVjdCB4PSIxIiB5PSIyIiB3aWR0aD0iMzEiIGhlaWdodD0iNiIgY2xhc3M9Im1lbnUtaWNvbiIvPjxyZWN0IHg9IjEiIHk9IjI0IiB3aWR0aD0iMzEiIGhlaWdodD0iNiIgY2xhc3M9Im1lbnUtaWNvbiIvPjxyZWN0IHg9IjEiIHk9IjEzIiB3aWR0aD0iMzEiIGhlaWdodD0iNiIgY2xhc3M9Im1lbnUtaWNvbiIvPjwvc3ZnPg=="></object>
+    <h5 id="nav-label" style="display:none;">Navigation<img id="menu-icon" src="<?php echo get_template_directory_uri()?>/images/navMenu.png" width="16px" height="16px"/>
     </h5>
     <h6 id="nav-logo" style="display:none;"><a href="<?php echo home_url( '/' );?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">Nancy <span>On Norwalk</span></a></h6>
     <?php 
