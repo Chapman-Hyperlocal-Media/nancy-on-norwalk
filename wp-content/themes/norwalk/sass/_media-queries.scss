@@ -3,66 +3,40 @@
 @media only screen and (max-width:1295px) and (min-width:1031px){
 	#logo{
 		h1, h2{
-			a > span{
-				padding-left:percentage($column-width * 4);
-			}
+			a > span{padding-left:percentage($column-width * 4); }
 		}
 	}
 	#main-nav{
 		@include columns(47, 0,4,0,4);
 		.menu-item{
-			a{
-				padding:16px 15px 5px 15px;
-			}
-		}
-		#nav-logo{
-			padding-left:percentage($column-width * (4 * 1.4215714257));  /* multiplier is 142.15714257% of the container's parent padding-left */
-			margin-left:percentage($column-width * -30);
-		}
+			a{padding:16px 15px 5px 15px; }
+		 }
+		#nav-logo{padding-left:percentage($column-width * (4 * 1.4215714257));  /* multiplier is 142.15714257% of the container's parent padding-left */ margin-left:percentage($column-width * -30); }
 		&.addLogo{
-			#nav-logo{
-				margin-left:percentage($column-width * (-4 * 1.4215714257));
-			}
+			#nav-logo{margin-left:percentage($column-width * (-4 * 1.4215714257)); }
 		}
 	}
-	.content{
-		@include columns(28, 1,1,1,4);
-	}
-	.sidebar{
-		@include columns(18, 0,4,0,0);
-	}
+	.content{@include columns(28, 1,1,1,4); }
+	.sidebar{@include columns(18, 0,4,0,0); }
 }
 @media only screen and (max-width:1030px) and (min-width:961px){
 	#logo{
 		h1, h2{
-			a > span{
-				padding-left:percentage($column-width * 3);
-			}
+			a > span{ padding-left:percentage($column-width * 3); }
 		}
 	}
 	#main-nav{
 		@include columns(47, 0,3,0,3);
 		.menu-item{
-			a{
-				padding:16px 10px 5px 10px;
-			}
+			a{ padding:16px 10px 5px 10px; }
 		}
-		#nav-logo{
-			padding-left:percentage($column-width * (3 * 1.4215714257));  /* multiplier is 142.15714257% of the container's parent padding-left */
-			margin-left:percentage($column-width * -30);
-		}
+		#nav-logo{padding-left:percentage($column-width * (3 * 1.4215714257));  /* multiplier is 142.15714257% of the container's parent padding-left */ margin-left:percentage($column-width * -30); }
 		&.addLogo{
-			#nav-logo{
-				margin-left:percentage($column-width * (-3 * 1.4215714257));
-			}
+			#nav-logo{ margin-left:percentage($column-width * (-3 * 1.4215714257)); }
 		}
 	}
-	.content{
-		@include columns(28, 1,1,1,3);
-	}
-	.sidebar{
-		@include columns(18, 0,3,0,0);
-	}
+	.content{@include columns(28, 1,1,1,3); }
+	.sidebar{@include columns(18, 0,3,0,0); }
 	.archive{
 		.post{
 			.post-title{font-size:2.6em;}
@@ -70,90 +44,49 @@
 	}
 }
 @media only screen and (max-width:1030px){
-		#NoN-content{
-			.content{
-				.the-content{
-					margin-left:0;
-				}
-				.post .meta{
-					width:100%;
-					margin-top:percentage($column-width * 1);
-					margin-bottom:percentage($column-width * 1);
-					float:none;
-					overflow:hidden;
-					.edit-link{
-						border-top:none;
+	#NoN-content{
+		.content{
+			.the-content{margin-left:0; }
+			.post .meta{ width:100%; margin-top:percentage($column-width * 1); margin-bottom:percentage($column-width * 1); float:none; overflow:hidden; 
+				
+				.edit-link{border-top:none; }
+				.byline span, 
+				.time{font-size:1em; display:inline; }
+				.date a{text-transform:lowercase; }
+				.post-categories a, 
+				.month, 
+				.comments a{text-transform:capitalize; }
+				
+				ul{font-size:1em; }
+				
+				li, li:first-child{float:left; padding-right:percentage($column-width * 1); padding-left:percentage($column-width * 1); padding-top:0px; padding-bottom:0px; border-left:1px dotted $dark + #606060; border-bottom:none; height:1em; margin-top:0; margin-bottom:percentage($column-width * 0.5); 
+					&:active{background-color:$green; }
+					&:first-child{padding-left:0; border-left:none; }
+					a{display:block; height:100%; 
+						&:active{color:#fff; }
 					}
-					.byline span, .time{
-						font-size:1em;
-						display:inline;
-					}
-					.date a{
-						text-transform:lowercase;
-					}
-					.post-categories a, .month, .comments a{
-						text-transform:capitalize;
-					}
-					ul{
-						font-size:1em;
-					}
-					
-					li, li:first-child{
-						float:left;
-						padding-right:percentage($column-width * 1);
-						padding-left:percentage($column-width * 1);
-						padding-top:0px;
-						padding-bottom:0px;
-						border-left:1px dotted $dark + #606060;
-						border-bottom:none;
-						height:1em;
-						margin-top:0; 
-						margin-bottom:percentage($column-width * 0.5);
-						&:active{
-								background-color:$green;
-						}
-						&:first-child{
-							padding-left:0;
-							border-left:none;
-						}
-						a{
-							display:block;
-							height:100%;
-							&:active{
-								color:#fff;
-							}
-						}
-						&.comments, &.edit-link{
-							a{
-								padding-top:0px;
-							}
-						}
+					&.comments, 
+					&.edit-link{
+						a{ padding-top:0px; }
 					}
 				}
 			}
+		}
 	}
 }
 @media only screen and (max-width:960px) and (min-width:801px){
 	#logo{
 		h1, h2{
-			a > span{
-				padding-left:percentage($column-width * 3);
-			}
+			a > span{ padding-left:percentage($column-width * 3); }
 		}
 	}
 	#main-nav{
 		@include columns(47, 0,1,0,3);
-		#nav-logo{
-			margin-left:percentage($column-width * -30);
-		}
+		#nav-logo{margin-left:percentage($column-width * -30); }
 
 	}
-	.content{
-		@include columns(24, 1,1,1,3);
-	}
-	.sidebar{
-		@include columns(22, 0,3,0,0);
-	}
+	.content{@include columns(24, 1,1,1,3); }
+	.sidebar{@include columns(22, 0,3,0,0); }
 	.archive{
 		.post{
 			.post-title{font-size:2.3em;}
@@ -161,223 +94,90 @@
 	}
 }
 @media only screen and (max-width:800px) and (min-width:551px){
-	#mainhead{
-		background-position: center -75px;
-	}
-	#logo{
-		font-size:6em;
-		h1, h2{
-			padding-left:percentage($column-width * 4);
-			background:url('../images/logoBG.png') no-repeat right center;
-			background-color:$green;
-			color:#fff;
-			a{
-				color:#fff;
-			}
-			a > span{
-				padding-left:percentage($column-width * 0);
-			}
+	#mainhead{background-position: center -75px; }
+	#logo{font-size:6em;
+		h1, h2{padding-left:percentage($column-width * 4); background:url('../images/logoBG.png') no-repeat right center; background-color:$green; color:#fff; 
+			a{color:#fff; }
+			a > span{padding-left:percentage($column-width * 0); }
 		}
 	}
-	#main-nav{
-		@include columns(47, 0,4,0,4);
-		height:40px;
-		#menu-main-navigation{
-			transition:top 0.5s ease;
-			border-radius:0 0 5px 5px;
-			width:30%;
-			margin-top:-20px;
-			border:1px solid #404040;
-			float:right;
-			background-color:#333;
-			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-			position:fixed;
-			right:percentage($column-width * 4);
+	#main-nav{@include columns(47, 0,4,0,4); height:40px;
+		#menu-main-navigation{transition:top 0.5s ease; border-radius:0 0 5px 5px; width:30%; margin-top:-20px; border:1px solid #404040; float:right; background-color:#333; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); position:fixed; right:percentage($column-width * 4); }
+		.menu-item{transition: height 0.6s ease; height:0px; float:none; overflow:hidden; 
+			a{color:#ccc; }
 		}
-		.menu-item{
-			transition: height 0.6s ease;
-			height:0px;
-			float:none;
-			overflow:hidden;
-			a{
-				color:#ccc;
-			}
-		}
-		#nav-label{
-			display:block;
-			float:right;
-			width:30%;
-		}
-		#nav-logo{
-			margin-left:percentage($column-width * -50);
-			float:left;
-			clear:none;
-		}
-		#nav-compact{
-			display:block;
-			float:right;
-		}
+		#nav-label{display:block; float:right; width:30%; }
+		#nav-logo{margin-left:percentage($column-width * -50); float:left; clear:none; }
+		#nav-compact{display:block; float:right; }
 		&.addLogo{
-			.home-link{
-				opacity:1;
-				display:block;
-				margin-left:0;
-			}
+			.home-link{opacity:1; display:block; margin-left:0; }
 		}
 		&.expand{
-			#menu-main-navigation{
-				margin-top: -1px;
-			}
-			.menu-item{
-				height: 40px;
-			}
+			#menu-main-navigation{margin-top: -1px; }
+			.menu-item{height: 40px; }
 		}
 
 	}
-	.content{
-		@include columns(47, 4,4,4,4);
-	}
-	.sidebar{
-		@include columns(47, 0,4,0,4);  
-	}
+	.content{@include columns(47, 4,4,4,4); }
+	.sidebar{@include columns(47, 0,4,0,4); }
 	.archive{
-		.post{
-			.attachment-thumbnail{width:30%;}
-			.post-title{font-size:2.3em;}
-			.post-title, .the-content, .date{margin-left:33% !important;}
-		}
+		.post{.attachment-thumbnail{width:30%;} .post-title{font-size:2.3em;} .post-title, .the-content, .date{margin-left:33% !important;} }
 	}
 }
 @media only screen and (max-width:550px){
-	.norwalk-social-bar{
-		height:42px;
-		margin-bottom:5px;
-		.twitter-share-button, .fb-like, .fb-share-button{
-			margin-bottom:2px;
+	.norwalk-social-bar{height:42px; margin-bottom:5px;
+		.twitter-share-button, 
+		.fb-like, 
+		.fb-share-button{margin-bottom:2px;
 		}
 		.fb_iframe_widget{
-			&>span{
-				width:auto !important;
-			}
+			&>span{width:auto !important; }
 		}
 	}
-	#mainhead{
-		background-position: center -75px;
-	}
-	#logo{
-		font-size:3.8em;
-		h1, h2{
-			
-			padding-left:percentage($column-width * 3);
-			background:url('../images/logoBG.png') no-repeat right center;
-			background-color:$green;
-			color:#fff;
-			a{
-				display:block;
-				padding-top:0.2em;
-				padding-bottom:0.2em;
-				color:#fff;
-			}
-			a > span{
-				float:none;
-				padding:0;
-				display:inline;
-			}
+	#mainhead{background-position: center -75px; }
+	#logo{ font-size:3.8em;
+		h1, h2{padding-left:percentage($column-width * 3); background:url('../images/logoBG.png') no-repeat right center; background-color:$green; color:#fff;
+			a{display:block; padding-top:0.2em; padding-bottom:0.2em; color:#fff; }
+			a > span{float:none; padding:0; display:inline; }
 		}
 	}
-	#main-nav{
-		transition:all 0.5s ease;
-		@include columns(47, 0,3,0,3);
-		position:absolute;
-		padding-bottom:3px;
+	#main-nav{transition:all 0.5s ease; @include columns(47, 0,3,0,3); position:absolute; padding-bottom:3px;
 		&.addLogo{
-			.home-link{
-				opacity:1;
-				margin-left:0;
-			}
+			.home-link{opacity:1; margin-left:0; }
 		}
-		#nav-label{
-			display:block;
+		#nav-label{display:block; }
+		#nav-logo{display:none; }
+		.menu-item{display:block; transition: height 0.6s ease; float:left; height:0; overflow:hidden; margin-right:0; width:50%; 
+			a{color:#ccc; }
 		}
-		#nav-logo{
-			display:none;
-		}
-		.menu-item{
-			display:block;
-			transition: height 0.6s ease;
-			float:left;
-			height:0;
-			overflow:hidden;
-			margin-right:0;
-			width:50%;
-			a{
-				color:#ccc;
-			}
-		}
-		#menu-main-navigation{
-			transition:top 0.5s ease;
-			width:percentage($column-width * 41);
-			border-radius:0 0 5px 5px;
-			position:absolute;			
-			top:-40px;
-			left:percentage($column-width * 3);
-			border:1px solid #404040;
-			background-color:#333;
-			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-			overflow:hidden;
-		}
+		#menu-main-navigation{transition:top 0.5s ease; width:percentage($column-width * 41); border-radius:0 0 5px 5px; position:absolute; top:-40px; left:percentage($column-width * 3); border:1px solid #404040; background-color:#333; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); overflow:hidden; }
 
-		&.expand{
-			#menu-main-navigation{
-				top:0px;
-			}
-			.menu-item{
-				height:40px;
-			}
-		}
+		&.expand{#menu-main-navigation{top:0px; } .menu-item{height:40px; } }
 		
 		
 
 	}
-	.content{
-		@include columns(47, 4,3,4,3);
-	}
-	.sidebar{
-		@include columns(47, 0,3,0,3);
-	}
-	.post, article.attachment, .page .type-page{
-		.post-title{
-			font-size:3.6em;
-		}
-		.meta{
-			font-size:1.5em;
-		}
-		.img-container{
-			margin-bottom:percentage($column-width * 1.0);
-			position:relative;
-			max-width:100%;
-			&.alignleft, &.alignright{
-				max-width:100%;
-			}
-			&.thumb{
-				margin-bottom:percentage($column-width * 1.8);
-			}
-			&.alignleft{
-				margin-right:0;
-			}
-			&.alignright{
-				margin-left:0;
-			}
-			&.alignnone img, &.aligncenter img, img{
-				width:100%;
-			}
+	.content{@include columns(47, 4,3,4,3); }
+	.sidebar{@include columns(47, 0,3,0,3); }
+	.post,
+	article.attachment, 
+	.page .type-page{
+		.post-title{font-size:3.6em; }
+		.meta{font-size:1.5em; }
+		.img-container{margin-bottom:percentage($column-width * 1.0); position:relative; max-width:100%; &.alignleft,
+			&.alignright{max-width:100%; }
+			&.thumb{margin-bottom:percentage($column-width * 1.8); }
+			&.alignleft{margin-right:0; }
+			&.alignright{margin-left:0; }
+			&.alignnone img, 
+			&.aligncenter img, 
+			img{width:100%; }
 		}
 	}
 	#comments-section, #idc-container-parent{ float:none; clear:both; }
 
 	.archive{
-		.post{
-			padding:percentage($column-width * 3) 0;
+		.post{padding:percentage($column-width * 3) 0;
 			.attachment-thumbnail{width:30%; float:right; margin: 0 0 2% 3%;}
 			.post-title{font-size:2.3em;}
 			.post-title, .the-content, .date{margin-left:0 !important;}
