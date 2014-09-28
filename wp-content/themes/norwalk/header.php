@@ -46,7 +46,7 @@
     wp_enqueue_script('norwalk-ads', get_template_directory_uri() . '/js/min/norwalk-ads.min.js', 'jquery');
 
     wp_enqueue_style('reset', get_template_directory_uri() . '/stylesheets/reset.css');
-    wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css', 'reset');
+    wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css');
     
 ?>
  
