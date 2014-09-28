@@ -232,7 +232,7 @@ article.attachment,
 .error404 .post, 
 .page .type-page{
 	.the-content{margin-left:0; }
-	.post-title{margin-bottom:percentage($column-width * 0.5); }
+	.post-title{ }
 	.meta .year{display:inline; }
 }
 
@@ -243,7 +243,7 @@ article.attachment,
 .norwalk-social-bar{height:20px; /*white-space:nowrap;*/ }
 .story-head, 
 .story-foot{clear:both; }
-.story-head .norwalk-social-bar{padding:percentage($column-width * 1) 0 percentage($column-width * 0.5); }
+.story-head .norwalk-social-bar{padding:percentage($column-width * 0.5) 0 percentage($column-width * 4); }
 .story-foot .norwalk-social-bar{padding:percentage($column-width * 2) 0 percentage($column-width * 0.5); }
 .single .post{margin-bottom:0; }
 .page .type-page .post-title{font-family:$asideHeadCondensed; margin-bottom:percentage($column-width * 2); }
