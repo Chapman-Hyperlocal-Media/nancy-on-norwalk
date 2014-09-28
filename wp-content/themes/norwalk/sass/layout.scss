@@ -20,6 +20,7 @@ html,
 strong{font-weight:bold; }
 em{font-style:italic; }
 body{}
+img{height:auto;} /* responsive fix */
 
 #mainhead{background-image: url(../images/skylineBG.png); background-repeat: no-repeat; background-position: center 16px; position: relative; overflow: hidden; }
 #logo{position:relative; margin:160px 0 percentage($column-width * 1); font-size:7.4em; font-family:$logo;
