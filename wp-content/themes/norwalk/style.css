@@ -6,9 +6,7 @@ Author: Eric Chapman
 Author URI: http://www.ericchapman.net
 Tags: legible, simple, responsive, news
 
-Styles imported by wp_enqueue_style()
 
 @import "../norwalk/stylesheets/reset.css";
 @import "../norwalk/stylesheets/layout.css";
-
 */
