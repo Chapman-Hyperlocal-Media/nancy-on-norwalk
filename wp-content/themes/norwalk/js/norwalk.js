@@ -7,7 +7,7 @@ jQuery(function ($) {
  
 // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
  
-// MIT license
+// MIT license 
  
 (function() {
     var lastTime = 0;

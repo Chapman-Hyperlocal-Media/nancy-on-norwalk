@@ -1,6 +1,11 @@
 
+//
+// 	Chapman Hyperlocal Media Google ad tags
+//
+
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
+
 (function() {
 var gads = document.createElement('script');
 gads.async = true;
@@ -24,78 +29,42 @@ googletag.enableServices();
 
 var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);
 
-//Doug's old Ad-zerk code. Almost certainly obsolete now, kept in code just in case until it's confirmed.
 
-// var ados = ados || {};
-// ados.run = ados.run || [];
-// ados.run.push(function() {
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Top*/
-// ados_add_placement(8842, 58402, "azk58825", 5).setZone(63065);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Top*/
-// ados_add_placement(8842, 58402, "azk42297", 94).setZone(63065);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Top*/
-// ados_add_placement(8842, 58402, "azk16122", 5).setZone(63065);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Top*/
-// ados_add_placement(8842, 58402, "azk89194", 94).setZone(63065);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Top*/
-// ados_add_placement(8842, 58402, "azk41441", 5).setZone(63065);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Top*/
-// ados_add_placement(8842, 58402, "azk82570", 94).setZone(63065);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Top*/
-// ados_add_placement(8842, 58402, "azk11068", 5).setZone(63065);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Top*/
-// ados_add_placement(8842, 58402, "azk53963", 94).setZone(63065);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Middle*/
-// ados_add_placement(8842, 58402, "azk63640", 5).setZone(63066);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Middle*/
-// ados_add_placement(8842, 58402, "azk5687", 94).setZone(63066);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Middle*/
-// ados_add_placement(8842, 58402, "azk88894", 5).setZone(63066);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Middle*/
-// ados_add_placement(8842, 58402, "azk68847", 94).setZone(63066);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Middle*/
-// ados_add_placement(8842, 58402, "azk50125", 5).setZone(63066);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Middle*/
-// ados_add_placement(8842, 58402, "azk55552", 94).setZone(63066);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Middle*/
-// ados_add_placement(8842, 58402, "azk93", 5).setZone(63066);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Middle*/
-// ados_add_placement(8842, 58402, "azk16315", 94).setZone(63066);
-//  /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Bottom */
-// ados_add_placement(8842, 58402, "azk18489", 5).setZone(63067);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Bottom*/
-// ados_add_placement(8842, 58402, "azk55410", 94).setZone(63067);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Bottom*/
-// ados_add_placement(8842, 58402, "azk26093", 5).setZone(63067);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Bottom*/
-// ados_add_placement(8842, 58402, "azk4238", 94).setZone(63067);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Bottom*/
-// ados_add_placement(8842, 58402, "azk19150", 5).setZone(63067);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Bottom*/
-// ados_add_placement(8842, 58402, "azk25616", 94).setZone(63067);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Bottom*/
-// ados_add_placement(8842, 58402, "azk94823", 5).setZone(63067);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Bottom*/
-// ados_add_placement(8842, 58402, "azk2208", 94).setZone(63067);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Tablet-Mobile*/
-// ados_add_placement(8842, 58402, "azk72251", 5).setZone(63068);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Tablet-Mobile*/
-// ados_add_placement(8842, 58402, "azk31557", 94).setZone(63068);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Tablet-Mobile*/
-// ados_add_placement(8842, 58402, "azk55755", 5).setZone(63068);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Tablet-Mobile*/
-// ados_add_placement(8842, 58402, "azk3273", 94).setZone(63068);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Tablet-Mobile*/
-// ados_add_placement(8842, 58402, "azk23262", 5).setZone(63068);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Tablet-Mobile*/
-// ados_add_placement(8842, 58402, "azk67876", 94).setZone(63068);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x250 - Medium Rectangle, zone: Tablet-Mobile*/
-// ados_add_placement(8842, 58402, "azk6796", 5).setZone(63068);
-// /* load placement for account: imnct, site: NancyOnNorwalk, size: 300x150 - 300x150, zone: Tablet-Mobile*/
-// ados_add_placement(8842, 58402, "azk11225", 94).setZone(63068);
-// ados_load();
-// });
- 
+
+
+//
+//	Independant Media Network Google ad tags
+//
+//
+
+(function() {
+var useSSL = 'https:' == document.location.protocol;
+var src = (useSSL ? 'https:' : 'http:') +
+'//www.googletagservices.com/tag/js/gpt.js';
+document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+})();
+
+googletag.defineSlot('/3021306/nancyonnorwalk-001-300x250', [300, 250], 'div-gpt-ad-1411766814990-0').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-002-300x250', [300, 250], 'div-gpt-ad-1411766814990-1').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-003-300x250', [300, 250], 'div-gpt-ad-1411766814990-2').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-004-300x250', [300, 250], 'div-gpt-ad-1411766814990-3').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-005-300x250', [300, 250], 'div-gpt-ad-1411766814990-4').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-006-300x250', [300, 250], 'div-gpt-ad-1411766814990-5').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-007-300x250', [300, 250], 'div-gpt-ad-1411766814990-6').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-008-300x250', [300, 250], 'div-gpt-ad-1411766814990-7').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-009-300x250', [300, 250], 'div-gpt-ad-1411766814990-8').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-010-300x250', [300, 250], 'div-gpt-ad-1411766814990-9').addService(googletag.pubads());
+googletag.pubads().enableSyncRendering();
+googletag.pubads().collapseEmptyDivs(); 
+googletag.enableServices(); 
+
+
+
+
+//
+//	Quantcast Analytics
+//
+
 var _qevents = _qevents || [];
 
 (function() {
