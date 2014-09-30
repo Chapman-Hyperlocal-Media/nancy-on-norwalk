@@ -15,6 +15,7 @@ if ( ! function_exists( 'norwalk_setup' ) ):
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * @since Norwalk 1.0
+ *
  */
 function norwalk_setup() {
 
@@ -46,8 +47,66 @@ function norwalk_setup() {
 	
 	add_image_size( 'story_thumb', 1000, 750, true ); 
 	add_image_size( 'search_thumb', 250, 250, true);
+
+	add_action( 'init', 'norwalk_custom_post_types_init' );
+	add_action( 'widgets_init', 'norwalk_widgets_init' );
 }
 endif;
+
+
+
+/*
+ * 	Custom post types
+ * 	Added release-1.2.3
+ * 	Add support for norwalk_popup custom post type.
+ *
+ * 	Includes:
+ *	norwalk_popup
+ */
+function norwalk_custom_post_types_init() {
+
+	function norwalk_popups_init(){
+ 		register_post_type( 'norwalk_popup',
+		    array(
+			    'labels' => array(
+			        'name' => __( 'Pop-ups' ),
+			        'singular_name' => __( 'Pop-up' )
+			    ),
+		    	'public' => false,  
+		    	'has_archive' => false,
+		    	'show_ui' => true,
+		    	'show_in_admin_bar' => false,
+		    	'menu_position' => 50,
+		    	'exclude_from_search' => true,
+				'show_in_menu' => true,
+		    	'description' => 'Pop-up ads that will display on page load.',
+		    	'support' => array(
+	    			'title',
+	    			'editor',
+	    			'custom-fields',
+	    			'revisions'
+		    	),
+		    	'capabilities_type' => 'post',
+		    )
+ 		);
+ 	}
+	norwalk_popups_init();
+}
+
+/*
+ *	Norwalk Theme settings page
+ *	Added release-1.2.3
+ *
+ *	Includes:
+ *	norwalk_popup_enable
+ *
+ */
+function norwalk_theme_settings_page(){
+	
+}
+
+
+
 
 function norwalk_widgets_init() {
 	// Default, located in the default sidebar.
@@ -141,46 +200,9 @@ function norwalk_widgets_init() {
 		'before_title' => '<h3 class="title">',
 		'after_title' => '</h3>', 
 	) );
-/*	register_sidebar( array(
-		'name' => __( 'Mobile ads 1', 'norwalk' ),
-		'id' => 'mobile-ads-1',
-		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
-		'before_widget' => '<li class="widget ad">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-		) );
-	register_sidebar( array(
-		'name' => __( 'Mobile ads 2', 'norwalk' ),
-		'id' => 'mobile-ads-2',
-		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
-		'before_widget' => '<li class="widget ad">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Mobile ads 3', 'norwalk' ),
-		'id' => 'mobile-ads-3',
-		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
-		'before_widget' => '<li class="widget ad">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Mobile ads 4', 'norwalk' ),
-		'id' => 'mobile-ads-4',
-		'description' => __( 'Displays between posts on the homepage and category pages, and only on mobile devices', 'norwalk' ),
-		'before_widget' => '<li class="widget ad">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	) );*/
+
 }
 /** Register sidebars by running norwalk_widgets_init() on the widgets_init hook. */
-add_action( 'widgets_init', 'norwalk_widgets_init' );
-
 function norwalk_sidebar_fallback(){?>
 		
 			<li class="widget">
@@ -218,13 +240,7 @@ function norwalk_sidebar_fallback(){?>
 				wp_nav_menu( $args );
 				
 				?>
-<!--                <div class="menu-popular-stories-container">
-                    <ul id="menu-popular-stories" class="menu">
-                        <li id="menu-item-581" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-581"><a href="http://192.168.1.20/norwalknancy/2012/11/norwalk-voters-celebrate-scary-romneys-loss/">Norwalk voters celebrate Obama’s defeat of ‘scary’ Romney</a></li>
-                        <li id="menu-item-582" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-582"><a href="http://192.168.1.20/norwalknancy/2012/11/norwalk-reporter-confesses-the-reasons-i-resigned-from-the-norwalk-daily-voice/">Reporter: Why I Resigned From The Norwalk Daily Voice</a></li>
-                        <li id="menu-item-583" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-583"><a href="http://192.168.1.20/norwalknancy/2012/11/man-injured-in-fall-under-norwalks-stroffolino-bridge/">Man Injured In Fall Under Norwalk’s Stroffolino Bridge</a></li>
-                    </ul>
-                </div>-->
+
             </li>
 
 			<li class="widget">
@@ -313,14 +329,6 @@ if( !function_exists('norwalk_default_nav') ):
 		
 	}
 endif;
-
-/*add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
-	function your_custom_menu_item ( $items, $args ) {
-   // if (is_single() && $args->theme_location == 'primary') {
-        $items .= '<li>Show whatever</li>';
-  //  }
-    return $items;
-}*/
 
 if ( ! function_exists( 'norwalk_comment' ) ) :
 /**
@@ -464,8 +472,7 @@ if (!function_exists('norwalk_save_byline')){
 function norwalk_display_byline($ouside_loop = false){
 	global $post;
 	$post_id = $post->ID;
-	$custom_byline = get_post_meta( $post_id, 'custom-byline', true );?>
-    <?php
+	$custom_byline = get_post_meta( $post_id, 'custom-byline', true );
 	if( $custom_byline ) return $custom_byline;
 	else if($ouside_loop){
 		$author_info = get_userdata($post->post_author);
