@@ -23,26 +23,11 @@ googletag.defineSlot('/1732998/Nancy-On-Norwalk-upper-sidebar', [300, 250], 'div
 googletag.defineSlot('/1732998/NancyOnNorwalk-middle-sidebar', [300, 250], 'div-gpt-ad-1390517935355-4').addService(googletag.pubads());
 googletag.defineSlot('/1732998/NancyOnNorwalk-lower-sidebar', [300, 250], 'div-gpt-ad-1390517935355-3').addService(googletag.pubads());
 googletag.defineSlot('/1732998/Nancy_on_Norwalk_bottom_sidebar_large_rectangle_ad', [300, 250], 'div-gpt-ad-1390517935355-1').addService(googletag.pubads());
-googletag.pubads().enableSingleRequest();
-googletag.enableServices();
-});
-
-var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);
-
-
-
 
 //
 //	Independant Media Network Google ad tags
+//	Grouped together with ours because it's all Google. 
 //
-//
-
-(function() {
-var useSSL = 'https:' == document.location.protocol;
-var src = (useSSL ? 'https:' : 'http:') +
-'//www.googletagservices.com/tag/js/gpt.js';
-document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
-})();
 
 googletag.defineSlot('/3021306/nancyonnorwalk-001-300x250', [300, 250], 'div-gpt-ad-1411766814990-0').addService(googletag.pubads());
 googletag.defineSlot('/3021306/nancyonnorwalk-002-300x250', [300, 250], 'div-gpt-ad-1411766814990-1').addService(googletag.pubads());
@@ -54,11 +39,12 @@ googletag.defineSlot('/3021306/nancyonnorwalk-007-300x250', [300, 250], 'div-gpt
 googletag.defineSlot('/3021306/nancyonnorwalk-008-300x250', [300, 250], 'div-gpt-ad-1411766814990-7').addService(googletag.pubads());
 googletag.defineSlot('/3021306/nancyonnorwalk-009-300x250', [300, 250], 'div-gpt-ad-1411766814990-8').addService(googletag.pubads());
 googletag.defineSlot('/3021306/nancyonnorwalk-010-300x250', [300, 250], 'div-gpt-ad-1411766814990-9').addService(googletag.pubads());
-googletag.pubads().enableSyncRendering();
-googletag.pubads().collapseEmptyDivs(); 
+
+googletag.pubads().enableSingleRequest();
 googletag.enableServices(); 
+});
 
-
+var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);
 
 
 //
