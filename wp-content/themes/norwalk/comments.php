@@ -64,5 +64,5 @@
 
 <?php endif; // end have_comments() ?>
 
-<?php comment_form(); ?>
+<?php norwalk_comment_form(); ?>
 </div>

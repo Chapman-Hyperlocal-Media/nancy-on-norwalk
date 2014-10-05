@@ -332,6 +332,12 @@ article.attachment{margin-bottom:0;
 
 #comments-section, 
 #idc-container-parent{@include margins(1,0,1,0); position:relative; float:left; clear:left; padding-top:0; margin-top:percentage($column-width * 0.5);
+	.comment-admin-message{padding: percentage($column-width * 2); font-family: arial, Helvetica, sans-serif; font-size:1em; background-color: #EBF3BD; color: #558833;
+		p{margin-top:3px;
+			&:first-child{margin-top:0;}
+			a{color:#407528;}
+		}
+	} 
 	#idc-container-parent #IDCommentsHead .idc-right{position:absolute; top:5px; right:5px; }
 	#idc-container{
 		.idc-c .idc-c-h-inner{height:auto; } 
@@ -345,7 +351,7 @@ article.attachment{margin-bottom:0;
 		.comment-nav{float:right; padding:percentage($column-width * 1) percentage($column-width * 1) percentage($column-width * 1) percentage($column-width * 1) ; font-size:0.6em; margin:0;
 			a{padding: 0 10px; margin:0; }
 		}
-	}
+	} 
 	.comment-nav{font-size:1.2em; display:block; overflow:hidden; font-family:$asideHead; margin:percentage($column-width * 1) 0;
 		a{color:$green + #333333; background-color:$green; text-decoration:none; display:block; float:left; padding:percentage($column-width * 1) percentage($column-width * 1) percentage($column-width * 1) percentage($column-width * 1) ; margin-right:percentage($column-width * 0.5); }
 	}
@@ -373,7 +379,7 @@ article.attachment{margin-bottom:0;
 		.meta, 
 		.idc-c-h{background:transparent !important; color:$dark; overflow:hidden; height:auto !important;
 			p, 
-			.idc-i{line-height:0.8em; font-size:2em; margin-left:0; height:auto;
+			.idc-i{line-height:1em; font-size:2em; margin-left:0; height:auto;
 				> em{margin-left:-0.35em; font-style:normal; }
 				.user, 
 				& > span, 
@@ -381,7 +387,7 @@ article.attachment{margin-bottom:0;
 					a{color:$dark; }
 				}
 				.time, 
-				.idc-time{font-size:0.4em; color:$dark + #606060; display:block; 
+				.idc-time{font-size:0.6em; color:$dark + #606060; display:block; position:relative; top:-5px;
 					a{text-decoration:none; color:$dark + #606060; }
 				}
 			}
@@ -390,13 +396,17 @@ article.attachment{margin-bottom:0;
 		.idc-c-h{height:auto !important; overflow:visible; }
 		.avatar{margin-right:percentage($column-width * 1); -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; float:left; }
 		.text, 
-		.idc-c-t-inner{padding:percentage($column-width * 1) 0; color:$dark; line-height:1.5em; font-size:inherit; }
+		.idc-c-t-inner{padding:percentage($column-width * 1) 0; color:$dark; line-height:1.5em; font-size:inherit; 
+			p{text-indent:0.3em; margin-top:1em;
+				&:first-child{margin-top:0;}
+			}
+		}
 	}
 	#IDCommentsHead h3{font-weight:bold; padding:percentage($column-width * 0.5) percentage($column-width * 1); 
 		#idc-commentcount_label, 
 		#idc-commentcount_wrap{font-weight:bold; font-size:0.7em; }
 	}
-	#IDCommentsHead > .idc-right{position:absolute; top:2.4%; right:2%; }
+	#IDCommentsHead > .idc-right{position:absolute; top:2.4%; right:2%; } 
 }
 #respond{
 	#reply-title{background-color:$green; padding:percentage($column-width * 0.5) percentage($column-width * 1); color:#FFF; font-size:1.8em; font-family:$asideHead; text-transform:uppercase; font-weight:600; margin-bottom:percentage($column-width * 1.5); margin-top:0; }
