@@ -26,10 +26,10 @@ class google_ad_widget extends WP_Widget {
         $title 		= apply_filters('widget_title', $instance['title']);
         $message 	= $instance['message'];
         ?>
-              <?php echo '<li class="widget" style="background-color:transparent;">'; ?>
+              <?php echo '<li class="widget goog-ad" style="background-color:transparent;">'; ?>
                 <?php //if ( $title ) echo $before_title . $title . $after_title; ?>
 					<!-- <?php echo $title; ?> -->
-                    <div id='<?php echo $message; ?>'>
+                    <div id='<?php echo $message; ?>' class="goog-ad">
                     <script type='text/javascript'>
 	                    googletag.cmd.push(function() { googletag.display('<?php echo $message; ?>'); });
                     </script>

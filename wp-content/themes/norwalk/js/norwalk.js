@@ -70,8 +70,8 @@ var $window = $(window),
 	$document = $(document),
 	$mainContent = $('#main-content'),
 	$sidebar = $mainContent.find('aside.sidebar'),
-	$adSlots =  $sidebar.find('li.widget.adzerk-ad-slot')
-	$ads = $adSlots.find('div.adzerk-ad'),
+	$adSlots =  $sidebar.find('li.widget.goog-ad')
+	$ads = $adSlots.find('div.goog-ad'),
 	$mobileAdSlots = $mainContent.find('div.content > div.mobile-ad-slot'),
 	adsInSidebar = true;
 
