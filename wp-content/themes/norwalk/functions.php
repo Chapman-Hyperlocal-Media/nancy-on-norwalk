@@ -64,48 +64,37 @@ endif;
  *	norwalk_popup
  */
 function norwalk_custom_post_types_init() {
-
-	function norwalk_popups_init(){
- 		register_post_type( 'norwalk_popup',
-		    array(
-			    'labels' => array(
-			        'name' => __( 'Pop-ups' ),
-			        'singular_name' => __( 'Pop-up' )
-			    ),
-		    	'public' => false,  
-		    	'has_archive' => false,
-		    	'show_ui' => true,
-		    	'show_in_admin_bar' => false,
-		    	'menu_position' => 50,
-		    	'exclude_from_search' => true,
-				'show_in_menu' => true,
-		    	'description' => 'Pop-up ads that will display on page load.',
-		    	'support' => array(
-	    			'title',
-	    			'editor',
-	    			'custom-fields',
-	    			'revisions'
-		    	),
-		    	'capabilities_type' => 'post',
-		    )
- 		);
- 	}
-	norwalk_popups_init();
+	//
+	//	this was moved to a plugin. 
+	// 	left here as an example for later. 
+	//
+	// function norwalk_popups_init(){
+ 	// 		register_post_type( 'norwalk_popup',
+	// 	    array(
+	// 		    'labels' => array(
+	// 		        'name' => __( 'Pop-ups' ),
+	// 		        'singular_name' => __( 'Pop-up' )
+	// 		    ),
+	// 	    	'public' => false,  
+	// 	    	'has_archive' => false,
+	// 	    	'show_ui' => true,
+	// 	    	'show_in_admin_bar' => false,
+	// 	    	'menu_position' => 50,
+	// 	    	'exclude_from_search' => true,
+	// 			'show_in_menu' => true,
+	// 	    	'description' => 'Pop-up ads that will display on page load.',
+	// 	    	'support' => array(
+	//     			'title',
+	//     			'editor',
+	//     			'custom-fields',
+	//     			'revisions'
+	// 	    	),
+	// 	    	'capabilities_type' => 'post',
+	// 	    )
+ // 		);
+ // 	}
+	// norwalk_popups_init();
 }
-
-/*
- *	Norwalk Theme settings page
- *	Added release-1.2.3
- *
- *	Includes:
- *	norwalk_popup_enable
- *
- */
-function norwalk_theme_settings_page(){
-	
-}
-
-
 
 
 function norwalk_widgets_init() {
