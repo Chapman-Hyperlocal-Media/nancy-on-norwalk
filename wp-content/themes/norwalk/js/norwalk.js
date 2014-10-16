@@ -118,7 +118,7 @@ mobileAdCheck = function(e){
 			////
 			var $thisSlot = $mobileAdSlots.eq(slotNum),
 				slotEmpty = true; 
-			$thisSlot.find('.adzerk-ad').each(function(){
+			$thisSlot.find('.goog-ad').each(function(){
 				if( $.trim( $(this).html() )  == '' ){
 					slotEmpty = true;
 				} else {
