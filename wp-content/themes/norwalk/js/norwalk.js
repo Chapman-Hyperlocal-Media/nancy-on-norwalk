@@ -138,6 +138,7 @@ mobileAdCheck = function(e){
 		});
 
 		adsInSidebar = false;
+		googletag.enableServices();
 	} 
 	else if(!adsInSidebar && documentWidth >= 801) {
 
@@ -157,6 +158,7 @@ mobileAdCheck = function(e){
 		});
 
 		adsInSidebar = true;
+		googletag.enableServices();
 	}
 
 }
