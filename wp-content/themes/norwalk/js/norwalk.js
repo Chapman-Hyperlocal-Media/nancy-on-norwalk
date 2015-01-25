@@ -213,11 +213,15 @@ $(document).ready(function(e) {
 			if (tLimit >= 5000){
 				clearInterval(t);
 				console.log('timer done');
+				googletag.pubads().refresh();
 			} else console.log('timer running');
 			tLimit += 500;
 		}, 500 )
 	} else mobileAdCheck();
-	$window.smartresize( function(e){ mobileAdCheck(e) });
+	$window.smartresize( function(e){ 
+		mobileAdCheck(e); 
+		googletag.pubads().refresh();
+	});
 
 	$('#nav-logo, #nav-label').prependTo('#main-nav').attr('style', '');
 
