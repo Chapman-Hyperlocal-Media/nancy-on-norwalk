@@ -26,7 +26,7 @@ class google_ad_widget extends WP_Widget {
         $title 		= apply_filters('widget_title', $instance['title']);
         $message 	= $instance['message'];
         ?>
-              <?php echo '<li class="widget" style="background-color:transparent;">'; ?>
+              <?php echo '<li class="widget googad" style="background-color:transparent;">'; ?>
                 <?php //if ( $title ) echo $before_title . $title . $after_title; ?>
 					<!-- <?php echo $title; ?> -->
                     <div id='<?php echo $message; ?>'>

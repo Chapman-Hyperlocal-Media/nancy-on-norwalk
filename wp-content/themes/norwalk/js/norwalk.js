@@ -137,6 +137,7 @@ mobileAdCheck = function(e){
 			else newSlot = true; 
 		});
 
+		googletag.pubads().refresh();
 		adsInSidebar = false;
 	} 
 	else if(!adsInSidebar && documentWidth >= 801) {
@@ -155,7 +156,8 @@ mobileAdCheck = function(e){
 			} 
 			slotNum++;
 		});
-
+		
+		googletag.pubads().refresh();
 		adsInSidebar = true;
 	}
 
@@ -172,7 +174,16 @@ $(document).ready(function(e) {
 				$('#NoN-content').css({width:contentWidth});
 			}); 
 	}
-
+	$('.widget').each(function(){ 
+		try {
+			var $this = $(this);
+			if ($this.find('iframe').attr('id').search('google_ads') != -1 && $this.find('iframe').contents().find('body').contents().length == 0){
+				$this.remove();
+			}
+		} 
+		catch(err) {
+		}
+	});
    /*
 	*	Mobile ad placement code
 	*	
@@ -210,8 +221,8 @@ $(document).ready(function(e) {
 			mobileAdCheck();
 			if (tLimit >= 5000){
 				clearInterval(t);
-				console.log('timer done');
-			} else console.log('timer running');
+				//console.log('timer done');
+			} //else console.log('timer running');
 			tLimit += 500;
 		}, 500 )
 	} else mobileAdCheck();
