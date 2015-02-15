@@ -42,6 +42,7 @@ googletag.defineSlot('/3021306/nancyonnorwalk-008-300x250', [300, 250], 'div-gpt
 googletag.defineSlot('/3021306/nancyonnorwalk-009-300x250', [300, 250], 'div-gpt-ad-1411766814990-8').addService(googletag.pubads());
 googletag.defineSlot('/3021306/nancyonnorwalk-010-300x250', [300, 250], 'div-gpt-ad-1411766814990-9').addService(googletag.pubads());
 
+googletag.pubads().collapseEmptyDivs();
 googletag.pubads().enableSingleRequest();
 googletag.enableServices(); 
 });

@@ -70,8 +70,8 @@ var $window = $(window),
 	$document = $(document),
 	$mainContent = $('#main-content'),
 	$sidebar = $mainContent.find('aside.sidebar'),
-	$adSlots =  $sidebar.find('li.widget.adzerk-ad-slot')
-	$ads = $adSlots.find('div.adzerk-ad'),
+	$adSlots =  $sidebar.find('li.widget.goog-ad'),
+	$ads = $adSlots.find('div.goog-ad'),
 	$mobileAdSlots = $mainContent.find('div.content > div.mobile-ad-slot'),
 	adsInSidebar = true;
 
@@ -105,7 +105,7 @@ showNav = function(e){
 
 mobileAdCheck = function(e){
 	var documentWidth = $document.width();
-	if(/*adsInSidebar &&*/ documentWidth < 801) {
+	if( documentWidth < 801) {
 
 		var slotNum = 0,
 			newSlot = false;
@@ -118,7 +118,7 @@ mobileAdCheck = function(e){
 			////
 			var $thisSlot = $mobileAdSlots.eq(slotNum),
 				slotEmpty = true; 
-			$thisSlot.find('.adzerk-ad').each(function(){
+			$thisSlot.find('.goog-ad').each(function(){
 				if( $.trim( $(this).html() )  == '' ){
 					slotEmpty = true;
 				} else {
@@ -139,6 +139,7 @@ mobileAdCheck = function(e){
 
 		googletag.pubads().refresh();
 		adsInSidebar = false;
+		googletag.enableServices();
 	} 
 	else if(!adsInSidebar && documentWidth >= 801) {
 
@@ -159,6 +160,7 @@ mobileAdCheck = function(e){
 		
 		googletag.pubads().refresh();
 		adsInSidebar = true;
+		googletag.enableServices();
 	}
 
 }
@@ -221,18 +223,23 @@ $(document).ready(function(e) {
 			mobileAdCheck();
 			if (tLimit >= 5000){
 				clearInterval(t);
-				//console.log('timer done');
-			} //else console.log('timer running');
+				console.log('timer done');
+				googletag.pubads().refresh();
+			} else console.log('timer running');
 			tLimit += 500;
 		}, 500 )
 	} else mobileAdCheck();
-	$window.smartresize( function(e){ mobileAdCheck(e) });
+	$window.smartresize( function(e){ 
+		mobileAdCheck(e); 
+		googletag.pubads().refresh();
+	});
 
 	$('#nav-logo, #nav-label').prependTo('#main-nav').attr('style', '');
 
 	$('#main-nextprev').appendTo('#main-nav').attr('style', '');	
 
 	$('#nav-label, #nav-label > object').on('click tap', null, null, showNav); 
+
 });
 
 }); // jQuery encapsulation
