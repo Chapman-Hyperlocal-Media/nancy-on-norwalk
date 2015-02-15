@@ -105,7 +105,7 @@ showNav = function(e){
 
 mobileAdCheck = function(e){
 	var documentWidth = $document.width();
-	if(/*adsInSidebar &&*/ documentWidth < 801) {
+	if( documentWidth < 801) {
 
 		var slotNum = 0,
 			newSlot = false;
@@ -228,6 +228,7 @@ $(document).ready(function(e) {
 	$('#main-nextprev').appendTo('#main-nav').attr('style', '');	
 
 	$('#nav-label, #nav-label > object').on('click tap', null, null, showNav); 
+
 });
 
 }); // jQuery encapsulation

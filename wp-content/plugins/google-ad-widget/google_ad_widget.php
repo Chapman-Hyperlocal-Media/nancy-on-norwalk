@@ -25,8 +25,10 @@ class google_ad_widget extends WP_Widget {
         extract( $args );
         $title 		= apply_filters('widget_title', $instance['title']);
         $message 	= $instance['message'];
+        $third_party = $instance['third_party'];
+        $class = $instance['third_party'] ? 'widget goog-ad third-party' : 'widget goog-ad';
         ?>
-              <?php echo '<li class="widget goog-ad" style="background-color:transparent;">'; ?>
+              <?php echo '<li class="'. $class .'" style="background-color:transparent;">'; ?>
                 <?php //if ( $title ) echo $before_title . $title . $after_title; ?>
 					<!-- <?php echo $title; ?> -->
                     <div id='<?php echo $message; ?>' class="goog-ad">
@@ -43,6 +45,7 @@ class google_ad_widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['message'] = $new_instance['message'];
+        $instance['third_party'] = $new_instance['third_party'];
         return $instance;
     }
  
@@ -51,6 +54,8 @@ class google_ad_widget extends WP_Widget {
  
         $title 		= esc_attr($instance['title']);
         $message	= esc_attr($instance['message']);
+        $third_party = esc_attr($instance['third_party']);
+
         ?>
          <p>
           <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Slot name:'); ?></label> 
@@ -59,6 +64,10 @@ class google_ad_widget extends WP_Widget {
 		<p>
           <label for="<?php echo $this->get_field_id('message'); ?>"><?php _e('ID number:'); ?></label> 
           <input type="text" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>"  value="<?php echo $message; ?>" />
+        </p>
+        <p>
+          <label for="<?php echo $this->get_field_id('third_party'); ?>"><?php _e('Third Party:'); ?></label> 
+          <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('third_party'); ?>" name="<?php echo $this->get_field_name('third_party'); ?>" <?php checked( (bool) $instance["third_party"], true ); ?> />
         </p>
         <?php 
     }
