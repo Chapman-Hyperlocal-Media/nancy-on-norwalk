@@ -356,7 +356,7 @@ article.attachment{margin-bottom:0;
 		a{color:$green + #333333; background-color:$green; text-decoration:none; display:block; float:left; padding:percentage($column-width * 1) percentage($column-width * 1) percentage($column-width * 1) percentage($column-width * 1) ; margin-right:percentage($column-width * 0.5); }
 	}
 	.comment, 
-	.idc-c{background-color:#FFF; margin-bottom:5px; overflow:hidden; font-size:1.4em; line-height:1.4em; font-family:$bodycopy; padding: percentage($column-width * 3) 0; border-top:1px dotted $dark + #606060;
+	.idc-c{background-color:#FFF; margin-bottom:5px; overflow:hidden; font-size:1.4em; line-height:1.4em; font-family:$bodycopy; padding: percentage($column-width * 3) 0; border-top:1px dotted $dark + #606060; -ms-word-break: break-all; word-break: break-all; word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; width:100%;
 		&:first-child{border-top:0px; }
 		a{color:$green; }
 		.reply{}
