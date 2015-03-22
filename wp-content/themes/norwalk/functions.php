@@ -819,6 +819,31 @@ function norwalk_comment_form( $args = array(), $post_id = null ) {
 		endif;
 }
 
+/**
+ * Tells Wordpress when to exclude categories from the main query of a page.
+ */
+if (!function_exists('norwalk_exclude_categories')) {
+	function norwalk_exclude_categories($query){
+		// Homepage
+		if (is_home() && is_main_query()){
+	        $categories = get_terms('category', 
+	        	array('exclude' => array(
+	        		790 // State
+	        	)
+	        ));
+	        $category_ids = array();
+	        foreach ($categories as $category) {
+	        	array_push($category_ids, $category->term_id);
+	        }
+	        $query->query_vars['category__in'] = $category_ids;
+		}
+		// Every Page
+		if (is_main_query()){
+		}
+	}
+}
+add_action('pre_get_posts','norwalk_exclude_categories');
+
 
 
 
