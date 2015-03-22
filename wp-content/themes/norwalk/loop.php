@@ -19,6 +19,26 @@
     // Loop counting, for mobile ad placement.
     $loop_num = 0;
     $mobile_ads_slot = 1;
+
+    // Special query for main page to exclude certain categories.
+    if (is_home()){
+        $categories = get_terms(array('category', 'nav_menu'), 
+            array('exclude' => array(
+                790 // State
+            )
+        ));
+        $category_ids = array();
+        foreach ($categories as $category) {
+            array_push($category_ids, $category->term_id);
+        }
+        $homepage_query = new WP_Query( array('category__in' => $category_ids) );
+        // Wordpress will think this query is an Archive because we specified categories. 
+        $homepage_query->is_archive = false;
+        // Switch the main query with the homepage query, for convenience.
+        // after the loop is done, we will switch them back.
+        $main_query = $wp_query;
+        $wp_query = $homepage_query;
+    }
 ?>
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
@@ -218,4 +238,14 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
         <?php next_posts_link( __( '&larr; Older posts', 'starkers' ) ); ?>
         <?php previous_posts_link( __( 'Newer posts &rarr;', 'starkers' ) ); ?>
     </nav>
-<?php endif; ?>
+<?php endif; 
+ 
+ if (is_home()){
+    //Restore the original main query.
+    if (isset($main_query)) $wp_query = $main_query;
+ }
+
+
+
+
+?>
