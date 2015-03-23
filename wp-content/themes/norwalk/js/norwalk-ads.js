@@ -40,14 +40,12 @@ googletag.defineSlot('/3021306/nancyonnorwalk-006-300x250', [300, 250], 'div-gpt
 googletag.defineSlot('/3021306/nancyonnorwalk-007-300x250', [300, 250], 'div-gpt-ad-1411766814990-6').addService(googletag.pubads());
 googletag.defineSlot('/3021306/nancyonnorwalk-008-300x250', [300, 250], 'div-gpt-ad-1411766814990-7').addService(googletag.pubads());
 googletag.defineSlot('/3021306/nancyonnorwalk-009-300x250', [300, 250], 'div-gpt-ad-1411766814990-8').addService(googletag.pubads());
-googletag.defineSlot('/3021306/nancyonnorwalk-010-300x250', [300, 250], 'div-gpt-ad-1411766814990-9').addService(googletag.pubads());
+googletag.defineSlot('/3021306/nancyonnorwalk-010-300x250', [300, 250], 'div-gpt-ad-1411766814990-9').addService(googletag.pubads()); 
 
 googletag.pubads().collapseEmptyDivs();
 googletag.pubads().enableSingleRequest();
 googletag.enableServices(); 
 });
-
-var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);
 
 
 //

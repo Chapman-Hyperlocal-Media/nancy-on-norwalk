@@ -176,16 +176,16 @@ $(document).ready(function(e) {
 				$('#NoN-content').css({width:contentWidth});
 			}); 
 	}
-	$('.widget').each(function(){ 
-		try {
-			var $this = $(this);
-			if ($this.find('iframe').attr('id').search('google_ads') != -1 && $this.find('iframe').contents().find('body').contents().length == 0){
-				$this.remove();
-			}
-		} 
-		catch(err) {
-		}
-	});
+	// $('.widget').each(function(){ 
+	// 	try {
+	// 		var $this = $(this);
+	// 		if ($this.find('iframe').attr('id').search('google_ads') != -1 && $this.find('iframe').contents().find('body').contents().length == 0){
+	// 			$this.remove();
+	// 		}
+	// 	} 
+	// 	catch(err) {
+	// 	}
+	// });
    /*
 	*	Mobile ad placement code
 	*	
@@ -223,9 +223,8 @@ $(document).ready(function(e) {
 			mobileAdCheck();
 			if (tLimit >= 5000){
 				clearInterval(t);
-				console.log('timer done');
 				googletag.pubads().refresh();
-			} else console.log('timer running');
+			}
 			tLimit += 500;
 		}, 500 )
 	} else mobileAdCheck();
