@@ -282,7 +282,7 @@ article.attachment{margin-bottom:0;
 	}
 }
 .pagination{font-size:1.5em; display:block; clear:both; font-family:$asideHead; margin-bottom:30px; font-weight:300; font-size:1.5em; color:$green;
-	a{color:$green - #444444; text-decoration:none; border-bottom:1px dotted $green - #222222;
+	a{color:$green - #444444; text-decoration:none; border-bottom:1px dotted $green - #222222; margin-right:2em;;
 		&:active{color:#fff; background-color:$green - #222222; }
 	}
 }

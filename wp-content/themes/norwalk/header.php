@@ -44,7 +44,7 @@
 
     wp_enqueue_script('jquery');
 		wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js', 'jquery');
-		wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-1.6.min.js');
+		wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.custom.99437.js');
     wp_enqueue_script('norwalk-ads', get_template_directory_uri() . '/js/min/norwalk-ads.min.js', 'jquery');
     wp_enqueue_style('reset', get_template_directory_uri() . '/stylesheets/reset.css');
     wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css', 'reset');
@@ -138,8 +138,8 @@ End facebook button code
 <?php */?>       
         <div id="logo">
         	<hgroup>
-        		<?php if (is_single) echo "<h2>"; else echo "<h1>" ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span>Nancy</span> On Norwalk</a>
-                <?php if (is_single) echo "</h2>"; else echo "</h1>" ?>
+        		<?php if (is_single()) echo "<h2>"; else echo "<h1>" ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span>Nancy</span> On Norwalk</a>
+                <?php if (is_single()) echo "</h2>"; else echo "</h1>" ?>
 	        </hgroup>
         </div>
 

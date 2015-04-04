@@ -191,6 +191,7 @@ test/
 .htaccess
 dwsync.xml
 error_log
+debug.log
 
 ~/public_html/nancyonnorwalk.com/fantastico_fileslist.txt
 ~/public_html/nancyonnorwalk.com/fantversion.php
@@ -272,6 +273,7 @@ advanced-cache.php
 wp-cache-config.php
 package.json
 gruntfile.js
+
 
 #other unnecessary crapola
 cgi-bin/

@@ -274,9 +274,9 @@ if( !function_exists('norwalk_meta') ):
 						
 				$tags_list = get_the_tag_list( '<ul><li>','</li><li>','</li></ul>');
 				
-				if ( $log == 'side' && $tags_list ):
-					printf( __( '<li class="tags"><span class="tagline">Tags </span>%2$s</li>', 'norwalk' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );  
-				endif; 
+				// if ( is_single() && $loc == 'side' && $tags_list ):
+				// 	printf( __( '<li class="tags"><span class="tagline">Tags </span>%2$s</li>', 'norwalk' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );  
+				// endif; 
 				echo '<li class="comments">';
 				comments_popup_link( __( 'Leave a comment', 'norwalk' ), __( '1 Comment', 'norwalk' ), __( '% Comments', 'norwalk' ) );
 			echo '</li>';
@@ -560,7 +560,7 @@ if (!function_exists('trim_excerpt')){
       return $excerpt;
     }
 }
-if (!function_exists(norwalk_comment_admin_message)){
+if (!function_exists('norwalk_comment_admin_message')){
 	function norwalk_comment_admin_message(){ ?>
 
 	<div class="comment-admin-message">
@@ -695,7 +695,7 @@ function norwalk_comment_form( $args = array(), $post_id = null ) {
 			?>
 			<div id="respond" class="comment-respond">
 				<h3 id="reply-title" class="comment-reply-title"><?php comment_form_title( $args['title_reply'], $args['title_reply_to'] ); ?> <small><?php cancel_comment_reply_link( $args['cancel_reply_link'] ); ?></small></h3>
-				<?php norwalk_comment_admin_message(); ?>
+				<?php //norwalk_comment_admin_message(); ?>
 				<?php if ( get_option( 'comment_registration' ) && !is_user_logged_in() ) : ?>
 					<?php echo $args['must_log_in']; ?>
 					<?php

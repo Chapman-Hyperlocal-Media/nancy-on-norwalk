@@ -28,10 +28,11 @@
             )
         ));
         $category_ids = array();
+        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
         foreach ($categories as $category) {
             array_push($category_ids, $category->term_id);
         }
-        $homepage_query = new WP_Query( array('category__in' => $category_ids) );
+        $homepage_query = new WP_Query( array('category__in' => $category_ids, 'paged' => $paged) );
         // Wordpress will think this query is an Archive because we specified categories. 
         $homepage_query->is_archive = false;
         // Switch the main query with the homepage query, for convenience.
@@ -233,10 +234,10 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
 <?php endwhile; // End the loop. Whew. ?>
  
 <?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if ( $wp_query->max_num_pages > 1 && !is_category() && !is_search() ) : ?>
+<?php if ( $wp_query->max_num_pages > 1 && !is_archive() && !is_search() ) : ?>
     <nav class="pagination">
-        <?php next_posts_link( __( '&larr; Older posts', 'starkers' ) ); ?>
-        <?php previous_posts_link( __( 'Newer posts &rarr;', 'starkers' ) ); ?>
+        <?php next_posts_link( __( '&larr; Older posts' ) ); ?>
+        <?php previous_posts_link( __( 'Newer posts &rarr;' ) ); ?>
     </nav>
 <?php endif; 
  
