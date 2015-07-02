@@ -40,7 +40,7 @@
         wp_nav_menu($footer_nav_args); ?>
 
         <div id="legal">
-        <p>Copyright © 2014 Chapman Hyperlocal Media Inc. Reproduction of material from any Nancy on Norwalk pages without written permission is strictly prohibited. All rights reserved.</p>
+        <p>Copyright © <?php echo date('Y'); ?> Chapman Hyperlocal Media Inc. Reproduction of material from any Nancy on Norwalk pages without written permission is strictly prohibited. All rights reserved.</p>
 <p>Chapman Hyperlocal Media Inc. is a registered non-profit corporation in the state of Connecticut.</p>
         </div>
         <script type="text/javascript"> // google+ share button code

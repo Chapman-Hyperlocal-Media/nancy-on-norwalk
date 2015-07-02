@@ -46,6 +46,9 @@ function norwalk_setup() {
 	
 	add_image_size( 'story_thumb', 1000, 750, true ); 
 	add_image_size( 'search_thumb', 250, 250, true);
+
+	//allow short codes in widgets 
+	add_filter('widget_text', 'do_shortcode');
 }
 endif;
 
@@ -450,9 +453,9 @@ if (!function_exists('norwalk_save_byline')){
 		$custom_byline = get_post_meta( $id, 'custom-byline', true );
 		$new_byline = stripslashes( $_POST['custom-byline'] );
 		
-		if ( $new_byline && $custom_byline == '')
+		if ( $new_byline && $custom_byline == ''){
 			add_post_meta( $id, 'custom-byline', $new_byline, true );
-	
+		}
 		elseif ( $new_byline != $custom_byline && $new_byline != '' ){
 			update_post_meta( $id, 'custom-byline', $new_byline );
 		}
@@ -845,6 +848,97 @@ if (!function_exists('norwalk_exclude_categories')) {
 }
 //add_action('pre_get_posts','norwalk_exclude_categories');
 
+if (!function_exists('norwalk_sc_donation_thankyou')){
+	function norwalk_sc_donation_thankyou($html, $charge_response){
+		// This is copied from the original output so that we can just add in our own details
+	    $html = '<div class="sc-payment-details-wrap">';
+	          
+	    $html .= '<p>' . __( 'Your donation to Nancy On Norwalk was successful!', 'sc' ) . '</p>';
+	    $html .= '<p>' . __( 'Here is your transaction info:', 'sc' ) . '</p>';
+	          
+	    // if( ! empty( $charge_response->description ) ) {
+	    //     $html .= '<p>' . __( "Here's what you bought:", 'sc' ) . '</p>';
+	    //     $html .= $charge_response->description . '<br>' . "\n";
+	    // }
+	          
+	    // if ( isset( $_GET['store_name'] ) && ! empty( $_GET['store_name'] ) ) {
+	    //     $html .= 'From: ' . esc_html( $_GET['store_name'] ) . '<br/>' . "\n";
+	    // }
+	      
+	    $html .= '<p><strong>' . __( 'Amount charged today: ', 'sc' ) . sc_stripe_to_formatted_amount( $charge_response->amount, $charge_response->currency ) . ' ' . 
+	            strtoupper( $charge_response->currency ) . '</strong></p>' . "\n";
+	      
+	    $html .= '<p>Your transaction ID is: ' . $charge_response->id . '</p>';
+	   
+	    //Our own new details
+	    // Let's add the last four of the card they used and the expiration date
+	    $html .= '<p>Card: ****-****-****-' . $charge_response->source->last4 . '<br>';
+	    $html .= 'Expiration: ' . $charge_response->source->exp_month . '/' . $charge_response->source->exp_year . '</p>';
+	      
+	    // We can show the Address provided - this requires shipping="true" in our shortcode
+	    if( ! empty( $charge_response->source->address_line1 ) ) {
+	        $html .= '<p>Address Line 1: ' . $charge_response->source->address_line1 . '</p>';
+	    }
+	      
+	    if( ! empty( $charge_response->source->address_line2 ) ) {
+	        $html .= '<p>Address Line 2: ' . $charge_response->source->address_line2 . '</p>';
+	    }
+	      
+	    if( ! empty( $charge_response->source->address_city ) ) {
+	        $html .= '<p>Address City: ' . $charge_response->source->address_city . '</p>';
+	    }
+	      
+	    if( ! empty( $charge_response->source->address_state ) ) {
+	        $html .= '<p>Address State: ' . $charge_response->source->address_state . '</p>';
+	    }
+	      
+	    if( ! empty( $charge_response->source->address_zip ) ) {
+	        $html .= '<p>Address Zip: ' . $charge_response->source->address_zip . '</p>';
+	    }
+	      
+	    // Finally we can add the output of a custom field
+	    // For our example shortcode: <div class="sc-form-group"><label for=""phone_number"">"Phone</label><input type="text" value="" class="sc-form-control sc-cf-text" id=""phone_number"" name="sc_form_field["phone_number"]" placeholder=""></div>
+	    if( ! empty( $charge_response->metadata->phone_number ) ) {
+	        $html .= '<p>Phone Number: ' . $charge_response->metadata->phone_number . '</p>';
+	    }
+	      
+	    $html .= '</div>';
+	      
+	    return $html;
+	}
+}
+add_filter( 'sc_payment_details', 'norwalk_sc_donation_thankyou', 20, 2 );
+
+
+
+/*if(!function_exists('norwalk_sc_redirect')){
+	function norwalk_sc_redirect($redirect, $failure){
+		function norwalk_sc_show_charge_result($redirect, $failure){
+			// We do not redirect. We want this to show up on the page
+			// the viewer was looking at when they made the payment.
+			if ($failure){ ?>
+				<script> console.log('Charge considered by Stripe to be potentially fraudulant') </script>;
+			<?php 
+			} else { ?>
+				<script> console.log( 'Charge processed successfully') </script>;
+			<?php
+			}
+
+		}
+		add_action('wp_footer', 'norwalk_sc_show_charge_result', 20, 2);
+		//error_log('$success = ' . $redirect . '     $failure = ' . $failure);
+	}
+}
+add_filter( 'sc_redirect', 'norwalk_sc_redirect', 20, 2 );*/
+
+// function debug_to_console($data) {
+//     if(is_array($data) || is_object($data))
+// 	{
+// 		echo("<script>console.log('PHP: ".json_encode($data)."');</script>");
+// 	} else {
+// 		echo("<script>console.log('PHP: ".$data."');</script>");
+// 	}
+// }
 
 
 
@@ -852,11 +946,29 @@ if (!function_exists('norwalk_exclude_categories')) {
 
 
 
+/* 
+
+ *********************************************************
+ *********************************************************
 
 
 
 
 
+				#####  ###### #####  #####  ######  ####    ##   ##### ###### #####  
+				#    # #      #    # #    # #      #    #  #  #    #   #      #    # 
+				#    # #####  #    # #    # #####  #      #    #   #   #####  #    # 
+				#    # #      #####  #####  #      #      ######   #   #      #    # 
+				#    # #      #      #   #  #      #    # #    #   #   #      #    # 
+				#####  ###### #      #    # ######  ####  #    #   #   ###### #####
+
+
+
+
+ *********************************************************
+ *********************************************************
+
+*/
 
 /**
  * Starkers functions and definitions

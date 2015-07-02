@@ -1,0 +1,45 @@
+<p><strong>We believe independent journalism that focuses on local government is important,</strong> and we think you do too. Please consider showing your support with a donation to NancyOnNorwalk.com.</p>
+<p>Your supporting donation will go towards keeping the lights on, the web server running, and gasoline in the reporter's car.</p>
+<div class="norwalk-tabs">
+	<div class="norwalk-tab one-time first">
+		<h4 class="tab-title" data-tab="one-time">One-time<span class="long-text"> contribution</span><h4>
+		<div class="tab-content">
+		[stripe 
+			description="Tax deductible one-time donation"
+			checkout_button_label="Confirm {{amount}} donation"
+		]
+		[stripe_amount default=25.00]
+		[/stripe]
+		</div><!-- tab content -->
+	</div><!-- tab -->
+	<div class="norwalk-tab monthly default">
+		<h4 class="tab-title" data-tab="monthly">Monthly<span class="long-text"> contribution</span></h4>
+		<div class="tab-content">
+		[stripe 
+			description="Tax deductible monthly donation" 
+			checkout_button_label="Confirm {{amount}} monthly"
+		]
+		[stripe_subscription default="gold"]
+		[stripe_plan id="green" label="Green"]
+		[stripe_plan id="bronze" label="Bronze"]
+		[stripe_plan id="silver" label="Silver"]
+		[stripe_plan id="gold" label="Gold"]
+		[stripe_plan id="platinum" label="Platinum"]
+		[stripe_plan id="norwalker" label="Norwalker"]
+		[/stripe_subscription]
+		[/stripe]
+		</div><!-- tab content -->
+	</div><!-- tab -->
+	<div class="norwalk-tab custom">
+		<h4 class="tab-title" data-tab="custom">Custom<span class="long-text"> contribution</span></h4>
+		<div class="tab-content">
+		[stripe 
+			description="Tax deductible monthly donation"
+			checkout_button_label="Confirm {{amount}} monthly"
+		]
+		[stripe_subscription description="Recurring donation non"]
+		[stripe_amount label="Enter a monthly contribution amount" default=35.00]
+		[/stripe]
+		</div><!-- tab content -->
+	</div><!-- tab -->
+</div>

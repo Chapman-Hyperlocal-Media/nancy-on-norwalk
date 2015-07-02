@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: One column, no sidebar
+ * Template Name: Thank you page
  *
  * @package WordPress
  * @subpackage Starkers
@@ -11,7 +11,7 @@ get_header(); ?>
 <div id="main-content">
 
 	<div class="content">
-	<?php get_template_part( 'loop', 'page' ); ?>
+	<?php get_template_part( 'loop', 'thankyou' ); ?>
 	</div>
 </div>
 

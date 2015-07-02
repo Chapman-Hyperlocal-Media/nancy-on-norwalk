@@ -330,6 +330,61 @@ article.attachment{margin-bottom:0;
 	}
 }
 
+.norwalk-tabs{
+	.tab-button{float:left; position:relative; padding:5px 7px 4px; color:$warm - #444444; background-color:$warm; margin-bottom:-1px; border:1px solid $warm - #444444; border-bottom:0; cursor:pointer; margin-right:2px; -webkit-border-top-left-radius: 3px; -webkit-border-top-right-radius: 3px; -moz-border-radius-topleft: 3px; -moz-border-radius-topright: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px;}
+	.tab-button.active{font-weight:bold; background-color:#fff; color:#000; padding-bottom:5px; border-bottom:0;  padding-bottom:6px;}
+	.tab-button .long-text{display:none;}
+	.tab-button.active .long-text{display:inline;}
+	.tab-title{display:none;} 
+	.norwalk-tab{display:none; clear:left; border:1px solid $warm - #444444; padding:10px 10px 0;}
+	.norwalk-tab.active{display:block;} 
+}
+
+/* Stripe stuff */
+.widget button.sc-payment-btn.stripe-button-el{display:block; margin:0 auto;}
+.widget .sc-checkout-form{text-align:center;}
+.widget .sc-checkout-form .sc-radio-group{text-align:left; margin:0 auto;}
+.widget .sc-checkout-form input[type=radio]{margin-top:2px;}
+.widget .sc-checkout-form input[type=radio] + span{display:block; color:$warm - #444444; margin:1px auto;}
+.widget .sc-checkout-form input[type=radio]:checked + span{font-weight:bold; color:#000;}
+.sc-payment-btn.stripe-button-el > span{padding-right:0;}
+.sc-payment-btn.stripe-button-el > span img{display:inline-block; vertical-align:middle; width:30px; height:30px; margin-top:-2px; box-shadow:none !important;}
+.sc-payment-btn.stripe-button-el > span img.progress-spin{display:none;}
+.sc-payment-btn.stripe-button-el.stripe-on > span img.progress-start{display:none;}
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.sc-payment-btn.stripe-button-el.stripe-on > span img.progress-spin{display:inline-block; -webkit-animation: rotating 0.5s linear infinite; -moz-animation: rotating 0.5s linear infinite; -ms-animation: rotating 0.5s linear infinite; -o-animation: rotating 0.5s linear infinite; animation: rotating 0.5s linear infinite; }
+
 #comments-section, 
 #idc-container-parent{@include margins(1,0,1,0); position:relative; float:left; clear:left; padding-top:0; margin-top:percentage($column-width * 0.5);
 	.comment-admin-message{padding: percentage($column-width * 2); font-family: arial, Helvetica, sans-serif; font-size:1em; background-color: #EBF3BD; color: #558833;
@@ -447,7 +502,19 @@ article.attachment{margin-bottom:0;
 .page-template-search-page-php{
 	#logo{margin-bottom:0; }
 }
+.page.page-template-thankyou-page{
+	.content{		
+		@include columns(48, 1,8,1,7); 
+	}
+	#mainfoot{clear:both;}
+	.story-head{clear:none;}
+	.the-content{@include columns(28, 1,1,1,0);}
+	img.portrait{@include maxWidthColumns(20, 1,0,1,1); margin-left:percentage($column-width * 1); float:right;}
+	.post-title{font-size:14em; letter-spacing:-4px; @include columns(28, 1,1,0,0); margin-bottom:0;}
+}
 .button-paypal{text-align:center; }
+
+.sc-payment-details-wrap{margin-top:20px;}
 
 
 @import '_wallpaper-ad.scss';

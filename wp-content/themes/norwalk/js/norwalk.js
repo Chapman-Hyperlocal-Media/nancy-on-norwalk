@@ -103,6 +103,31 @@ showNav = function(e){
 	$(args).on('click tap touchstart', null, args, hideNav );
 }
 
+norwalkTabsInit = function(e){
+	var $tabGroups = $('div.norwalk-tabs');
+	$tabGroups.each(function(){
+		var $tabs = $(this);
+		$tabs.find('.tab-title').each(function(){
+			var $title = $(this),
+				target = $title.data('tab'),
+				text = $title.html(),
+				isDefault = $title.parent().hasClass('default') ? true : false,
+				buttonClass = isDefault ? 'tab-button active' : 'tab-button';
+			$('<div class="'+ buttonClass +'" data-target="' + target + '">' + text + '</div>').insertBefore($title.closest('div.norwalk-tabs').children('.norwalk-tab.first'));
+			$tabs.find('.default').addClass('active');
+		});
+		var $tabButtons = $tabs.find('div.tab-button');
+		$tabButtons.click(function(){
+			var $button = $(this),
+				$target = $button.parent().find('div.' + $button.data('target'));
+			if (!$target.hasClass('active')){
+				$tabs.children('div.norwalk-tab, div.tab-button').removeClass('active');
+				$target.add($button).addClass('active');
+			}
+		})
+	})
+}
+
 mobileAdCheck = function(e){
 	var documentWidth = $document.width();
 	if( documentWidth < 801) {
@@ -238,6 +263,27 @@ $(document).ready(function(e) {
 	$('#main-nextprev').appendTo('#main-nav').attr('style', '');	
 
 	$('#nav-label, #nav-label > object').on('click tap', null, null, showNav); 
+
+	if($('div.norwalk-tabs').length > 0){
+		norwalkTabsInit();
+	} else {console.log('no tabs found')}
+
+	$('button.sc-payment-btn.stripe-button-el').click(function(){
+		var $this = $(this);
+		if (!$this.parents('html').hasClass('cssanimations')){
+			//skip this whole thing if the browser can't do a css animation
+			return;
+		}
+		$(this).addClass('stripe-on');
+		function stripeCheck(el){
+			if (!$('.stripe_checkout_app').is(":visible")){
+				el.removeClass('stripe-on');
+				return;
+			}
+			setTimeout(stripeCheck, 500, $this);
+		}
+		stripeCheck();
+	});
 
 });
 
