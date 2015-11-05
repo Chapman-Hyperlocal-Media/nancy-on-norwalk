@@ -19,6 +19,9 @@
     // Loop counting, for mobile ad placement.
     $loop_num = 0;
     $mobile_ads_slot = 1;
+    $mobile_ad_codes = [];
+    $TEST_mobile_ad_codes = [44988, 44989];
+    $mobile_ad_codes = $TEST_mobile_ad_codes;
 
     // Special query for main page to exclude certain categories.
     if (is_home()){
@@ -216,10 +219,12 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
          *  when document width makes it appropriate.
          */
     ?>
-    <div id="mobile-ad-slot-<?php echo $mobile_ads_slot; ?>" class="mobile-ad-slot post">
-        <p class="ad-label">Advertisement</p>
-    </div>
-
+    <?php if (!empty($mobile_ad_codes) && count($mobile_ad_codes)){  ?>
+        <div id="mobile-ad-slot-<?php echo $mobile_ads_slot; ?>" class="mobile-ad-slot post">
+            <p class="ad-label">Advertisement</p>
+            <script type="text/javascript">broadstreet.zone(<?php echo array_shift($TEST_mobile_ad_codes); ?>);</script>
+        </div>
+    <?php } ?>
     <?php 
         $mobile_ads_slot++;
 

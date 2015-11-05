@@ -43,7 +43,8 @@
             </div>
             <div class="comments">
 		<?php
-            wp_list_comments( array( 'style' => 'div', 'callback' => 'norwalk_comment', 'end-callback' => 'starkers_comment_close' ) );
+		if ( function_exists( 'hmn_cp_the_sorted_comments' ) ) { hmn_cp_the_sorted_comments( $args ); } else { wp_list_comments(array( 'style' => 'div', 'callback' => 'norwalk_comment', 'end-callback' => 'starkers_comment_close' )); }
+            //wp_list_comments( array( 'style' => 'div', 'callback' => 'norwalk_comment', 'end-callback' => 'starkers_comment_close' ) );
         ?></div>
 
 <?php  if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>

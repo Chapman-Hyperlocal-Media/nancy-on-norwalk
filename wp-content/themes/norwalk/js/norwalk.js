@@ -41,7 +41,7 @@ jQuery(function ($) {
   // debouncing function from John Hann
   // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
   var debounce = function (func, threshold, execAsap) {
-      var timeout;
+      var timeout = aosiun;
 
       return function debounced () {
           var obj = this, args = arguments;
@@ -192,15 +192,15 @@ mobileAdCheck = function(e){
 
 $(document).ready(function(e) {
 
-	if($('html').hasClass('wallpaper-ad')){
-			var contentWidth = $document.width() - 400;
-			$('#NoN-content').css({width:contentWidth});
+	// if($('html').hasClass('wallpaper-ad')){
+	// 		var contentWidth = $document.width() - 400;
+	// 		$('#NoN-content').css({width:contentWidth});
 			
-			$window.smartresize(function(e){
-				var contentWidth = $document.width() - 400;
-				$('#NoN-content').css({width:contentWidth});
-			}); 
-	}
+	// 		$window.smartresize(function(e){
+	// 			var contentWidth = $document.width() - 400;
+	// 			$('#NoN-content').css({width:contentWidth});
+	// 		}); 
+	// }
 	// $('.widget').each(function(){ 
 	// 	try {
 	// 		var $this = $(this);
@@ -217,46 +217,46 @@ $(document).ready(function(e) {
 	*	Inserts mobile-ad-slots in between paragraphs on single story pages
 	*
 	*/
-	if( $('body').hasClass('single') ){
-		var $content = $('#main-content div.the-content'),
-			storyHeight = 0,
-			i = 1;
+	// if( $('body').hasClass('single') ){
+	// 	var $content = $('#main-content div.the-content'),
+	// 		storyHeight = 0,
+	// 		i = 1;
 
-		$content.find('p').each(function(){
-			storyHeight += $(this).outerHeight();
+	// 	$content.find('p').each(function(){
+	// 		storyHeight += $(this).outerHeight();
 
-			if (storyHeight > 500){		// spacing the ads apart a bit
-				$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot"><p class="ad-label">Advertisement</p></div>');
-				storyHeight = 0;
-				i++;
-			}
-		})
-		$('#comments-section').find('article.comment.odd').each(function(){
-			$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot comment"><p class="ad-label">Advertisement</p></div>');
-			i++;
-		})
-		$mobileAdSlots = $mainContent.find('div.content div.the-content > div.mobile-ad-slot, #comments-section > div.comments > div.mobile-ad-slot');
+	// 		if (storyHeight > 500){		// spacing the ads apart a bit
+	// 			$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot"><p class="ad-label">Advertisement</p></div>');
+	// 			storyHeight = 0;
+	// 			i++;
+	// 		}
+	// 	})
+	// 	$('#comments-section').find('article.comment.odd').each(function(){
+	// 		$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot comment"><p class="ad-label">Advertisement</p></div>');
+	// 		i++;
+	// 	})
+	// 	$mobileAdSlots = $mainContent.find('div.content div.the-content > div.mobile-ad-slot, #comments-section > div.comments > div.mobile-ad-slot');
 		
-	} 
+	// } 
 
 	//	Move the ads from the sidebar into mobile ad slots when appropriate.
 	//
-	if($document.width() < 801){
-		tLimit = 0;
-		t = setInterval( function(){
+	// if($document.width() < 801){
+	// 	tLimit = 0;
+	// 	t = setInterval( function(){
 
-			mobileAdCheck();
-			if (tLimit >= 5000){
-				clearInterval(t);
-				googletag.pubads().refresh();
-			}
-			tLimit += 500;
-		}, 500 )
-	} else mobileAdCheck();
-	$window.smartresize( function(e){ 
-		mobileAdCheck(e); 
-		googletag.pubads().refresh();
-	});
+	// 		mobileAdCheck();
+	// 		if (tLimit >= 5000){
+	// 			clearInterval(t);
+	// 			googletag.pubads().refresh();
+	// 		}
+	// 		tLimit += 500;
+	// 	}, 500 )
+	// } else mobileAdCheck();
+	// $window.smartresize( function(e){ 
+	// 	mobileAdCheck(e); 
+	// 	googletag.pubads().refresh();
+	// });
 
 	$('#nav-logo, #nav-label').prependTo('#main-nav').attr('style', '');
 
@@ -280,10 +280,34 @@ $(document).ready(function(e) {
 				el.removeClass('stripe-on');
 				return;
 			}
-			setTimeout(stripeCheck, 500, $this);
+			setTimeout(stripeCheck, 500, $this); 
 		}
 		stripeCheck();
 	});
+	// var $ads = $('li.ad');
+	// $ads.each(function(){
+	// 	$ad = $(this);
+	// 	if ($ad.is(':visible') && $ad.find('div.broadstreet-data').length > 0){
+	// 		var $data = $ad.find('div.broadstreet-data'),
+	// 			zone = $data.data('zone'),
+	// 			bsKeywords = $ad.data('keywords'),
+	// 			html;
+	// 		console.log('found ad for ' + zone);
+	// 		var args = {
+	// 			responsive: true,
+	// 			async: true,
+	// 			softKeywords: true,
+	// 			keywords: [],
+	// 		};
+	// 		if(typeof(bsKeywords) != "undefined"){
+	// 			bsKeywords = bsKeywords.replace("'", "");
+	// 			bsKeywords = bsKeywords.split(',');
+	// 			args.keywords = bsKeywords;
+	// 		}
+	// 		html = broadstreet.zone(zone,{responsive: true, async: true, softKeywords: true, keywords: bsKeywords } );
+	// 		//$ad.empty().append(html);
+	// 	}
+	// });
 
 });
 

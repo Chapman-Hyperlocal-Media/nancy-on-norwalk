@@ -9,6 +9,11 @@
 
 /** Tell WordPress to run norwalk_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'norwalk_setup' );
+// function norwalk_comment_popularity(){
+// 	error_log("FUCKBALLS");
+// 	remove_filter( 'comments_template', array( 'HMN_Comment_Popularity', 'custom_comments_template' ) ); 
+// }
+// add_action( 'after_setup_theme', 'norwalk_comment_popularity', 100);
 
 if ( ! function_exists( 'norwalk_setup' ) ):
 /**
@@ -17,7 +22,6 @@ if ( ! function_exists( 'norwalk_setup' ) ):
  * @since Norwalk 1.0
  */
 function norwalk_setup() {
-
 	// Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
 	//add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
 
