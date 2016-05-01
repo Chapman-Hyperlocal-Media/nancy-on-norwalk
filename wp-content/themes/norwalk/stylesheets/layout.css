@@ -3116,7 +3116,7 @@ article.attachment .parent-link .parent-title {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ericchapman\/Dropbox\/mamp\/nancy-on-norwalk\/wp-content\/themes\/norwalk\/sass\/_ads\.scss}line{font-family:\0000315}}
-.top-content-ad-2 + .post {
+.top-content-ads-container + .post {
   border-top: none;
 }
 
