@@ -6,6 +6,21 @@
 	.goog-ad{ margin:20px auto; width:300px;}
 }
 
+.top-content-ad{
+	display:inline-block;
+}
+.top-content-ad-2+.post{
+	border-top:none;
+}
+
+@media only screen and (max-width: 767px){
+	.top-content-ad{
+		display:block;
+		margin: 0 auto 5%;
+		width: 300px;
+	}
+}
+
 @media only screen and (max-width:342px){
 	.mobile-ad-slot{ width:112.76596%; margin-left:-6.38298%; }
 }

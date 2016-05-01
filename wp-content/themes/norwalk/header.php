@@ -45,7 +45,7 @@
     wp_enqueue_script('jquery');
 		//wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js', 'jquery');
     wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/norwalk.js', 'jquery');
-		wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.custom.99437.js');
+    wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.custom.99437.js');
     wp_enqueue_script('norwalk-ads', get_template_directory_uri() . '/js/min/norwalk-ads.min.js', 'jquery');
     wp_enqueue_style('reset', get_template_directory_uri() . '/stylesheets/reset.css');
     wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css', 'reset');
