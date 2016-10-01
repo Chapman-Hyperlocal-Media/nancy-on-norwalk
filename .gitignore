@@ -175,6 +175,7 @@ wp-content/themes/twentyten/
 wp-content/themes/twentyeleven/
 wp-content/themes/twentytwelve/
 wp-content/themes/twentythirteen/
+wp-content/themes/twentyfifteen/
 wp-content/plugins/*
 wp-content/cache/
 !wp-content/plugins/code-block-widget/
@@ -272,6 +273,7 @@ advanced-cache.php
 wp-cache-config.php
 package.json
 gruntfile.js
+.idea
 
 #other unnecessary crapola
 cgi-bin/
