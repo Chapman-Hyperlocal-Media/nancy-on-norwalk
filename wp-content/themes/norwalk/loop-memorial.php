@@ -57,6 +57,11 @@
 			</footer>
 		</article>
 
-				<?php //comments_template( '', true ); ?>
+			<?php if (have_comments() || comments_open()){ ?>
+        <a name="comments"></a>
+        
+
+			<?php comments_template( '', true ); 
+			}?>
 
 <?php endwhile; ?>
