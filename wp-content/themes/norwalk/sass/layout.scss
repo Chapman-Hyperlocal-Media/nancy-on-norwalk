@@ -516,6 +516,20 @@ article.attachment{margin-bottom:0;
 
 .sc-payment-details-wrap{margin-top:20px;}
 
+.page.page-template-memorial-page{
+	.content{		
+		@include columns(47, 1,7,1,7); 
+	}
+	#mainfoot{clear:both;}
+	.story-head{clear:none;}
+	.the-content{
+		@include columns(48, 1,0,1,0);
+
+		& > p{max-width: 660px; margin-left: auto; margin-right: auto; letter-spacing:0.1px;}
+	}
+	.img-container, .wp-caption{margin-top: percentage($column-width * 1.0); }
+	.post-title{font-size:9em; margin-bottom:0;}
+}
 
 @import '_wallpaper-ad.scss';
 @import '_media-queries.scss';

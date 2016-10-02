@@ -134,12 +134,18 @@
 }
 @media screen and (max-width:767px){
 	.page.page-template-thankyou-page{
+		.content{@include columns(47, 4,3,4,3); }
 		.page{max-width:400px; margin:0 auto; float:none; clear:none; }
 		.story-head,
 		.the-content{width:100%; padding:2% 0; float:none;}
 		img.portrait{display:block; float:none; margin:0 auto; padding:0; width:100%;}
 		.post-title{width:100%; float:none;}
 	}
+
+	.page.page-template-memorial-page{
+		.content{@include columns(47, 4,3,4,3); }
+	}
+
 	#mainfoot{
 		#site.about,
 		#nancy.about,
@@ -147,6 +153,8 @@
 	}
 }
 @media only screen and (max-width:550px){
+	.wp-caption{ width:100%;}
+	img.size-full{ width: 100%; height: auto;}
 	.norwalk-social-bar{height:42px; margin-bottom:5px;
 		.twitter-share-button, 
 		.fb-like, 
@@ -206,6 +214,7 @@
 		}
 	}
 	.page.page-template-thankyou-page .post-title{font-size:10em;}
+	.page.page-template-memorial-page .post-title{font-size:6em;}
 }
 @media screen and (max-width:400px){
 	.page.page-template-thankyou-page .post-title{font-size:8em; letter-spacing:-2px;}
