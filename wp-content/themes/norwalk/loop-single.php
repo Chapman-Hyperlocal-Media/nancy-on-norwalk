@@ -26,8 +26,8 @@
 
 				<?php if (!is_page()) norwalk_meta('meta top', 'top'); ?>
                 <div class="norwalk-social-bar">
-					<?php norwalk_tweet_button(); ?>
-					<?php norwalk_googleplus_button(); ?>
+										<?php norwalk_tweet_button(); ?>
+										<?php norwalk_googleplus_button(); ?>
                     <?php norwalk_facebook_like(); ?>
                     
                 </div>
@@ -48,12 +48,8 @@
 			<?php endif; ?>
 			
 			<footer class="story-foot">
-            	<div class="norwalk-social-bar">
-					<?php norwalk_tweet_button(); ?>
-					<?php norwalk_googleplus_button(); ?>
-                    <?php norwalk_facebook_like(); ?>
-                </div>
-            </footer>
+	    		<?php if (function_exists('norwalk_social_bar')) norwalk_social_bar(); ?>
+      </footer>
 				
 		</article>
 

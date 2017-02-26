@@ -8,61 +8,68 @@
  * located in the functions.php file.
  *
  * @package WordPress
- * @subpackage Starkers
- * @since Starkers HTML5 3.0
+ * @subpackage Norwalk
+ * @since Norwalk 1.2.5
  */
-?>
-<div id="comments-section">
-<?php if ( post_password_required() ) : ?>
-				<p><?php _e( 'This post is password protected. Enter the password to view any comments.', 'norwalk' ); ?></p>
-<?php
-		return;
-	endif;
+
+if ( post_password_required() ) {
+	return;
+}
 ?>
 
-<?php
-	// You can start editing here -- including this comment!
-?>
+<div id="comments" class="comments-area">
 
-<?php if ( have_comments() ) : ?>
-			<?php /* STARKERS NOTE: The following h3 id is left intact so that comments can be referenced on the page */ ?>
-			<div id="comment-section-head">
-                <h3 id="comments-title"><?php
-                printf( _n( 'One comment', '%1$s comments', get_comments_number(), 'norwalk' ),
-                number_format_i18n( get_comments_number() ));
-                ?></h3>
+	<?php if ( have_comments() ) : ?>
+		<h3 class="comments-title">
+			<?php
+				$comments_number = get_comments_number();
+				if ( 1 === $comments_number ) {
+					/* translators: %s: post title */
+					printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'twentysixteen' ), get_the_title() );
+				} else {
+					printf(
+						/* translators: 1: number of comments, 2: post title */
+						_nx(
+							'%1$s comment',
+							'%1$s comments',
+							$comments_number,
+							'comments title',
+							'twentysixteen'
+						),
+						number_format_i18n( $comments_number )
+					);
+				}
+			?>
+		</h3>
 
+		<?php the_comments_navigation(); ?>
 
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-	<nav class="comment-nav">
-    	<a href="#prevcomm" name="prevcomm">&larr; Older Comments</a><a href="#nextcomm" name="nextcomm">Newer Comments &rarr;</a>
-		<?php previous_comments_link( __( '&larr; Older Comments', 'norwalk' ) ); ?>
-		<?php next_comments_link( __( 'Newer Comments &rarr;', 'norwalk' ) ); ?>
-	</nav>
-<?php endif; // check for comment navigation ?>
-            </div>
-            <div class="comments">
-		<?php
-            wp_list_comments( array( 'style' => 'div', 'callback' => 'norwalk_comment', 'end-callback' => 'starkers_comment_close' ) );
-        ?></div>
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 0,
+				) );
+			?>
+		</ol><!-- .comment-list -->
 
-<?php  if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-	<nav class="comment-nav">
-    	<a href="#prevcomm" name="prevcomm">&larr; Older Comments</a>
-        <a href="#nextcomm" name="nextcomm">Newer Comments &rarr;</a>
-		<?php previous_comments_link( __( '&larr; Older Comments', 'starkers' ) ); ?>
-		<?php next_comments_link( __( 'Newer Comments &rarr;', 'starkers' ) ); ?>
-	</nav>
-<?php endif; // check for comment navigation ?>
+		<?php the_comments_navigation(); ?>
 
-<?php else : // or, if we don't have comments:
+	<?php endif; // Check for have_comments(). ?>
 
-	if ( ! comments_open() ) :
-?>
-	<p><?php _e( 'Comments are closed.', 'starkers' ); ?></p>
-<?php endif; // end ! comments_open() ?>
+	<?php
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'twentysixteen' ); ?></p>
+	<?php endif; ?>
 
-<?php endif; // end have_comments() ?>
+	<?php
+		comment_form( array(
+			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+			'title_reply_after'  => '</h2>',
+		) );
+	?>
 
-<?php norwalk_comment_form(); ?>
-</div>
+</div><!-- .comments-area -->
