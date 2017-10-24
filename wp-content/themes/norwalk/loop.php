@@ -24,7 +24,8 @@
     if (is_home()){
         $categories = get_terms(array('category', 'nav_menu'), 
             array('exclude' => array(
-                790 // State
+                790, // State
+                7070 // Press Releases
             )
         ));
         $category_ids = array();
