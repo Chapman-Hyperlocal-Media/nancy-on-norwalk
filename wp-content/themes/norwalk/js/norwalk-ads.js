@@ -26,6 +26,8 @@ googletag.cmd.push(function() {
     googletag.defineSlot('/1732998/NancyOnNorwalk-lower-sidebar', [300, 250], 'div-gpt-ad-1508819195998-5').addService(googletag.pubads());
     googletag.defineSlot('/1732998/NancyOnNorwalk_extra_300x250_ad_3', [300, 250], 'div-gpt-ad-1508819195998-6').addService(googletag.pubads());
     googletag.defineSlot('/1732998/Nancy_on_Norwalk_bottom_sidebar_large_rectangle_ad', [300, 250], 'div-gpt-ad-1508819195998-7').addService(googletag.pubads());
+    googletag.defineSlot('/1732998/NancyOnNorwalk_extra_300x250_ad_4', [300, 250], 'div-gpt-ad-1509508957615-0').addService(googletag.pubads());
+    googletag.defineSlot('/1732998/NancyOnNorwalk_extra_300x250_ad_5', [300, 250], 'div-gpt-ad-1509508957615-1').addService(googletag.pubads());
 
 //
 //	Independant Media Network Google ad tags
