@@ -109,7 +109,7 @@ stylecop.*
 Generated_Code #added for RIA/Silverlight projects
 
 # Backup & report files from converting an old project file to a newer
-# Visual Studio version. Backup files are not needed, because we have 
+# Visual Studio version. Backup files are not needed, because we have
 git ;-)
 _UpgradeReport_Files/
 Backup*/
@@ -283,9 +283,37 @@ cgi-bin/
 
 .sass-cache/
 
-# Comps, images, 
-# other unnecessary stuff 
+# Comps, images,
+#other unnecessary crapola
+cgi-bin/
+.smileys/
+
+.sass-cache/
+
+# Comps, images,
+# other unnecessary stuff
 *.psd
 *.ai
 *.tmp
 *.zip
+
+*.log
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
+wp-content/themes/twentyseventeen/
+wp-content/themes/twentysixteen/
