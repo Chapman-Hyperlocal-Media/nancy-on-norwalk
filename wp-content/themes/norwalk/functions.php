@@ -434,7 +434,7 @@ if (!function_exists('norwalk_custom_byline_box')){
 		global $post;
 		$id = $post->ID; ?>
     	<p>	<label for="custom-byline">Use this name:</label>
-        	<input type="text" value="<?php	echo wp_specialchars( get_post_meta( $id, 'custom-byline', true ), 1 ); ?>" name="custom-byline" id="custom-byline" size="25">
+        	<input type="text" value="<?php	echo esc_html( get_post_meta( $id, 'custom-byline', true )); ?>" name="custom-byline" id="custom-byline" size="25">
             <?php wp_nonce_field('custom-byline-field','verify-that-shit'); ?>
         </p>
     <?php
@@ -444,6 +444,15 @@ if (!function_exists('norwalk_custom_byline_box')){
 if (!function_exists('norwalk_save_byline')){
 	function norwalk_save_byline(){
 		global $post;
+        if (!is_object($post)) {
+            return;
+        }
+        if ($post->type == 'page') {
+            return;
+        }
+        if (empty($_POST['custom-byline'])) {
+            return;
+        }
 		$id = $post->ID;
 		
 	/*	if ( !wp_verify_nonce( $_POST['verify-that-shit'], 'custom-byline-field' ) ) return $post_id;

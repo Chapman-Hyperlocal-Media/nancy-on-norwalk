@@ -1,17 +1,19 @@
 <?php
 /**
- * Template Name: Memorial page
+ * Template Name: Full-width blank page
  *
  * @package WordPress
  * @subpackage Starkers
- * @since Norwalk 1.2.5
+ * @since Norwalk 1.2.6
  */
 
 get_header(); ?>
 <div id="main-content">
     <div class="facebook-hide" style="display:none !important;"><?php norwalk_facebook_like(); ?></div>
 	<div class="content">
-	<?php get_template_part( 'loop', 'memorial' ); ?>
+	<?php
+        get_template_part( 'loop', 'blank' );
+        ?>
 	</div>
 </div>
 
