@@ -7,6 +7,14 @@
   *
   */
 
+$component_dirs = glob(get_template_directory() . '/components/*', GLOB_ONLYDIR);
+foreach($component_dirs as $dir) {
+    $component_files = glob($dir . '/*.php');
+    foreach($component_files as $component) {
+        require $component;
+    }
+}
+
 /** Tell WordPress to run norwalk_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'norwalk_setup' );
 
@@ -239,6 +247,24 @@ function norwalk_sidebar_fallback(){?>
                 </div>
 			</li>
 <?php }
+
+if ( !function_exists('norwalk_exclude_categories')) {
+    function norwalk_exclude_categories($cat_ids = array()) {
+        $categories = get_terms(
+            array('category', 'nav_menu'),
+            array('exclude' => $cat_ids)
+        );
+        $category_ids = array();
+        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+        foreach ($categories as $category) {
+            array_push($category_ids, $category->term_id);
+        }
+        $new_query = new WP_Query( array('category__in' => $category_ids, 'paged' => $paged) );
+        // Wordpress will think this query is an Archive because we specified categories.
+        $new_query->is_archive = false;
+        return $new_query;
+    }
+}
 
 if ( ! function_exists( 'norwalk_posted_on' ) ) :
 /**

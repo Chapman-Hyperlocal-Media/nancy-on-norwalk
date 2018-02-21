@@ -7,43 +7,15 @@
  * @since Starkers HTML5 3.0
  */
 ?>
- 
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php /* if ( $wp_query->max_num_pages > 1 ) : ?>
-    <nav>
-        <?php next_posts_link( __( '&larr; Older posts', 'starkers' ) ); ?>
-        <?php previous_posts_link( __( 'Newer posts &rarr;', 'starkers' ) ); ?>
-    </nav>
-<?php endif;*/ ?>
+
 <?php
     // Loop counting, for mobile ad placement.
     $loop_num = 0;
     $mobile_ads_slot = 1;
 
-    // Special query for main page to exclude certain categories.
-    if (is_home()){
-        $categories = get_terms(array('category', 'nav_menu'), 
-            array('exclude' => array(
-                790, // State
-                7070 // Press Releases
-            )
-        ));
-        $category_ids = array();
-        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-        foreach ($categories as $category) {
-            array_push($category_ids, $category->term_id);
-        }
-        $homepage_query = new WP_Query( array('category__in' => $category_ids, 'paged' => $paged) );
-        // Wordpress will think this query is an Archive because we specified categories. 
-        $homepage_query->is_archive = false;
-        // Switch the main query with the homepage query, for convenience.
-        // after the loop is done, we will switch them back.
-        $main_query = $wp_query;
-        $wp_query = $homepage_query;
-    }
-?>
-<?php /* If there are no posts to display, such as an empty archive page */ ?>
-<?php if ( ! have_posts() ) : ?>
+ /* If there are no posts to display, such as an empty archive page */
+
+ if ( ! have_posts() ) : ?>
         <h1><?php _e( 'Not Found', 'starkers' ); ?></h1>
             <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'norwalk' ); ?></p>
             <?php get_search_form(); ?>
@@ -153,8 +125,8 @@
         </a>   	
         	
             
-<?php /* How to display all other posts. */ ?>            
-    <?php else : ?>
+<?php /* How to display all other posts. */
+    else : ?>
      
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
          
@@ -205,12 +177,11 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
             </footer>
 		</article>
  
-            <?php comments_template( '', true ); ?>
- 
+    <?php comments_template( '', true );
 
-    <?php endif; // This was the if statement that broke the loop into three parts based on post type. ?>
- 
-    <?php   
+    endif; // This was the if statement that broke the loop into three parts based on post type.
+    //
+    //
         /*  mobile ad placements; 
          *  empty divs placed after each story.
          *  Javascript will into these divs from sidebar 
@@ -231,23 +202,13 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
             echo "</ul>";
             $mobile_ads_slot++;
         }*/
-    ?>
-<?php endwhile; // End the loop. Whew. ?>
- 
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if ( $wp_query->max_num_pages > 1 && !is_archive() && !is_search() ) : ?>
+
+endwhile; // End the loop. Whew.
+
+// /* Display navigation to next/previous pages when applicable */
+if ( $wp_query->max_num_pages > 1 && !is_archive() && !is_search() ) : ?>
     <nav class="pagination">
         <?php next_posts_link( __( '&larr; Older posts' ) ); ?>
         <?php previous_posts_link( __( 'Newer posts &rarr;' ) ); ?>
     </nav>
 <?php endif; 
- 
- if (is_home()){
-    //Restore the original main query.
-    if (isset($main_query)) $wp_query = $main_query;
- }
-
-
-
-
-?>

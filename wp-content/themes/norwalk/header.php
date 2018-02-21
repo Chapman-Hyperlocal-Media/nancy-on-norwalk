@@ -31,7 +31,6 @@
  
     ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lte IE 8]>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/stylesheets/ie.css" />
@@ -43,9 +42,8 @@
     //remember to clear cache on live server after modifying these!!
 
     wp_enqueue_script('jquery');
-		//wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js', 'jquery');
     wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/norwalk.js', 'jquery');
-		wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.custom.99437.js');
+    wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.custom.99437.js');
     wp_enqueue_script('norwalk-ads', get_template_directory_uri() . '/js/min/norwalk-ads.min.js', 'jquery');
     wp_enqueue_style('reset', get_template_directory_uri() . '/stylesheets/reset.css');
     wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css', 'reset');
@@ -97,54 +95,5 @@ Begin facebook button code
 End facebook button code
 
 <?php */?>
-<div id="wallpaper-content">
-<div id="NoN-content"> 
-    <header id="mainhead">
-    <h5 id="nav-label" style="display:none;">Navigation<img id="menu-icon" src="<?php echo get_template_directory_uri()?>/images/navMenu.png" width="16px" height="16px"/>
-    </h5>
-    <h6 id="nav-logo" style="display:none;"><a href="<?php echo home_url( '/' );?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">Nancy <span>On Norwalk</span></a></h6>
-    <?php 
-	if(is_single()){
-		echo '<ul id="main-nextprev"  style="display:none;">';
-		$format = '<li id="main-nav-next" class="main-post-nav">%link</li>';
-		$link = '<span title="%title">Previous post</span>';
-		previous_post_link($format, $link);
-		$link = '<span title="%title">Next post</span>';
-		next_post_link($format, $link);
 
-		echo '</ul>';
-	}
-			$main_nav_args = array(
-						'theme_location'  => 'main-nav',
-						'menu'            => 'main-navigation', 
-						'container'       => 'nav', 
-						'container_class' => 'header-nav main-nav', 
-						'container_id'    => 'main-nav',
-						//'menu_class'      => 'main-nav', 
-						//'menu_id'         => '',
-						'echo'            => true,
-						'fallback_cb'     => 'norwalk_default_nav',
-						//'before'          => '',
-						//'after'           => '',
-						//'link_before'     => '',
-						//'link_after'      => '',
-						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-						//'depth'           => 0,
-						//'walker'          => ''
-					);
-			wp_nav_menu($main_nav_args);
-		?>
-
-<?php /*?>        <nav id="main-nav"></nav>
-<?php */?>       
-        <div id="logo">
-        	<hgroup>
-        		<?php if (is_single()) echo "<h2>"; else echo "<h1>" ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span>Nancy</span> On Norwalk</a>
-                <?php if (is_single()) echo "</h2>"; else echo "</h1>" ?>
-	        </hgroup>
-        </div>
-
-
-        <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to the 'starkers_menu' function which can be found in functions.php.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-        <?php /*wp_nav_menu( array( 'container' => 'nav', 'fallback_cb' => 'starkers_menu', 'theme_location' => 'primary' ) );*/ ?>
-</header>
+<?php echo norwalk_navigation(); ?>
