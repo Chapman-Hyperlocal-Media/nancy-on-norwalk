@@ -24,6 +24,8 @@
                     $wp_query = norwalk_exclude_categories($exclude_cats);
                 }
 
+                echo norwalk_loop_banner(58708);
+
                 get_template_part( 'loop', 'index' );
 
                 if (is_home()){

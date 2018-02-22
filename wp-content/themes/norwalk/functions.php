@@ -57,7 +57,32 @@ function norwalk_setup() {
 
 	//allow short codes in widgets 
 	add_filter('widget_text', 'do_shortcode');
+
+	norwalk_register_custom_post_types();
 }
+endif;
+
+
+
+if (!function_exists('norwalk_register_custom_post_types')):
+
+    function norwalk_register_site_text() {
+
+        $site_text_args = array(
+            'label' => __('Site Text', 'norwalk'),
+            'public' => false,
+            'description' => __( 'Text to be used as a part of the site, like in the footer, for example. ', 'norwalk' ),
+            'has_archive' => false,
+            'show_ui' => true,
+        );
+
+        register_post_type('site_text', $site_text_args);
+    }
+
+    function norwalk_register_custom_post_types() {
+        add_action('init', 'norwalk_register_site_text');
+    }
+
 endif;
 
 function norwalk_widgets_init() {
