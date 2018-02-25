@@ -1,139 +1,140 @@
 import './polyfills/requestAnimationFrame-polyfill';
 import './vendor/debounce';
-import './_norwalk-ads';
+
+require('./_norwalk-ads');
+
 
 (($) => {
-    const $window = $(window);
-    const $mainNav = $('#main-nav');
-    const $document = $(document);
-    const $mainContent = $('#main-content');
-    const $sidebar = $mainContent.find('aside.sidebar');
-    const $adSlots = $sidebar.find('li.widget.goog-ad');
-    const $ads = $adSlots.find('div.goog-ad');
-    let $mobileAdSlots = $mainContent.find('div.content > div.mobile-ad-slot');
-    let adsInSidebar = true;
+    $(document).ready(() => {
+        console.log('norwalk js running')
+        const $window = $(window);
+        const $mainNav = $('#main-nav');
+        const $mainContent = $('#main-content');
+        const $sidebar = $mainContent.find('aside.sidebar');
+        const $adSlots = $sidebar.find('li.widget.goog-ad');
+        const $ads = $adSlots.find('div.goog-ad');
+        let $mobileAdSlots = $mainContent.find('div.content > div.mobile-ad-slot');
+        let adsInSidebar = true;
 
-    // $window.smartresize(function(e) {
-    //     var height = $mainNav.outerHeight();
-    // });
+        // $window.smartresize(function(e) {
+        //     var height = $mainNav.outerHeight();
+        // });
 
-    $window.scroll(() => {
-        $mainNav.toggleClass('addLogo', $window.scrollTop() >= 195);
-    });
-
-    let showNav;
-
-    const hideNav = (e) => {
-        let keepGoing = true;
-
-        e.target.parentElement.classList.keys().forEach((key) => {
-            if (key === 'menu-item') {
-                keepGoing = false;
-            }
+        $window.scroll(() => {
+            $mainNav.toggleClass('addLogo', $window.scrollTop() >= 195);
         });
 
-        if (e.target.id !== 'nav-label' && keepGoing) {
-            $mainNav.removeClass('expand');
-            $('#nav-label, #nav-label > object').one('click tap', null, null, showNav);
-        }
-    };
+        let showNav;
 
-    showNav = () => {
-        $mainNav.addClass('expand');
-        const args = '#main-content, #mainhead, #mainfoot';
-        $(args).one('click tap touchstart', null, args, hideNav);
-    };
+        const hideNav = (e) => {
+            let keepGoing = true;
 
-    const norwalkTabsInit = () => {
-        const $tabGroups = $('div.norwalk-tabs');
-        $tabGroups.each(() => {
-            const $tabs = $(this);
-            $tabs.find('.tab-title').each(() => {
-                const $title = $(this);
-                const target = $title.data('tab');
-                const text = $title.html();
-                const isDefault = $title.parent().hasClass('default');
-                const buttonClass = isDefault ? 'tab-button active' : 'tab-button';
-                $(`<div class="${buttonClass}" data-target="${target}">${text}</div>`).insertBefore($title.closest('div.norwalk-tabs').children('.norwalk-tab.first'));
-                $tabs.find('.default').addClass('active');
-            });
-            const $tabButtons = $tabs.find('div.tab-button');
-            $tabButtons.click(() => {
-                const $button = $(this);
-                const $target = $button.parent().find(`div.${$button.data('target')}`);
-                if (!$target.hasClass('active')) {
-                    $tabs.children('div.norwalk-tab, div.tab-button').removeClass('active');
-                    $target.add($button).addClass('active');
+            e.target.parentElement.classList.keys().forEach((key) => {
+                if (key === 'menu-item') {
+                    keepGoing = false;
                 }
             });
-        });
-    };
 
-    const mobileAdCheck = () => {
-        const documentWidth = $document.width();
-        if (documentWidth < 801) {
-            let slotNum = 0;
-            let newSlot = false;
+            if (e.target.id !== 'nav-label' && keepGoing) {
+                $mainNav.removeClass('expand');
+                $('#nav-label, #nav-label > object').one('click tap', null, null, showNav);
+            }
+        };
 
-            $ads.each(() => {
-                $(this).appendTo($mobileAdSlots[slotNum]);
-                //
-                // check to see if element is filled and mark it if so.
-                //
-                const $thisSlot = $mobileAdSlots.eq(slotNum);
-                let slotEmpty = true;
-                $thisSlot.find('.goog-ad').each(() => {
-                    slotEmpty = $.trim($(this).html()) === '';
-                    if (!slotEmpty && !$thisSlot.hasClass('filled')) {
-                        $thisSlot.addClass('filled');
-                    }
+        showNav = () => {
+            $mainNav.addClass('expand');
+            const args = '#main-content, #mainhead, #mainfoot';
+            $(args).one('click tap touchstart', null, args, hideNav);
+        };
 
-                    if (newSlot) {
-                        slotNum += 1;
-                        newSlot = false;
-                    }
-                    else {
-                        newSlot = true;
+        const norwalkTabsInit = () => {
+            const $tabGroups = $('div.norwalk-tabs');
+            $tabGroups.each(() => {
+                const $tabs = $(this);
+                $tabs.find('.tab-title').each(() => {
+                    const $title = $(this);
+                    const target = $title.data('tab');
+                    const text = $title.html();
+                    const isDefault = $title.parent().hasClass('default');
+                    const buttonClass = isDefault ? 'tab-button active' : 'tab-button';
+                    $(`<div class="${buttonClass}" data-target="${target}">${text}</div>`).insertBefore($title.closest('div.norwalk-tabs').children('.norwalk-tab.first'));
+                    $tabs.find('.default').addClass('active');
+                });
+                const $tabButtons = $tabs.find('div.tab-button');
+                $tabButtons.click(() => {
+                    const $button = $(this);
+                    const $target = $button.parent().find(`div.${$button.data('target')}`);
+                    if (!$target.hasClass('active')) {
+                        $tabs.children('div.norwalk-tab, div.tab-button').removeClass('active');
+                        $target.add($button).addClass('active');
                     }
                 });
             });
+        };
 
-            googletag.pubads().refresh();
-            adsInSidebar = false;
-            googletag.enableServices();
-        }
-        else if (!adsInSidebar && documentWidth >= 801) {
-            let slotNum = 0;
+        const isDesktop = width => width >= 800;
+        const getOrientation = (width, height) => {
+            if (height > width) return 'portrait';
+            return 'desktop';
+        };
 
-            //
-            // Remove the filled marker
-            //
-            $ads.each(() => {
-                $(this).appendTo($adSlots[slotNum]);
-                const $thisSlot = $mobileAdSlots.eq(slotNum);
+        const mobileAdCheck = (width, currentAdMode = 'desktop') => {
+            if (!isDesktop(width)) {
+                let slotNum = 0;
+                let newSlot = false;
 
-                if ($thisSlot.hasClass('filled')) {
-                    $thisSlot.removeClass('filled');
-                }
-                slotNum += 1;
-            });
+                $ads.each(() => {
+                    $(this).appendTo($mobileAdSlots[slotNum]);
+                    //
+                    // check to see if element is filled and mark it if so.
+                    //
+                    const $thisSlot = $mobileAdSlots.eq(slotNum);
+                    let slotEmpty = true;
+                    $thisSlot.find('.goog-ad').each(() => {
+                        slotEmpty = $.trim($(this).html()) === '';
+                        if (!slotEmpty && !$thisSlot.hasClass('filled')) {
+                            $thisSlot.addClass('filled');
+                        }
 
-            googletag.pubads().refresh();
-            adsInSidebar = true;
-            googletag.enableServices();
-        }
-    };
+                        if (newSlot) {
+                            slotNum += 1;
+                            newSlot = false;
+                        }
+                        else {
+                            newSlot = true;
+                        }
+                    });
+                });
 
-    $(document).ready(() => {
-        if ($('html').hasClass('wallpaper-ad')) {
-            let contentWidth = $document.width() - 400;
-            $('#NoN-content').css({ width: contentWidth });
+                googletag.pubads().refresh();
+                adsInSidebar = false;
+                googletag.enableServices();
+                return 'mobile';
+            }
 
-            $window.smartresize(() => {
-                contentWidth = $document.width() - 400;
-                $('#NoN-content').css({ width: contentWidth });
-            });
-        }
+            if (!adsInSidebar) {
+                let slotNum = 0;
+                //
+                // Remove the filled marker
+                //
+                $ads.each(() => {
+                    $(this).appendTo($adSlots[slotNum]);
+                    const $thisSlot = $mobileAdSlots.eq(slotNum);
+
+                    if ($thisSlot.hasClass('filled')) {
+                        $thisSlot.removeClass('filled');
+                    }
+                    slotNum += 1;
+                });
+
+                googletag.pubads().refresh();
+                adsInSidebar = true;
+                googletag.enableServices();
+                return 'desktop';
+            }
+
+            return currentAdMode;
+        };
 
         /*
          *   Mobile ad placement code
@@ -168,11 +169,16 @@ import './_norwalk-ads';
 
         //  Move the ads from the sidebar into mobile ad slots when appropriate.
         //
-        if ($document.width() < 801) {
-            tLimit = 0;
-            t = setInterval(() => {
+        let tLimit = 0;
+        let t;
+        let viewport = $window.innerWidth;
+        let height = $window.innerHeight;
+        let currentAdMode;
+        let orientation = getOrientation(viewport, height);
 
-                mobileAdCheck();
+        if (!isDesktop(viewport)) {
+            t = setInterval(() => {
+                currentAdMode = mobileAdCheck(viewport);
                 if (tLimit >= 5000) {
                     clearInterval(t);
                     googletag.pubads().refresh();
@@ -180,10 +186,20 @@ import './_norwalk-ads';
                 tLimit += 500;
             }, 500);
         }
-        else mobileAdCheck();
-        $window.smartresize((e) => {
-            mobileAdCheck(e);
-            googletag.pubads().refresh();
+        else currentAdMode = mobileAdCheck(viewport);
+
+        $window.smartresize(() => {
+            const newViewport = $window.innerWidth;
+            const newHeight = $window.innerHeight;
+            const newOrientation = getOrientation(newViewport, newHeight);
+            if ((currentAdMode === 'desktop') !== (isDesktop(newViewport)) ||
+                (!isDesktop(newViewport) && orientation !== newOrientation)) {
+                currentAdMode = mobileAdCheck(newViewport, currentAdMode);
+                googletag.pubads().refresh();
+            }
+            viewport = newViewport;
+            height = newHeight;
+            orientation = newOrientation;
         });
 
         $('#nav-logo, #nav-label').prependTo('#main-nav').attr('style', '');
@@ -206,6 +222,7 @@ import './_norwalk-ads';
                 return;
             }
             $this.addClass('stripe-on');
+
             function stripeCheck(el) {
                 if (!$('.stripe_checkout_app').is(':visible')) {
                     el.removeClass('stripe-on');
@@ -213,6 +230,7 @@ import './_norwalk-ads';
                 }
                 setTimeout(stripeCheck, 500, $this);
             }
+
             stripeCheck();
         });
     });
