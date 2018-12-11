@@ -594,22 +594,12 @@ if (!function_exists('norwalk_facebook_like')){
 /*<div  data-share="true"></div>*/
 
 if (!function_exists('norwalk_googleplus_button')){
-	function norwalk_googleplus_button($echo = true, $target = false, $size = 'medium', $annotation = 'bubble', $width = NULL ){
-		if ($target) $href = ' data-href="' . $target . '"';
-		else $href = ' data-href="' . get_permalink() . '"';
-		$size = ' data-size="' . $size . '"';
-		if($annotation == 'inline' && $width != NULL){
-			$width = ' data-width="' . $width . '"';
-			$annotation = ' data-annotation="' . $annotation . '"' . $width . '"';
-		}
-		else $annotation = ' data-annotation="' . $annotation . '"';
-		
-		
-		$button = '<div style="float:left;"><div class="g-plusone"' . $href . $size . $annotation . '></div></div>';
-		if ($echo) echo $button;
-		else return $button;
+	function norwalk_googleplus_button(){
+	    // G+ iz ded. Legacy noop.
+		return '';
 	}
 }
+
 if (!function_exists('trim_excerpt')){
 	function trim_excerpt($limit) {
 	  $excerpt = explode(' ', get_the_excerpt(), $limit);
