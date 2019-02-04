@@ -51,11 +51,11 @@ function norwalk_setup() {
 	register_nav_menus( array(
 		'foot-nav' => __('Footer Navigation', 'norwalk'),
 	));
-	
-	add_image_size( 'story_thumb', 1000, 750, true ); 
+
+	add_image_size( 'story_thumb', 1000, 750, true );
 	add_image_size( 'search_thumb', 250, 250, true);
 
-	//allow short codes in widgets 
+	//allow short codes in widgets
 	add_filter('widget_text', 'do_shortcode');
 
 	norwalk_register_custom_post_types();
@@ -74,13 +74,29 @@ if (!function_exists('norwalk_register_custom_post_types')):
             'description' => __( 'Text to be used as a part of the site, like in the footer, for example. ', 'norwalk' ),
             'has_archive' => false,
             'show_ui' => true,
+            'menu_position' => 25
         );
 
         register_post_type('site_text', $site_text_args);
     }
 
+    function norwalk_register_modals() {
+
+        $modal_args = array(
+            'label' => __('Polite Popups', 'norwalk'),
+            'public' => false,
+            'description' => __('Alerts and modals to be displayed to users.'),
+            'has_archive' => false,
+            'show_ui' => true,
+            'menu_position' => 26
+        );
+
+        register_post_type('modals', $modal_args);
+    }
+
     function norwalk_register_custom_post_types() {
         add_action('init', 'norwalk_register_site_text');
+        add_action('init', 'norwalk_register_modals');
     }
 
 endif;
@@ -104,7 +120,7 @@ function norwalk_widgets_init() {
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="title">',
 		'after_title' => '</h3>',
-	) );	
+	) );
 	register_sidebar( array(
 		'name' => __( 'Category archive sidebar', 'norwalk' ),
 		'id' => 'category-sidebar',
@@ -175,7 +191,7 @@ function norwalk_widgets_init() {
 		'before_widget' => '<li class="widget ad">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>', 
+		'after_title' => '</h3>',
 	) );
 /*	register_sidebar( array(
 		'name' => __( 'Mobile ads 1', 'norwalk' ),
@@ -218,7 +234,7 @@ function norwalk_widgets_init() {
 add_action( 'widgets_init', 'norwalk_widgets_init' );
 
 function norwalk_sidebar_fallback(){?>
-		
+
 			<li class="widget">
 				<!-- Nancy_on_Norwalk_top_sidebar_large_rectangle_ad -->
                 <div id='div-gpt-ad-1357460250405-0'>
@@ -231,7 +247,7 @@ function norwalk_sidebar_fallback(){?>
             <li class="widget">
             	<h3 class="title">Popular Stories</h3>
                 <?php
-				
+
 				$args = array(
 					'theme_location'  => '',
 					'menu'            => 'popular-stories',
@@ -250,9 +266,9 @@ function norwalk_sidebar_fallback(){?>
 					'depth'           => 0,
 					'walker'          => ''
 				);
-				
+
 				wp_nav_menu( $args );
-				
+
 				?>
 <!--                <div class="menu-popular-stories-container">
                     <ul id="menu-popular-stories" class="menu">
@@ -298,7 +314,7 @@ if ( ! function_exists( 'norwalk_posted_on' ) ) :
  * @since Starkers HTML5 3.0
  */
 function norwalk_posted_on($tag = 'span') {
-	
+
 	printf( __( '<' . $tag . ' class="date">%2$s</' . $tag . '>', 'norwalk' ),
 		'meta-prep meta-prep-author',
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate><span class="time">%4$s</span> <span class="month">%5$s</span> <span class="day">%6$s</span> <span class="year">%7$s</span></time></a>',
@@ -319,18 +335,18 @@ if( !function_exists('norwalk_meta') ):
 		function norwalk_meta($class, $loc = 'side'){
 			echo '<ul class="' . $class .'">';
 				if ($loc == 'side' && count( get_the_category() )):
-					   printf( __( '<li>%2$s</li>', 'norwalk' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list() ); 
+					   printf( __( '<li>%2$s</li>', 'norwalk' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list() );
 				endif;
-				
+
 			echo '<li class="byline"><span class="tagline">By </span>' . norwalk_display_byline() . '</li>';
-				
+
 				norwalk_posted_on('li');
-						
+
 				$tags_list = get_the_tag_list( '<ul><li>','</li><li>','</li></ul>');
-				
+
 				// if ( is_single() && $loc == 'side' && $tags_list ):
-				// 	printf( __( '<li class="tags"><span class="tagline">Tags </span>%2$s</li>', 'norwalk' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );  
-				// endif; 
+				// 	printf( __( '<li class="tags"><span class="tagline">Tags </span>%2$s</li>', 'norwalk' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
+				// endif;
 				echo '<li class="comments">';
 				comments_popup_link( __( 'Leave a comment', 'norwalk' ), __( '1 Comment', 'norwalk' ), __( '% Comments', 'norwalk' ) );
 			echo '</li>';
@@ -345,7 +361,7 @@ endif;
 // 		add_filter( $tag, $function_to_add, $priority, $accepted_args );
 add_filter('img_caption_shortcode', 'norwalk_flex_caption', 10, 3 );
 function norwalk_flex_caption($wtf, $attr, $content){
-	
+
 	extract(shortcode_atts(array(
 		'id'	=> '',
 		'align'	=> 'alignnone',
@@ -364,7 +380,7 @@ function norwalk_flex_caption($wtf, $attr, $content){
 
 if( !function_exists('norwalk_default_nav') ):
 	function norwalk_default_nav($args){
-		
+
 	}
 endif;
 
@@ -505,14 +521,14 @@ if (!function_exists('norwalk_save_byline')){
             return;
         }
 		$id = $post->ID;
-		
+
 	/*	if ( !wp_verify_nonce( $_POST['verify-that-shit'], 'custom-byline-field' ) ) return $post_id;
 
 		if ( !current_user_can( 'edit_post', $post_id ) ) return $post_id;*/
-		
+
 		$custom_byline = get_post_meta( $id, 'custom-byline', true );
 		$new_byline = stripslashes( $_POST['custom-byline'] );
-		
+
 		if ( $new_byline && $custom_byline == ''){
 			add_post_meta( $id, 'custom-byline', $new_byline, true );
 		}
@@ -535,9 +551,80 @@ function norwalk_display_byline($ouside_loop = false){
 		$author_name = $author_info->first_name . ' ' . $author_info->last_name;
 		return $author_name;
 	} else return get_the_author();
-	
+
 }
 
+/*
+ *		Modal Alert expiration controls
+ *		Added Norwalk 1.3.1
+ *		Set how long before modals re-display.
+ *
+ */
+
+if (!function_exists('norwalk_create_modal_expiration_box')) {
+    function norwalk_create_modal_expiration() {
+        add_meta_box('norwalk-modal-expiration', 'Set display frequency', 'norwalk_modal_expiration_box', 'modals', 'normal');
+    }
+
+    function norwalk_modal_expiration_box(){
+        global $post;
+        $id = $post->ID;
+        $currentExpiration = get_post_meta( $id, 'modal-expiration', true ); ?>
+
+        <p>	<label for="modal-expiration">After dismissal, this modal will return after:</label>
+            <select name="modal-expiration" id="modal-expiration">
+                <option value="30"<?php echo $currentExpiration == 30 || $currentExpiration == '' ? 'selected' : '' ?>>1 Month</option>
+                <option value="60"<?php echo $currentExpiration == 60 ? 'selected' : '' ?>>2 Months</option>
+                <option value="90"<?php echo $currentExpiration == 90 ? 'selected' : '' ?>>3 Months</option>
+                <option value="180"<?php echo $currentExpiration == 180 ? 'selected' : '' ?>>6 Months</option>
+                <option value="270"<?php echo $currentExpiration == 270 ? 'selected' : '' ?>>9 Months</option>
+                <option value="365"<?php echo $currentExpiration == 365 ? 'selected' : '' ?>>1 year</option>
+            </select>
+            <?php wp_nonce_field('norwalk-modal-expiration-field','verify-that-modal'); ?>
+        </p>
+        <?php
+    }
+
+    function norwalk_save_modal_expiration() {
+        global $post;
+        if (!is_object($post)) {
+            return;
+        }
+        if (empty($_POST['modal-expiration'])) {
+            return;
+        }
+        $id = $post->ID;
+
+        $old_expiration = get_post_meta( $id, 'modal-expiration', true );
+        $new_expiration = stripslashes( $_POST['modal-expiration'] );
+
+        if ( $new_expiration && $old_expiration == '') {
+            add_post_meta( $id, 'modal-expiration', $new_expiration, true );
+        }
+        elseif ( $new_expiration != $old_expiration ) {
+            update_post_meta( $id, 'modal-expiration', $new_expiration );
+        }
+    }
+
+    function norwalk_get_modal_expiration() {
+        global $post;
+        if (!is_object($post)) {
+            return '';
+        }
+        if ($post->type == 'modals') {
+            return '';
+        }
+        if (empty($_POST['modal-expiration'])) {
+            return 30;
+        }
+
+        $id = $post->ID;
+        return get_post_meta( $id, 'modal-expiration', true );
+    }
+}
+
+add_action('admin_menu', 'norwalk_create_modal_expiration');
+add_action('save_post', 'norwalk_save_modal_expiration');
 
 /*
  *		Sharing buttons
@@ -553,11 +640,11 @@ if (!function_exists('norwalk_tweet_button')){
 		$via = ' data-via="' . $via . '"';
 		$text = ' data-text="' . get_the_title() . '"';
 		$count = ' data-count="' . $count . '"';
-		
+
 		$button = '<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"' . $url . $size . $via . $text . $count . '>Tweet</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
-		
-		if ($echo) echo $button; 
+
+		if ($echo) echo $button;
 		else return $button;
 	}
 }
@@ -569,17 +656,17 @@ if (!function_exists('norwalk_facebook_like')){
 		$type = ' data-type="' . $layout . '"';
 		$layout = ' data-layout="' . $layout . '"';
 		$share = ' data-share="' . $share . '"';
-		$action = ' data-action="' . $action . '"'; 
-		$color = ' data-colorscheme="' . $color . '"'; 
+		$action = ' data-action="' . $action . '"';
+		$color = ' data-colorscheme="' . $color . '"';
 		/*
 
 		The $ref parameter was preventing the like button from loading on some pages.
 		This was because the ref parameter can't be longer than 50 characters,
-		and it was being auto-filled with the title of the story. 
-		So, if the headline was more than 50 characters, 
-		the like button	would not load. 
+		and it was being auto-filled with the title of the story.
+		So, if the headline was more than 50 characters,
+		the like button	would not load.
 
-		This parameter is optional, and used for tracking in analytics. 
+		This parameter is optional, and used for tracking in analytics.
 		Until we find a specific need for this kind of tracking, ref is disabled.
 
 		Should we need to enable it, a better solution must be found for an autofill.
@@ -608,7 +695,7 @@ if (!function_exists('trim_excerpt')){
         $excerpt = implode(" ",$excerpt).'...';
       } else {
         $excerpt = implode(" ",$excerpt);
-      } 
+      }
       $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
       return $excerpt;
     }
@@ -626,8 +713,8 @@ if (!function_exists('norwalk_comment_admin_message')){
 }
 
 /**
- * Modified version of Wordpress's basic comment form. 
- * 
+ * Modified version of Wordpress's basic comment form.
+ *
  * Modified to include an admin message, with function norwalk_comment_admin_message()
  *
  * Original documentation follows below:
@@ -880,7 +967,7 @@ if (!function_exists('norwalk_exclude_categories')) {
 	function norwalk_exclude_categories($query){
 		// Homepage only
 		// if (is_home() && is_main_query()){
-		// 	$categories = get_terms(array('category', 'nav_menu'), 
+		// 	$categories = get_terms(array('category', 'nav_menu'),
 	 //        	array('exclude' => array(
 	 //        		790 // State
 	 //        	)
@@ -902,58 +989,58 @@ if (!function_exists('norwalk_sc_donation_thankyou')){
 	function norwalk_sc_donation_thankyou($html, $charge_response){
 		// This is copied from the original output so that we can just add in our own details
 	    $html = '<div class="sc-payment-details-wrap">';
-	          
+
 	    $html .= '<p>' . __( 'Your donation to Nancy On Norwalk was successful!', 'sc' ) . '</p>';
 	    $html .= '<p>' . __( 'Here is your transaction info:', 'sc' ) . '</p>';
-	          
+
 	    // if( ! empty( $charge_response->description ) ) {
 	    //     $html .= '<p>' . __( "Here's what you bought:", 'sc' ) . '</p>';
 	    //     $html .= $charge_response->description . '<br>' . "\n";
 	    // }
-	          
+
 	    // if ( isset( $_GET['store_name'] ) && ! empty( $_GET['store_name'] ) ) {
 	    //     $html .= 'From: ' . esc_html( $_GET['store_name'] ) . '<br/>' . "\n";
 	    // }
-	      
-	    $html .= '<p><strong>' . __( 'Amount charged today: ', 'sc' ) . sc_stripe_to_formatted_amount( $charge_response->amount, $charge_response->currency ) . ' ' . 
+
+	    $html .= '<p><strong>' . __( 'Amount charged today: ', 'sc' ) . sc_stripe_to_formatted_amount( $charge_response->amount, $charge_response->currency ) . ' ' .
 	            strtoupper( $charge_response->currency ) . '</strong></p>' . "\n";
-	      
+
 	    $html .= '<p>Your transaction ID is: ' . $charge_response->id . '</p>';
-	   
+
 	    //Our own new details
 	    // Let's add the last four of the card they used and the expiration date
 	    $html .= '<p>Card: ****-****-****-' . $charge_response->source->last4 . '<br>';
 	    $html .= 'Expiration: ' . $charge_response->source->exp_month . '/' . $charge_response->source->exp_year . '</p>';
-	      
+
 	    // We can show the Address provided - this requires shipping="true" in our shortcode
 	    if( ! empty( $charge_response->source->address_line1 ) ) {
 	        $html .= '<p>Address Line 1: ' . $charge_response->source->address_line1 . '</p>';
 	    }
-	      
+
 	    if( ! empty( $charge_response->source->address_line2 ) ) {
 	        $html .= '<p>Address Line 2: ' . $charge_response->source->address_line2 . '</p>';
 	    }
-	      
+
 	    if( ! empty( $charge_response->source->address_city ) ) {
 	        $html .= '<p>Address City: ' . $charge_response->source->address_city . '</p>';
 	    }
-	      
+
 	    if( ! empty( $charge_response->source->address_state ) ) {
 	        $html .= '<p>Address State: ' . $charge_response->source->address_state . '</p>';
 	    }
-	      
+
 	    if( ! empty( $charge_response->source->address_zip ) ) {
 	        $html .= '<p>Address Zip: ' . $charge_response->source->address_zip . '</p>';
 	    }
-	      
+
 	    // Finally we can add the output of a custom field
 	    // For our example shortcode: <div class="sc-form-group"><label for=""phone_number"">"Phone</label><input type="text" value="" class="sc-form-control sc-cf-text" id=""phone_number"" name="sc_form_field["phone_number"]" placeholder=""></div>
 	    if( ! empty( $charge_response->metadata->phone_number ) ) {
 	        $html .= '<p>Phone Number: ' . $charge_response->metadata->phone_number . '</p>';
 	    }
-	      
+
 	    $html .= '</div>';
-	      
+
 	    return $html;
 	}
 }
@@ -968,7 +1055,7 @@ add_filter( 'sc_payment_details', 'norwalk_sc_donation_thankyou', 20, 2 );
 			// the viewer was looking at when they made the payment.
 			if ($failure){ ?>
 				<script> console.log('Charge considered by Stripe to be potentially fraudulant') </script>;
-			<?php 
+			<?php
 			} else { ?>
 				<script> console.log( 'Charge processed successfully') </script>;
 			<?php
@@ -996,7 +1083,7 @@ add_filter( 'sc_redirect', 'norwalk_sc_redirect', 20, 2 );*/
 
 
 
-/* 
+/*
 
  *********************************************************
  *********************************************************
@@ -1005,11 +1092,11 @@ add_filter( 'sc_redirect', 'norwalk_sc_redirect', 20, 2 );*/
 
 
 
-				#####  ###### #####  #####  ######  ####    ##   ##### ###### #####  
-				#    # #      #    # #    # #      #    #  #  #    #   #      #    # 
-				#    # #####  #    # #    # #####  #      #    #   #   #####  #    # 
-				#    # #      #####  #####  #      #      ######   #   #      #    # 
-				#    # #      #      #   #  #      #    # #    #   #   #      #    # 
+				#####  ###### #####  #####  ######  ####    ##   ##### ###### #####
+				#    # #      #    # #    # #      #    #  #  #    #   #      #    #
+				#    # #####  #    # #    # #####  #      #    #   #   #####  #    #
+				#    # #      #####  #####  #      #      ######   #   #      #    #
+				#    # #      #      #   #  #      #    # #    #   #   #      #    #
 				#####  ###### #      #    # ######  ####  #    #   #   ###### #####
 
 

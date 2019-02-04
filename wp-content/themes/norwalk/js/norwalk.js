@@ -1,33 +1,33 @@
 // JavaScript Document
 
 jQuery(function ($) {
-	
+
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
- 
+
 // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
- 
-// MIT license 
- 
+
+// MIT license
+
 (function() {
     var lastTime = 0;
     var vendors = ['ms', 'moz', 'webkit', 'o'];
     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
         window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
                                    || window[vendors[x]+'CancelRequestAnimationFrame'];
     }
- 
+
     if (!window.requestAnimationFrame)
         window.requestAnimationFrame = function(callback, element) {
             var currTime = new Date().getTime();
             var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
               timeToCall);
             lastTime = currTime + timeToCall;
             return id;
         };
- 
+
     if (!window.cancelAnimationFrame)
         window.cancelAnimationFrame = function(id) {
             clearTimeout(id);
@@ -59,11 +59,11 @@ jQuery(function ($) {
           timeout = setTimeout(delayed, threshold || 100);
       };
   }
-  // smartresize 
+  // smartresize
   jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 })(jQuery,'smartresize');
 
-//////////////////////// 
+////////////////////////
 
 var $window = $(window),
 	$mainNav = $('#main-nav'),
@@ -78,8 +78,8 @@ var $window = $(window),
 $window.smartresize(function(e) {
 	var height = $mainNav.outerHeight();
 });
-	  
-$window.scroll(function(e){	$mainNav.toggleClass('addLogo', $window.scrollTop() >= 195);  });	
+
+$window.scroll(function(e){	$mainNav.toggleClass('addLogo', $window.scrollTop() >= 195);  });
 
 hideNav = function(e){
 
@@ -136,13 +136,13 @@ mobileAdCheck = function(e){
 			newSlot = false;
 
 
-		$ads.each(function(){ 
-			$(this).appendTo($mobileAdSlots[slotNum]); 
+		$ads.each(function(){
+			$(this).appendTo($mobileAdSlots[slotNum]);
 			////
 			////	check to see if element is filled and mark it if so.
 			////
 			var $thisSlot = $mobileAdSlots.eq(slotNum),
-				slotEmpty = true; 
+				slotEmpty = true;
 			$thisSlot.find('.goog-ad').each(function(){
 				if( $.trim( $(this).html() )  == '' ){
 					slotEmpty = true;
@@ -151,69 +151,123 @@ mobileAdCheck = function(e){
 					return;
 				}
 			});
-			
+
 			if( !slotEmpty && !$thisSlot.hasClass('filled') ){
 				$thisSlot.addClass('filled');
 			}
 			if (newSlot) {
 				slotNum++;
 				newSlot = false;
-			} 
-			else newSlot = true; 
+			}
+			else newSlot = true;
 		});
 
 		googletag.pubads().refresh();
 		adsInSidebar = false;
 		googletag.enableServices();
-	} 
+	}
 	else if(!adsInSidebar && documentWidth >= 801) {
 
 		var slotNum = 0;
-		
+
 		///
 		///		Remove the filled marker
 		///
-		$ads.each(function(){ 
-			$(this).appendTo($adSlots[slotNum]); 
-			var $thisSlot = $mobileAdSlots.eq(slotNum); 
+		$ads.each(function(){
+			$(this).appendTo($adSlots[slotNum]);
+			var $thisSlot = $mobileAdSlots.eq(slotNum);
 
 			if ( $thisSlot.hasClass('filled') ){
 				$thisSlot.removeClass('filled')
-			} 
+			}
 			slotNum++;
 		});
-		
+
 		googletag.pubads().refresh();
 		adsInSidebar = true;
 		googletag.enableServices();
 	}
+};
 
+function initNorwalkModal($modals) {
+	var modalCookies = [];
+	var $activeModal = false;
+	var cookies = decodeURIComponent(document.cookie).split(';');
+	for (var i = 0; i < cookies.length; i += 1) {
+		if (cookies[i].indexOf('norwalk-modal') !== -1) {
+			var cookieId = cookies[i].split('=').shift().replace(/\D/g, '');
+			modalCookies.push(parseInt(cookieId, 10));
+		}
+	}
+	$modals.each(function(i, el) {
+		var $this = $(el);
+		if (modalCookies.indexOf($this.data('id')) === -1 && !$activeModal) {
+			$activeModal = $this;
+		}
+	});
+
+	if (!$activeModal) {
+		return;
+	}
+
+	var modalId = $activeModal.data('id');
+	var $closeButton = $activeModal.find('.norwalk-polite-modal__close');
+	var $submitButton = $activeModal.find('button[name=submit], input[name=subscribe]');
+	var $textInputs = $activeModal.find('input[type=text], input[type=email]');
+
+	$activeModal.addClass('norwalk-polite-modal--active');
+	setTimeout(function() {
+		$activeModal.addClass('norwalk-polite-modal--show');
+	}, 3000);
+
+	$textInputs.on('keyup', function(e) {
+		var $input = $(e.target);
+		var $fieldGroup = $input.closest('.norwalk-polite-modal__field-group');
+		if ($input.val() !== '') {
+			$fieldGroup.addClass('dirty');
+		}
+		else {
+			$fieldGroup.removeClass('dirty');
+		}
+	});
+
+	$closeButton
+		.add($submitButton)
+		.on('click tap', function() {
+			$activeModal.removeClass('norwalk-polite-modal--show');
+			var cookie = 'norwalk-modal-' + modalId + '=dismissed';
+			var hostname = window.location.hostname.split('.').splice(-2, 2).join('.');
+			cookie += ';domain=' + hostname;
+			cookie += ';samesite=strict';
+			cookie += ';max-age=' + $activeModal.data('expiration') * 24 * 60 * 60;
+			document.cookie = cookie;
+		});
 }
 
-$(document).ready(function(e) {
+$(document).ready(function() {
 
 	if($('html').hasClass('wallpaper-ad')){
 			var contentWidth = $document.width() - 400;
 			$('#NoN-content').css({width:contentWidth});
-			
+
 			$window.smartresize(function(e){
 				var contentWidth = $document.width() - 400;
 				$('#NoN-content').css({width:contentWidth});
-			}); 
+			});
 	}
-	// $('.widget').each(function(){ 
+	// $('.widget').each(function(){
 	// 	try {
 	// 		var $this = $(this);
 	// 		if ($this.find('iframe').attr('id').search('google_ads') != -1 && $this.find('iframe').contents().find('body').contents().length == 0){
 	// 			$this.remove();
 	// 		}
-	// 	} 
+	// 	}
 	// 	catch(err) {
 	// 	}
 	// });
    /*
 	*	Mobile ad placement code
-	*	
+	*
 	*	Inserts mobile-ad-slots in between paragraphs on single story pages
 	*
 	*/
@@ -236,8 +290,8 @@ $(document).ready(function(e) {
 			i++;
 		})
 		$mobileAdSlots = $mainContent.find('div.content div.the-content > div.mobile-ad-slot, #comments-section > div.comments > div.mobile-ad-slot');
-		
-	} 
+
+	}
 
 	//	Move the ads from the sidebar into mobile ad slots when appropriate.
 	//
@@ -253,16 +307,16 @@ $(document).ready(function(e) {
 			tLimit += 500;
 		}, 500 )
 	} else mobileAdCheck();
-	$window.smartresize( function(e){ 
-		mobileAdCheck(e); 
+	$window.smartresize( function(e){
+		mobileAdCheck(e);
 		googletag.pubads().refresh();
 	});
 
 	$('#nav-logo, #nav-label').prependTo('#main-nav').attr('style', '');
 
-	$('#main-nextprev').appendTo('#main-nav').attr('style', '');	
+	$('#main-nextprev').appendTo('#main-nav').attr('style', '');
 
-	$('#nav-label, #nav-label > object').on('click tap', null, null, showNav); 
+	$('#nav-label, #nav-label > object').on('click tap', null, null, showNav);
 
 	if($('div.norwalk-tabs').length > 0){
 		norwalkTabsInit();
@@ -285,6 +339,11 @@ $(document).ready(function(e) {
 		stripeCheck();
 	});
 
+	var $modals = $('.norwalk-polite-modal');
+
+	if ($modals.length) {
+		initNorwalkModal($modals);
+	}
 });
 
 }); // jQuery encapsulation

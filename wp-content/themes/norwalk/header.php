@@ -15,20 +15,20 @@
 <meta name="viewport" content="user-scalable=no, width=device-width, minimum-scale=1, maximum-scale=1">
 <?php include 'meta-social.php'; ?>
 <title><?php
- 
+
     global $page, $paged;
- 
+
     wp_title( '|', true, 'right' );
- 
+
     bloginfo( 'name' );
- 
+
     $site_description = get_bloginfo( 'description', 'display' );
     if ( $site_description && ( is_home() || is_front_page() ) )
         echo " | $site_description";
- 
+
     if ( $paged >= 2 || $page >= 2 )
         echo ' | ' . sprintf( __( 'Page %s', 'starkers' ), max( $paged, $page ) );
- 
+
     ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -46,10 +46,10 @@
     wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.custom.99437.js');
     wp_enqueue_script('norwalk-ads', get_template_directory_uri() . '/js/min/norwalk-ads.min.js', 'jquery');
     wp_enqueue_style('reset', get_template_directory_uri() . '/stylesheets/reset.css');
-    wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css', 'reset');
-    
+    wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css', 'reset', null);
+
 ?>
- 
+
 <!-- Quantcast Tag -->
 <noscript>
 <div style="display:none;">
@@ -57,7 +57,7 @@
 </div>
 </noscript>
 <!-- End Quantcast tag -->
- 
+
 <?php
 
     /* We add some JavaScript to pages with the comment form
@@ -65,7 +65,7 @@
      */
     if ( is_singular() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
- 
+
     /* Always have wp_head() just before the closing </head>
      * tag of your theme, or you will break many plugins, which
      * generally use this hook to add elements to <head> such
@@ -75,7 +75,7 @@
 
 ?>
 </head>
- 
+
 <body <?php body_class(); ?>>
 <?php /*?>
 

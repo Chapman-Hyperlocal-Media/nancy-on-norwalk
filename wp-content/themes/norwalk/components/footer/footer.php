@@ -26,8 +26,9 @@ function norwalk_footer() {
     );
     $footer_nav_menu = wp_nav_menu($footer_nav_args);
     $date = date('Y');
-
+    $popups = norwalk_polite_popup_loop();
     return <<<HTML
+    $popups
 <footer id="mainfoot">
     <div id="site" class="about">
         <h4 class="title">About this site</h4>
