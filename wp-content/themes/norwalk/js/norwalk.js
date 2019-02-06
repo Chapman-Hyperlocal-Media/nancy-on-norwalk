@@ -73,7 +73,8 @@ var $window = $(window),
 	$adSlots =  $sidebar.find('li.widget.goog-ad'),
 	$ads = $adSlots.find('div.goog-ad'),
 	$mobileAdSlots = $mainContent.find('div.content > div.mobile-ad-slot'),
-	adsInSidebar = true;
+ 	currentMode = false;
+
 
 $window.smartresize(function(e) {
 	var height = $mainNav.outerHeight();
@@ -81,7 +82,7 @@ $window.smartresize(function(e) {
 
 $window.scroll(function(e){	$mainNav.toggleClass('addLogo', $window.scrollTop() >= 195);  });
 
-hideNav = function(e){
+var hideNav = function(e){
 
 	var keepGoing = true;
 
@@ -96,14 +97,14 @@ hideNav = function(e){
 	}
 }
 
-showNav = function(e){
+var showNav = function(e){
 	$mainNav.addClass('expand');
 	var args = "#main-content, #mainhead, #mainfoot";
 	$('#nav-label, #nav-label > object').off('click tap', null, null, showNav);
 	$(args).on('click tap touchstart', null, args, hideNav );
-}
+};
 
-norwalkTabsInit = function(e){
+var norwalkTabsInit = function(e){
 	var $tabGroups = $('div.norwalk-tabs');
 	$tabGroups.each(function(){
 		var $tabs = $(this);
@@ -126,15 +127,16 @@ norwalkTabsInit = function(e){
 			}
 		})
 	})
-}
+};
 
-mobileAdCheck = function(e){
+var mobileAdCheck = function(e){
 	var documentWidth = $document.width();
-	if( documentWidth < 801) {
-
+	if (currentMode === false) {
+		currentMode = !($document.width() >= 801) ? 'desktop' : 'mobile';
+	}
+	if(documentWidth < 801 && currentMode === 'desktop') {
 		var slotNum = 0,
 			newSlot = false;
-
 
 		$ads.each(function(){
 			$(this).appendTo($mobileAdSlots[slotNum]);
@@ -163,11 +165,9 @@ mobileAdCheck = function(e){
 		});
 
 		googletag.pubads().refresh();
-		adsInSidebar = false;
 		googletag.enableServices();
 	}
-	else if(!adsInSidebar && documentWidth >= 801) {
-
+	else if(documentWidth >= 801 && currentMode === 'mobile') {
 		var slotNum = 0;
 
 		///
@@ -184,9 +184,10 @@ mobileAdCheck = function(e){
 		});
 
 		googletag.pubads().refresh();
-		adsInSidebar = true;
 		googletag.enableServices();
 	}
+
+	currentMode = $document.width() >= 801 ? 'desktop' : 'mobile';
 };
 
 function initNorwalkModal($modals) {
@@ -284,13 +285,12 @@ $(document).ready(function() {
 				storyHeight = 0;
 				i++;
 			}
-		})
+		});
 		$('#comments-section').find('article.comment.odd').each(function(){
 			$(this).after('<div id="mobile-ad-slot-' + i + '" class="mobile-ad-slot comment"><p class="ad-label">Advertisement</p></div>');
 			i++;
-		})
+		});
 		$mobileAdSlots = $mainContent.find('div.content div.the-content > div.mobile-ad-slot, #comments-section > div.comments > div.mobile-ad-slot');
-
 	}
 
 	//	Move the ads from the sidebar into mobile ad slots when appropriate.
@@ -306,10 +306,12 @@ $(document).ready(function() {
 			}
 			tLimit += 500;
 		}, 500 )
-	} else mobileAdCheck();
+	} else {
+		mobileAdCheck();
+	}
+
 	$window.smartresize( function(e){
 		mobileAdCheck(e);
-		googletag.pubads().refresh();
 	});
 
 	$('#nav-logo, #nav-label').prependTo('#main-nav').attr('style', '');
@@ -320,7 +322,9 @@ $(document).ready(function() {
 
 	if($('div.norwalk-tabs').length > 0){
 		norwalkTabsInit();
-	} else {console.log('no tabs found')}
+	} else {
+		console.log('no tabs found');
+	}
 
 	$('button.sc-payment-btn.stripe-button-el').click(function(){
 		var $this = $(this);
