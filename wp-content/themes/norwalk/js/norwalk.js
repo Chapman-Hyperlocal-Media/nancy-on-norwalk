@@ -131,12 +131,28 @@ var norwalkTabsInit = function(e){
 
 var mobileAdCheck = function(e){
 	var documentWidth = $document.width();
+	var slotNum = 0;
 	if (currentMode === false) {
 		currentMode = !($document.width() >= 801) ? 'desktop' : 'mobile';
 	}
-	if(documentWidth < 801 && currentMode === 'desktop') {
-		var slotNum = 0,
-			newSlot = false;
+
+	var googTimer;
+	function refreshGoog(count = 0) {
+		var timeout = count === 0 ? 0 : 1000;
+		googTimer = setTimeout(function() {
+			clearTimeout(googTimer);
+			if (typeof googletag !== undefined && typeof googletag.pubads === 'function') {
+				googletag.pubads().refresh();
+				googletag.enableServices();
+			}
+			else if (count <= 9) {
+				refreshGoog(count + 1)
+			}
+		}, timeout);
+	}
+
+	if (documentWidth < 801 && currentMode === 'desktop') {
+		var	newSlot = false;
 
 		$ads.each(function(){
 			$(this).appendTo($mobileAdSlots[slotNum]);
@@ -164,12 +180,9 @@ var mobileAdCheck = function(e){
 			else newSlot = true;
 		});
 
-		googletag.pubads().refresh();
-		googletag.enableServices();
+		refreshGoog();
 	}
-	else if(documentWidth >= 801 && currentMode === 'mobile') {
-		var slotNum = 0;
-
+	else if (documentWidth >= 801 && currentMode === 'mobile') {
 		///
 		///		Remove the filled marker
 		///
@@ -183,8 +196,7 @@ var mobileAdCheck = function(e){
 			slotNum++;
 		});
 
-		googletag.pubads().refresh();
-		googletag.enableServices();
+		refreshGoog();
 	}
 
 	currentMode = $document.width() >= 801 ? 'desktop' : 'mobile';
