@@ -36,18 +36,18 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/stylesheets/ie.css" />
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/FlashCanvasPro/bin/flashcanvas.js"></script>
 <![endif]-->
-
+<script>
+	googletag = typeof googletag !== 'undefined' ? googletag : {};
+	googletag.cmd = googletag.cmd || [];
+</script>
 <?php
-
     //remember to clear cache on live server after modifying these!!
-
     wp_enqueue_script('jquery');
     wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js', 'jquery', '1.3.2');
     wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.custom.99437.js');
     wp_enqueue_script('norwalk-ads', get_template_directory_uri() . '/js/min/norwalk-ads.min.js', 'jquery');
     wp_enqueue_style('reset', get_template_directory_uri() . '/stylesheets/reset.css');
     wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css', 'reset', null);
-
 ?>
 
 <!-- Quantcast Tag -->
