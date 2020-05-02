@@ -105,23 +105,19 @@ var showNav = function(e){
 };
 
 function norwalkTabsInit() {
-	console.log('norwalkTabsInit fired')
 	var $tabGroups = $('div.norwalk-tabs');
 	$tabGroups.each(function(){
 		var $tabs = $(this);
-		console.log($tabs)
 		$tabs.find('.tab-title').each(function(){
 			var $title = $(this),
 				target = $title.data('tab'),
 				text = $title.html(),
 				isDefault = $title.parent().hasClass('default') ? true : false,
 				buttonClass = isDefault ? 'tab-button active' : 'tab-button';
-			console.log($title.closest('div.norwalk-tabs').children('.norwalk-tab.first'));
 			$('<div class="'+ buttonClass +'" data-target="' + target + '">' + text + '</div>').insertBefore($title.closest('div.norwalk-tabs').children('.norwalk-tab.first'));
 		});
 		$tabs.find('.default').addClass('active');
 		var $tabButtons = $tabs.find('div.tab-button');
-		console.log($tabButtons)
 		$tabButtons.click(function(){
 			var $button = $(this),
 				$target = $button.parent().find('div.' + $button.data('target'));
