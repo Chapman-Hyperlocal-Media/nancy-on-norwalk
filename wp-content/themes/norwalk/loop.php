@@ -7,21 +7,15 @@
  * @since Starkers HTML5 3.0
  */
 ?>
- 
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php /* if ( $wp_query->max_num_pages > 1 ) : ?>
-    <nav>
-        <?php next_posts_link( __( '&larr; Older posts', 'starkers' ) ); ?>
-        <?php previous_posts_link( __( 'Newer posts &rarr;', 'starkers' ) ); ?>
-    </nav>
-<?php endif;*/ ?>
+
 <?php
     // Loop counting, for mobile ad placement.
     $loop_num = 0;
     $mobile_ads_slot = 1;
-?>
-<?php /* If there are no posts to display, such as an empty archive page */ ?>
-<?php if ( ! have_posts() ) : ?>
+
+ /* If there are no posts to display, such as an empty archive page */
+
+ if ( ! have_posts() ) : ?>
         <h1><?php _e( 'Not Found', 'starkers' ); ?></h1>
             <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'norwalk' ); ?></p>
             <?php get_search_form(); ?>
@@ -131,8 +125,8 @@
         </a>   	
         	
             
-<?php /* How to display all other posts. */ ?>            
-    <?php else : ?>
+<?php /* How to display all other posts. */
+    else : ?>
      
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
          
@@ -183,12 +177,11 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
             </footer>
 		</article>
  
-            <?php comments_template( '', true ); ?>
- 
+    <?php comments_template( '', true );
 
-    <?php endif; // This was the if statement that broke the loop into three parts based on post type. ?>
- 
-    <?php   
+    endif; // This was the if statement that broke the loop into three parts based on post type.
+    //
+    //
         /*  mobile ad placements; 
          *  empty divs placed after each story.
          *  Javascript will into these divs from sidebar 
@@ -209,13 +202,13 @@ AND post_status = 'inherit' AND post_type='attachment' ORDER BY post_date DESC L
             echo "</ul>";
             $mobile_ads_slot++;
         }*/
-    ?>
-<?php endwhile; // End the loop. Whew. ?>
- 
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if ( $wp_query->max_num_pages > 1 && !is_category() && !is_search() ) : ?>
+
+endwhile; // End the loop. Whew.
+
+// /* Display navigation to next/previous pages when applicable */
+if ( $wp_query->max_num_pages > 1 && !is_archive() && !is_search() ) : ?>
     <nav class="pagination">
-        <?php next_posts_link( __( '&larr; Older posts', 'starkers' ) ); ?>
-        <?php previous_posts_link( __( 'Newer posts &rarr;', 'starkers' ) ); ?>
+        <?php next_posts_link( __( '&larr; Older posts' ) ); ?>
+        <?php previous_posts_link( __( 'Newer posts &rarr;' ) ); ?>
     </nav>
-<?php endif; ?>
+<?php endif; 

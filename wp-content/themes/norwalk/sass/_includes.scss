@@ -32,6 +32,11 @@ uses flexible 48 column system
 	padding: percentage(($column-width * $padT)) percentage(($column-width * $padR)) percentage(($column-width * $padB)) percentage(($column-width * $padL)); 
 }
 
+@mixin maxWidthColumns($cols, $padT, $padR, $padB, $padL){ 
+	width: percentage(($column-width * $cols) - ($column-width * ($padR + $padL)));
+	padding: percentage(($column-width * $padT)) percentage(($column-width * $padR)) percentage(($column-width * $padB)) percentage(($column-width * $padL)); 
+}
+
 @mixin margins($marT, $marR, $marB, $marL){
 	margin:  percentage(($column-width * $marT)) percentage(($column-width * $marR)) percentage(($column-width * $marB)) percentage(($column-width * $marL))
 }

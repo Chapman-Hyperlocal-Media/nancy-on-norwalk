@@ -109,7 +109,7 @@ stylecop.*
 Generated_Code #added for RIA/Silverlight projects
 
 # Backup & report files from converting an old project file to a newer
-# Visual Studio version. Backup files are not needed, because we have 
+# Visual Studio version. Backup files are not needed, because we have
 git ;-)
 _UpgradeReport_Files/
 Backup*/
@@ -167,7 +167,7 @@ pip-log.txt
 #hide wordpress nuts and bolts
 wp-includes/
 wp-admin/
-wp-content/uploads
+wp-content/uploads/
 wp-content/themes/twentyfourteen/
 wp-content/themes/classic/
 wp-content/themes/default/
@@ -196,6 +196,7 @@ test/
 .htaccess
 dwsync.xml
 error_log
+debug.log
 
 ~/public_html/nancyonnorwalk.com/fantastico_fileslist.txt
 ~/public_html/nancyonnorwalk.com/fantversion.php
@@ -279,15 +280,44 @@ package.json
 gruntfile.js
 .idea
 
+
 #other unnecessary crapola
 cgi-bin/
 .smileys/
 
 .sass-cache/
 
-# Comps, images, 
-# other unnecessary stuff 
+# Comps, images,
+#other unnecessary crapola
+cgi-bin/
+.smileys/
+
+.sass-cache/
+
+# Comps, images,
+# other unnecessary stuff
 *.psd
 *.ai
 *.tmp
 *.zip
+
+*.log
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
+wp-content/themes/twentyseventeen/
+wp-content/themes/twentysixteen/
