@@ -226,6 +226,7 @@ function initNorwalkModal($modals) {
 	var modalId = $activeModal.data('id');
 	var $closeButton = $activeModal.find('.norwalk-polite-modal__close');
 	var $submitButton = $activeModal.find('button[name=submit], input[name=subscribe]');
+	var $otherDismissals = $activeModal.find('[data-dismiss-modal]');
 	var $textInputs = $activeModal.find('input[type=text], input[type=email]');
 
 	$activeModal.addClass('norwalk-polite-modal--active');
@@ -246,6 +247,7 @@ function initNorwalkModal($modals) {
 
 	$closeButton
 		.add($submitButton)
+		.add($otherDismissals)
 		.on('click tap', function() {
 			$activeModal.removeClass('norwalk-polite-modal--show');
 			var cookie = 'norwalk-modal-' + modalId + '=dismissed';
