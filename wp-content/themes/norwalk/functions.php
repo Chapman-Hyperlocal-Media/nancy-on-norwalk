@@ -573,6 +573,7 @@ if (!function_exists('norwalk_create_modal_expiration_box')) {
 
         <p>	<label for="modal-expiration">After dismissal, this modal will return after:</label>
             <select name="modal-expiration" id="modal-expiration">
+				<option value="1"<?php echo $currentExpiration == 1 ? 'selected' : '' ?>>1 day</option>
                 <option value="30"<?php echo $currentExpiration == 30 || $currentExpiration == '' ? 'selected' : '' ?>>1 Month</option>
                 <option value="60"<?php echo $currentExpiration == 60 ? 'selected' : '' ?>>2 Months</option>
                 <option value="90"<?php echo $currentExpiration == 90 ? 'selected' : '' ?>>3 Months</option>

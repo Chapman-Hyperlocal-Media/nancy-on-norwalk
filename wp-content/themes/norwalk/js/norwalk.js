@@ -252,7 +252,7 @@ function initNorwalkModal($modals) {
 			var hostname = window.location.hostname.split('.').splice(-2, 2).join('.');
 			cookie += ';domain=' + hostname;
 			cookie += ';samesite=strict';
-			cookie += ';max-age=' + $activeModal.data('expiration') * 24 * 60 * 60;
+			cookie += ';max-age=' + (parseFloat($activeModal.data('expiration')) * 24 * 60 * 60);
 			document.cookie = cookie;
 		});
 }
@@ -335,7 +335,7 @@ $(document).ready(function() {
 	if($('div.norwalk-tabs').length > 0){
 		norwalkTabsInit();
 	} else {
-		console.log('no tabs found');
+		// console.log('no tabs found');
 	}
 
 	$('button.sc-payment-btn.stripe-button-el').click(function(){
