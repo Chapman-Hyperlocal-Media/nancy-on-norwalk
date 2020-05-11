@@ -1,15 +1,10 @@
 <?php
 
-function norwalk_loop_banner($post_id = null) {
-    if (empty($post_id)) {
-        return null;
-    }
-    $Post = get_post($post_id);
-    if (empty($Post->post_content)) {
-        return null;
-    }
-
-    $content = apply_filters('the_content', $Post->post_content);
+function norwalk_loop_banner() {
+	$content = render_site_text_as_basic_posts('top-post-banner', true);
+	if ($content === '') {
+		return '';
+	}
 
     return <<<HTML
 <div id="top-loop-banner" class="post">
