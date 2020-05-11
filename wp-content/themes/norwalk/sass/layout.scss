@@ -525,14 +525,21 @@ article.attachment{margin-bottom:0;
         p {
             text-indent: 10px;
         }
-        .title + p {
+        .title + p,
+        .norwalk-basic-post__title + p {
             text-indent: 0;
         }
     }
 
 	a{color:#FFF; }
 	.about{float:left;
-		.title{font-family:$asideHeadCondensed; color:#FFF; font-size:1.6em; margin-bottom:20px; }
+		.title,
+    .norwalk-basic-post__title {
+      font-family:$asideHeadCondensed;
+      color:#FFF;
+      font-size:1.6em;
+      margin-bottom:20px;
+    }
 	}
 	#site.about{@include columns(28,1,2,2,7); }
 	#nancy.about{@include columns(12, 1, 0, 2, 0); }

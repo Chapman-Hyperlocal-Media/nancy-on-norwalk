@@ -628,6 +628,109 @@ add_action('admin_menu', 'norwalk_create_modal_expiration');
 add_action('save_post', 'norwalk_save_modal_expiration');
 
 /*
+ *		Site text display location controls
+ *		Added Norwalk 1.3.5
+ */
+
+if (!function_exists('norwalk_create_site_text_location_box')) {
+	function norwalk_create_site_text_location_box() {
+		add_meta_box('norwalk-site-text-location', 'Set template location', 'norwalk_site_text_location_box', 'site_text', 'normal');
+	}
+
+	function norwalk_site_text_location_box(){
+		global $post;
+		$id = $post->ID;
+		$current = get_post_meta( $id, 'site-text-location', true );
+		$locations = [];
+		$locations[] = array('label' => 'Main Loop: Top banner', 'value' => 'top-post-banner');
+		$locations[] = array('label' => 'Footer: About the site', 'value' => 'about-the-site');
+		$locations[] = array('label' => 'Footer: About Nancy', 'value' => 'about-nancy');
+		?>
+
+		<p>	<label for="site-text-location">Choose where on the site this will appear:</label>
+			<select name="site-text-location" id="site-text-location">
+				<option value="NO_LOCATION">No location selected</option>
+				<?php
+					foreach ($locations as $location) {
+						$value = $location['value'];
+						$label = $location['label'];
+						$selected = $value === $current ? 'selected' : '';
+						?>
+						<option value="<?php echo $value; ?>" <?php echo $selected; ?> ><?php echo $label?></option>
+					<?php }
+				?>
+			</select>
+			<?php wp_nonce_field('norwalk_save_site_text_location','verify-that-site-text-location'); ?>
+		</p>
+		<?php
+	}
+
+	function norwalk_save_site_text_location() {
+		global $post;
+		if (!is_object($post)) {
+			return;
+		}
+		if (empty($_POST['site-text-location'])) {
+			return;
+		}
+		$id = $post->ID;
+
+		$old_setting = get_post_meta( $id, 'site-text-location', true );
+		$new_setting = stripslashes( $_POST['site-text-location'] );
+
+		if ( $new_setting && $old_setting == '') {
+			add_post_meta( $id, 'site-text-location', $new_setting, true );
+		}
+		elseif ( $new_setting != $old_setting ) {
+			update_post_meta( $id, 'site-text-location', $new_setting );
+		}
+	}
+
+	function norwalk_get_site_text_location() {
+		global $post;
+		if (!is_object($post)) {
+			return '';
+		}
+		if ($post->type == 'site_text') {
+			return '';
+		}
+		if (empty($_POST['site-text-location'])) {
+			return 30;
+		}
+
+		$id = $post->ID;
+		return get_post_meta( $id, 'site-text-location', true );
+	}
+}
+
+add_action('admin_menu', 'norwalk_create_site_text_location_box');
+add_action('save_post', 'norwalk_save_site_text_location');
+
+/*
+ * 	Returns HTML markup for any number of site texts as basic posts
+ */
+function render_site_text_as_basic_posts($location, $hide_title = false, $order = 'DESC') {
+	$site_text_args = array(
+		'post_type' => 'site_text',
+		'post_status' => 'publish',
+		'fields' => 'ids',
+		'order' => $order,
+		'meta_query' => array(
+			array('key' => 'site-text-location', 'value' => $location)
+		)
+	);
+	$site_text_query = new WP_Query($site_text_args);
+	$content = [];
+	if (empty($site_text_query->posts)) {
+		return '';
+	}
+	foreach($site_text_query->posts as $site_text) {
+		$content[] = basic_post(get_post($site_text), $hide_title);
+	}
+	return implode("\n", $content);
+}
+
+/*
  *		Sharing buttons
  *		Added Norwalk 1.2.1
  *		Creates functions to add sharing buttons to template files.
