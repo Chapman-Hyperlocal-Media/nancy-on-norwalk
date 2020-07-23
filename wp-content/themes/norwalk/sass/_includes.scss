@@ -1,8 +1,9 @@
 /* Sass stuff */
 
 $green: #9fb03e;
+$green-link: #7d8e1c;
 $dark: #3c3f36;
-$lighter-dark: $dark + #606060;
+$lighter-dark: #9c9f96;
 $bluegreen: #72918b;
 $warm: #ebe9dc;
 $column-width: .02127659574468085;
@@ -23,18 +24,18 @@ $bodycopy: "jubilat", serif;
 	font-family:$asideHead;
 	line-height:1.4em;
 }
-/* 
-expects params as numbers of columns, including padding 
+/*
+expects params as numbers of columns, including padding
 uses flexible 48 column system
 */
-@mixin columns($cols, $padT, $padR, $padB, $padL){ 
+@mixin columns($cols, $padT, $padR, $padB, $padL){
 	width: percentage(($column-width * $cols) - ($column-width * ($padR + $padL)));
-	padding: percentage(($column-width * $padT)) percentage(($column-width * $padR)) percentage(($column-width * $padB)) percentage(($column-width * $padL)); 
+	padding: percentage(($column-width * $padT)) percentage(($column-width * $padR)) percentage(($column-width * $padB)) percentage(($column-width * $padL));
 }
 
-@mixin maxWidthColumns($cols, $padT, $padR, $padB, $padL){ 
+@mixin maxWidthColumns($cols, $padT, $padR, $padB, $padL){
 	width: percentage(($column-width * $cols) - ($column-width * ($padR + $padL)));
-	padding: percentage(($column-width * $padT)) percentage(($column-width * $padR)) percentage(($column-width * $padB)) percentage(($column-width * $padL)); 
+	padding: percentage(($column-width * $padT)) percentage(($column-width * $padR)) percentage(($column-width * $padB)) percentage(($column-width * $padL));
 }
 
 @mixin margins($marT, $marR, $marB, $marL){

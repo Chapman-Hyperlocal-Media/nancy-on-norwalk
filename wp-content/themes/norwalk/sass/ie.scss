@@ -1,6 +1,6 @@
 @import "_includes.scss";
 #comments-section{
-	width:100%; 
+	width:100%;
 }
 .snowcap{
 	display:none;
@@ -49,14 +49,14 @@
 			ul{
 				font-size:1em;
 			}
-			
+
 			li, li:first-child{
 				float:left;
 				padding-right:percentage($column-width * 1);
 				padding-left:percentage($column-width * 1);
 				padding-top:0px;
 				padding-bottom:0px;
-				border-left:1px dotted $dark + #606060;
+				border-left:1px dotted $lighter-dark;
 				border-bottom:none;
 				height:1em;
 				margin-top:0;

@@ -51,25 +51,25 @@
 	#NoN-content{
 		.content{
 			.the-content{margin-left:0; }
-			.post .meta{ width:100%; margin-top:percentage($column-width * 1); margin-bottom:percentage($column-width * 1); float:none; overflow:hidden; 
-				
+			.post .meta{ width:100%; margin-top:percentage($column-width * 1); margin-bottom:percentage($column-width * 1); float:none; overflow:hidden;
+
 				.edit-link{border-top:none; }
-				.byline span, 
+				.byline span,
 				.time{font-size:1em; display:inline; }
 				.date a{text-transform:lowercase; }
-				.post-categories a, 
-				.month, 
+				.post-categories a,
+				.month,
 				.comments a{text-transform:capitalize; }
-				
+
 				ul{font-size:1em; }
-				
-				li, li:first-child{float:left; padding-right:percentage($column-width * 1); padding-left:percentage($column-width * 1); padding-top:0px; padding-bottom:0px; border-left:1px dotted $dark + #606060; border-bottom:none; height:1em; margin-top:0; margin-bottom:percentage($column-width * 0.5); 
+
+				li, li:first-child{float:left; padding-right:percentage($column-width * 1); padding-left:percentage($column-width * 1); padding-top:0px; padding-bottom:0px; border-left:1px dotted color.adjust($dark, $lightness: 23.53%); border-bottom:none; height:1em; margin-top:0; margin-bottom:percentage($column-width * 0.5);
 					&:active{background-color:$green; }
 					&:first-child{padding-left:0; border-left:none; }
-					a{display:block; height:100%; 
+					a{display:block; height:100%;
 						&:active{color:#fff; }
 					}
-					&.comments, 
+					&.comments,
 					&.edit-link{
 						a{ padding-top:0px; }
 					}
@@ -100,14 +100,14 @@
 @media only screen and (max-width:800px) and (min-width:551px){
 	#mainhead{background-position: center -75px; }
 	#logo{font-size:6em;
-		h1, h2{padding-left:percentage($column-width * 4); background:url('../images/logoBG.png') no-repeat right center; background-color:$green; color:#fff; 
+		h1, h2{padding-left:percentage($column-width * 4); background:url('../images/logoBG.png') no-repeat right center; background-color:$green; color:#fff;
 			a{color:#fff; }
 			a > span{padding-left:percentage($column-width * 0); }
 		}
 	}
 	#main-nav{@include columns(47, 0,4,0,4); height:40px;
 		#menu-main-navigation{transition:top 0.5s ease; border-radius:0 0 5px 5px; width:30%; margin-top:-20px; border:1px solid #404040; float:right; background-color:#333; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); position:fixed; right:percentage($column-width * 4); }
-		.menu-item{transition: height 0.6s ease; height:0px; float:none; overflow:hidden; 
+		.menu-item{transition: height 0.6s ease; height:0px; float:none; overflow:hidden;
 			a{color:#ccc; }
 		}
 		#nav-label{display:block; float:right; width:30%; }
@@ -156,8 +156,8 @@
 	.wp-caption{ width:100%;}
 	img.size-full{ width: 100%; height: auto;}
 	.norwalk-social-bar{height:42px; margin-bottom:5px;
-		.twitter-share-button, 
-		.fb-like, 
+		.twitter-share-button,
+		.fb-like,
 		.fb-share-button{margin-bottom:2px;
 		}
 		.fb_iframe_widget{
@@ -177,20 +177,20 @@
 		}
 		#nav-label{display:block; }
 		#nav-logo{display:none; }
-		.menu-item{display:block; transition: height 0.6s ease; float:left; height:0; overflow:hidden; margin-right:0; width:50%; 
+		.menu-item{display:block; transition: height 0.6s ease; float:left; height:0; overflow:hidden; margin-right:0; width:50%;
 			a{color:#ccc; }
 		}
 		#menu-main-navigation{transition:top 0.5s ease; width:percentage($column-width * 41); border-radius:0 0 5px 5px; position:absolute; top:-40px; left:percentage($column-width * 3); border:1px solid #404040; background-color:#333; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); overflow:hidden; }
 
 		&.expand{#menu-main-navigation{top:0px; } .menu-item{height:40px; } }
-		
-		
+
+
 
 	}
 	.content{@include columns(47, 4,3,4,3); }
 	.sidebar{@include columns(47, 0,3,0,3); }
 	.post,
-	article.attachment, 
+	article.attachment,
 	.page .type-page{
 		.post-title{font-size:3.6em; }
 		.meta{font-size:1.5em; }
@@ -199,8 +199,8 @@
 			&.thumb{margin-bottom:percentage($column-width * 1.8); }
 			&.alignleft{margin-right:0; }
 			&.alignright{margin-left:0; }
-			&.alignnone img, 
-			&.aligncenter img, 
+			&.alignnone img,
+			&.aligncenter img,
 			img{width:100%; }
 		}
 	}
