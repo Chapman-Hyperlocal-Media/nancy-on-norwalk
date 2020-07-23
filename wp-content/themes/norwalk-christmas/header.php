@@ -13,20 +13,20 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php
- 
+
     global $page, $paged;
- 
+
     wp_title( '|', true, 'right' );
- 
+
     bloginfo( 'name' );
- 
+
     $site_description = get_bloginfo( 'description', 'display' );
     if ( $site_description && ( is_home() || is_front_page() ) )
         echo " | $site_description";
- 
+
     if ( $paged >= 2 || $page >= 2 )
         echo ' | ' . sprintf( __( 'Page %s', 'starkers' ), max( $paged, $page ) );
- 
+
     ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
@@ -43,7 +43,7 @@ var gads = document.createElement('script');
 gads.async = true;
 gads.type = 'text/javascript';
 var useSSL = 'https:' == document.location.protocol;
-gads.src = (useSSL ? 'https:' : 'http:') + 
+gads.src = (useSSL ? 'https:' : 'http:') +
 '//www.googletagservices.com/tag/js/gpt.js';
 var node = document.getElementsByTagName('script')[0];
 node.parentNode.insertBefore(gads, node);
@@ -77,7 +77,7 @@ GA_googleAddSlot("ca-pub-7723353377962344", "nancyonnorwalk_300x250_5");
 
 // disabled until I can make a spot for it in the layout.
 //
-//GA_googleAddSlot("ca-pub-7723353377962344", "nancyonnorwalk_728x90_leaderboard"); 
+//GA_googleAddSlot("ca-pub-7723353377962344", "nancyonnorwalk_728x90_leaderboard");
 
 </script>
 
@@ -95,7 +95,7 @@ var gads = document.createElement('script');
 gads.async = true;
 gads.type = 'text/javascript';
 var useSSL = 'https:' == document.location.protocol;
-gads.src = (useSSL ? 'https:' : 'http:') + 
+gads.src = (useSSL ? 'https:' : 'http:') +
 '//www.googletagservices.com/tag/js/gpt.js';
 var node = document.getElementsByTagName('script')[0];
 node.parentNode.insertBefore(gads, node);
@@ -119,8 +119,8 @@ googletag.enableServices();
 <?php 	wp_enqueue_script('jquery');
 		wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/norwalk.min.js');
 		//wp_enqueue_script('stickybar', get_template_directory_uri() . '/js/stickysidebar.jquery.min.js');
-		wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-1.6.min.js'); ?>
- 
+		wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-1.6.js'); ?>
+
 <!-- Quantcast Tag -->
 <script type="text/javascript">
 var _qevents = _qevents || [];
@@ -145,7 +145,7 @@ qacct:"p-7GR1A7wZbYvVp"
 </div>
 </noscript>
 <!-- End Quantcast tag -->
- 
+
 <?php
 
     /* We add some JavaScript to pages with the comment form
@@ -153,7 +153,7 @@ qacct:"p-7GR1A7wZbYvVp"
      */
     if ( is_singular() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
- 
+
     /* Always have wp_head() just before the closing </head>
      * tag of your theme, or you will break many plugins, which
      * generally use this hook to add elements to <head> such
@@ -162,18 +162,18 @@ qacct:"p-7GR1A7wZbYvVp"
     wp_head();
 ?>
 </head>
- 
+
 <body <?php body_class(); ?>>
     <header id="mainhead">
 		<canvas id="particle_canvas"></canvas>
-        <?php 
+        <?php
 			$main_nav_args = array(
 						'theme_location'  => 'main-nav',
-						'menu'            => 'main-navigation', 
-						'container'       => 'nav', 
-						'container_class' => 'header-nav', 
+						'menu'            => 'main-navigation',
+						'container'       => 'nav',
+						'container_class' => 'header-nav',
 						'container_id'    => 'main-nav',
-						//'menu_class'      => '{menu slug}', 
+						//'menu_class'      => '{menu slug}',
 						//'menu_id'         => '',
 						'echo'            => true,
 						'fallback_cb'     => 'norwalk_default_nav',
