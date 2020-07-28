@@ -40,9 +40,9 @@
     //remember to clear cache on live server after modifying these!!
     wp_enqueue_script('jquery');
     wp_enqueue_script('google-ads', 'https://securepubads.g.doubleclick.net/tag/js/gpt.js');
-    wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js', 'jquery', '1.3.7');
+    wp_enqueue_script('norwalk-js', get_template_directory_uri() . '/js/min/norwalk.min.js', 'jquery', '1.3.7-hotfix');
     wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/min/modernizr.custom.99437.min.js');
-    wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css', '1.3.7');
+    wp_enqueue_style('norwalk-css', get_template_directory_uri() . '/stylesheets/layout.css', '1.3.7-hotfix');
 ?>
 
 <!-- Quantcast Tag -->
