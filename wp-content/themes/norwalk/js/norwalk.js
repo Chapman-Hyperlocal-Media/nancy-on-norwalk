@@ -173,7 +173,6 @@ jQuery(function ($) {
                 clearTimeout(googTimer);
                 if (typeof googletag !== undefined && typeof googletag.pubads === 'function') {
                     googletag.pubads().refresh();
-                    googletag.enableServices();
                 } else if (count <= 9) {
                     refreshGoog(count + 1);
                 }
@@ -214,6 +213,7 @@ jQuery(function ($) {
                 adsInitialized = true;
                 googletag.cmd.push(function () {
                     googletag.enableServices();
+                    googletag.pubads().refresh();
                 });
             }
         } else if (documentWidth >= 801 && currentMode === 'mobile') {
@@ -236,6 +236,7 @@ jQuery(function ($) {
                 adsInitialized = true;
                 googletag.cmd.push(function () {
                     googletag.enableServices();
+                    googletag.pubads().refresh();
                 });
             }
         }
