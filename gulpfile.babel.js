@@ -4,6 +4,7 @@ const sass = require('gulp-sass');
 const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
 sass.compiler = require('sass');
 
 const themePath = 'wp-content/themes/norwalk/';
@@ -17,8 +18,17 @@ const cleanJS = (cb) => {
     fs.readdirSync(jsPath + 'min/')
         .filter(f => jsMinRegex.test(f))
         .map(f => fs.unlinkSync(jsPath + 'min/' + f));
+    try {
+        fs.readdirSync(jsPath + 'min/maps/')
+            .map(f => fs.unlinkSync(jsPath + 'min/maps/' + f));
+        fs.rmdirSync(jsPath + 'min/maps');
+    }
+    catch(e) {
+        console.log('\x1b[33m', 'This is probably just that /maps/ doesn\'t exist, which is fine.', "\x1b[0m");
+        console.error(e);
+    }
     cb();
-}
+};
 
 const cleanCSS = (cb) => {
     fs.readdirSync(cssPath)
@@ -54,8 +64,13 @@ exports.develop = () => {
     watch(jsPath + '*.js', developJS);
 };
 
-const compileJS = () => src(jsPath + '*.js')
+const compileJS = () => src(jsPath + '*.js', {ignore: 'modernizr.*.js'})
     .pipe(babel())
+    .pipe(uglify())
+    .pipe(rename({extname: '.min.js'}))
+    .pipe(dest(jsPath + 'min/'));
+
+const copyModernizr = () => src(jsPath + 'modernizr.*.js')
     .pipe(rename({extname: '.min.js'}))
     .pipe(dest(jsPath + 'min/'));
 
@@ -70,6 +85,7 @@ exports.build = series(
     cleanCSS,
     parallel(
         compileSass,
-        compileJS
+        compileJS,
+        copyModernizr
     )
 );
